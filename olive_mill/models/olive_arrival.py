@@ -1113,7 +1113,7 @@ class OliveArrivalLine(models.Model):
             ailo.create(il_vals)
         # AFIDOL Tax
         tax_product = company.olive_oil_tax_product_id
-        if tax_product.uom_id != self.env.ref('product.product_uom_kgm'):
+        if tax_product.uom_id != self.env.ref('uom.product_uom_kgm'):
             raise UserError(_(
                 "The unit of measure of the oil tax product (%s) should be in kg.")
                 % tax_product.display_name)

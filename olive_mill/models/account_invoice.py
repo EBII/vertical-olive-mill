@@ -20,7 +20,7 @@ class AccountInvoice(models.Model):
             production_service = self.company_id.olive_oil_production_product_id
             total_amount = 0.0
             total_qty = 0.0
-            kg_uom = self.env.ref('product.product_uom_kgm')
+            kg_uom = self.env.ref('uom.product_uom_kgm')
             for iline in self.invoice_line_ids:
                 if iline.product_id in oproducts:
                     total_amount += iline.price_subtotal_signed
