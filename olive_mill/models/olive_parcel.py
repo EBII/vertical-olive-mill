@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -48,5 +47,5 @@ class OliveParcel(models.Model):
     @api.depends('variant_ids.name')
     def _compute_variant_label(self):
         for parcel in self:
-            parcel.variant_label = u', '.join([
+            parcel.variant_label = ', '.join([
                 p.name for p in parcel.variant_ids])

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -195,7 +194,7 @@ class OliveAppointment(models.Model):
             start_in_tz = fields.Datetime.to_string(start_dt_in_tz)
             res.append((
                 app.id,
-                u'%s %s' % (app.partner_id.display_name, start_in_tz[:16])))
+                '%s %s' % (app.partner_id.display_name, start_in_tz[:16])))
         return res
 
     @api.onchange('start_datetime', 'appointment_type', 'qty')

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2019 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -187,7 +186,7 @@ class OliveAgrimerReport(models.Model):
         vals['olive_pressed_qty'] = rg and rg[0]['olive_qty'] or 0.0
 
     def _compute_oil_produced(self, vals, oiltype2oilproducts):
-        for oil_type, oil_products in oiltype2oilproducts.items():
+        for oil_type, oil_products in list(oiltype2oilproducts.items()):
             net_fieldname = '%s_oil_produced' % oil_type
             shrinkage_fieldname = 'shrinkage_%s_oil' % oil_type
             rg = self.env['olive.arrival.line'].read_group([
@@ -218,7 +217,7 @@ class OliveAgrimerReport(models.Model):
         withdrawal_locs = self.env['stock.location']
         for olive_wh in olive_whs:
             withdrawal_locs += olive_wh.olive_withdrawal_loc_id
-        for oil_type, oil_products in oiltype2oilproducts.items():
+        for oil_type, oil_products in list(oiltype2oilproducts.items()):
             move_rg = smo.read_group(
                 move_common_domain + [
                     ('product_id', 'in', oil_products.ids),
@@ -237,7 +236,7 @@ class OliveAgrimerReport(models.Model):
             withdrawal_fieldname = 'withdrawal_%s_oil' % oil_type
             vals[withdrawal_fieldname] = qty - return_qty
         # Loose
-        for oil_type, oil_products in oiltype2oilproducts.items():
+        for oil_type, oil_products in list(oiltype2oilproducts.items()):
             move_rg = smo.read_group(
                 move_common_domain + [
                     ('product_id', 'in', oil_products.ids),
@@ -260,7 +259,7 @@ class OliveAgrimerReport(models.Model):
         distri_pricelists = self.env['product.pricelist'].search([
             ('olive_oil_distributor', '=', True)])
 
-        for bottle, props in bottle2oiltypevol.items():
+        for bottle, props in list(bottle2oiltypevol.items()):
             move_rg = smo.read_group(
                 move_common_domain + [
                     ('product_id', '=', bottle.id),
@@ -294,7 +293,7 @@ class OliveAgrimerReport(models.Model):
 
     def _oil_out_sale_final_compute(
             self, partner_type, vals, props, product_qty):
-        for oil_type, vol in props.items():
+        for oil_type, vol in list(props.items()):
             fieldname = 'sale_%s_%s_oil' % (partner_type, oil_type)
             vals[fieldname] += product_qty * vol
 
@@ -316,7 +315,7 @@ class OliveAgrimerReport(models.Model):
         oiltype2oilproducts = {}
         bottle2oiltypevol = {}
         ppo = self.env['product.product']
-        for oil_type, domain in oil_product_domain.items():
+        for oil_type, domain in list(oil_product_domain.items()):
             oiltype2oilproducts[oil_type] = ppo.search(
                 domain + [('olive_type', '=', 'oil')])
         regular_bottles = ppo.search([('olive_type', '=', 'bottle_full')])
@@ -341,8 +340,8 @@ class OliveAgrimerReport(models.Model):
         for pbottle in pack_bottles:
             bottle2oiltypevol[pbottle] = {}
             pack_dict = pbottle.oil_bottle_full_pack_get_bottles()
-            for cbottle, qty in pack_dict.items():
-                oil_type, bottle_volume = bottle2oiltypevol[cbottle].items()[0]
+            for cbottle, qty in list(pack_dict.items()):
+                oil_type, bottle_volume = list(bottle2oiltypevol[cbottle].items())[0]
                 if oil_type in bottle2oiltypevol[pbottle]:
                     bottle2oiltypevol[pbottle][oil_type] += bottle_volume * qty
                 else:

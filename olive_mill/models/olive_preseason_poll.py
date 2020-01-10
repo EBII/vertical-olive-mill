@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2019 Barroux Abbey (http://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -130,7 +129,7 @@ class OlivePreseasonPoll(models.Model):
             ('commercial_partner_id', '=', self.commercial_partner_id.id)],
             ['olive_qty', 'oil_qty_net', 'sale_oil_qty', 'season_id'],
             ['season_id'])
-        print "res=", res
+        print("res=", res)
         season2data = {}
         for re in res:
             season_id = re['season_id'][0]

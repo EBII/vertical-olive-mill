@@ -23,69 +23,69 @@
                 <label for="olive_oil_density"/>
                 <div name="olive_oil_density">
                     <field name="olive_oil_density" class="oe_inline"/>
-                    <label string=" kg / L" class="oe_inline"/>
+                    <label for="olive_oil_density" string=" kg / L" class="oe_inline"/>
                 </div>
                 <label for="olive_max_qty_per_palox"/>
                 <div name="olive_max_qty_per_palox">
                     <field name="olive_max_qty_per_palox" class="oe_inline"/>
-                    <label string=" kg" class="oe_inline"/>
+                    <label for="olive_max_qty_per_palox" string=" kg" class="oe_inline"/>
                 </div>
                 <label for="olive_shrinkage_ratio"/>
                 <div name="olive_shrinkage_ratio">
                     <field name="olive_shrinkage_ratio" class="oe_inline"/>
-                    <label string=" %" class="oe_inline"/>
+                    <label for="olive_shrinkage_ratio" string=" %" class="oe_inline"/>
                 </div>
                 <label for="olive_filter_ratio"/>
                 <div name="olive_filter_ratio">
                     <field name="olive_filter_ratio" class="oe_inline"/>
-                    <label string=" %" class="oe_inline"/>
+                    <label for="olive_filter_ratio" string=" %" class="oe_inline"/>
                 </div>
                 <label for="olive_min_ratio"/>
                 <div name="olive_min_ratio">
                     <field name="olive_min_ratio" class="oe_inline"/>
-                    <label string=" %" class="oe_inline"/>
+                    <label for="olive_min_ratio" string=" %" class="oe_inline"/>
                 </div>
                 <label for="olive_max_ratio"/>
                 <div name="olive_max_ratio">
                     <field name="olive_max_ratio" class="oe_inline"/>
-                    <label string=" %" class="oe_inline"/>
+                    <label for="olive_max_ratio" string=" %" class="oe_inline"/>
                 </div>
                 <label for="olive_harvest_arrival_max_delta_days"/>
                 <div name="olive_harvest_arrival_max_delta_days">
                     <field name="olive_harvest_arrival_max_delta_days" class="oe_inline"/>
-                    <label string=" days" class="oe_inline"/>
+                    <label for="olive_harvest_arrival_max_delta_days" string=" days" class="oe_inline"/>
                 </div>
             </group>
             <group name="appointment" string="Appointments">
                 <label for="olive_appointment_qty_per_palox"/>
                 <div name="olive_appointment_qty_per_palox">
                     <field name="olive_appointment_qty_per_palox" class="oe_inline"/>
-                    <label string=" kg" class="oe_inline"/>
+                    <label for="olive_appointment_qty_per_palox" string=" kg" class="oe_inline"/>
                 </div>
                 <label for="olive_appointment_arrival_no_leaf_removal_minutes"/>
                 <div name="olive_appointment_arrival_no_leaf_removal_minutes">
                     <field name="olive_appointment_arrival_no_leaf_removal_minutes" class="oe_inline"/>
-                    <label string=" minutes / 100 kg of olive" class="oe_inline"/>
+                    <label for="olive_appointment_arrival_no_leaf_removal_minutes" string=" minutes / 100 kg of olive" class="oe_inline"/>
                 </div>
                 <label for="olive_appointment_arrival_leaf_removal_minutes"/>
                 <div name="olive_appointment_arrival_leaf_removal_minutes">
                     <field name="olive_appointment_arrival_leaf_removal_minutes" class="oe_inline"/>
-                    <label string=" minutes / 100 kg of olive" class="oe_inline"/>
+                    <label for="olive_appointment_arrival_leaf_removal_minutes" string=" minutes / 100 kg of olive" class="oe_inline"/>
                 </div>
                 <label for="olive_appointment_arrival_min_minutes"/>
                 <div name="olive_appointment_arrival_min_minutes">
                     <field name="olive_appointment_arrival_min_minutes" class="oe_inline"/>
-                    <label string=" minutes" class="oe_inline"/>
+                    <label for="olive_appointment_arrival_min_minutes" string=" minutes" class="oe_inline"/>
                 </div>
                 <label for="olive_appointment_lend_minutes"/>
                 <div name="olive_appointment_lend_minutes">
                     <field name="olive_appointment_lend_minutes" class="oe_inline"/>
-                    <label string=" minutes" class="oe_inline"/>
+                    <label for="olive_appointment_lend_minutes" string=" minutes" class="oe_inline"/>
                 </div>
                 <label for="olive_appointment_withdrawal_minutes"/>
                 <div name="olive_appointment_withdrawal_minutes">
                     <field name="olive_appointment_withdrawal_minutes" class="oe_inline"/>
-                    <label string=" minutes" class="oe_inline"/>
+                    <label for="olive_appointment_withdrawal_minutes" string=" minutes" class="oe_inline"/>
                 </div>
             </group>
             <group name="oil_production" string="Oil Production">

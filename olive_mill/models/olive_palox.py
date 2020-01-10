@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -86,14 +85,14 @@ class OlivePalox(models.Model):
                 paloxes[l.palox_id]['farmers'].append(l.commercial_partner_id.name)
                 if l.arrival_date < paloxes[l.palox_id]['arrival_date']:
                     paloxes[l.palox_id]['arrival_date'] = l.arrival_date
-        for palox, rdict in paloxes.iteritems():
+        for palox, rdict in paloxes.items():
             oil_destination = 'mix'
             if all([dest == 'sale' for dest in rdict['oil_dests']]):
                 oil_destination = 'sale'
             elif all([dest == 'withdrawal' for dest in rdict['oil_dests']]):
                 oil_destination = 'withdrawal'
             palox.oil_destination = oil_destination
-            palox.farmers = u' / '.join(rdict['farmers'])
+            palox.farmers = ' / '.join(rdict['farmers'])
             palox.arrival_date = rdict['arrival_date']
 
     @api.constrains('borrower_partner_id', 'borrowed_date')

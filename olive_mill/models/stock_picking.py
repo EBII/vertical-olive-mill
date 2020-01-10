@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -52,7 +51,7 @@ class StockPicking(models.Model):
             'Olive Oil Ratio')
         arrivals = self.env['olive.arrival']
         cpartner = self.partner_id.commercial_partner_id
-        for pack in self.pack_operation_ids:
+        for pack in self.count_picking:
             if pack.product_id and pack.product_id.olive_type == 'oil':
                 for pack_lot in pack.pack_lot_ids:
                     if pack_lot.lot_id and pack_lot.lot_id.olive_production_id:

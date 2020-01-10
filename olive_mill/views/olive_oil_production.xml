@@ -45,50 +45,50 @@
                         <label for="olive_qty"/>
                         <div name="olive_qty">
                             <field name="olive_qty" class="oe_inline"/>
-                            <label string=" kg" class="oe_inline"/>
+                            <label for="olive_qty" string=" kg" class="oe_inline"/>
                         </div>
                         <field name="compensation_type"/>
                         <field name="compensation_oil_product_id" attrs="{'invisible': [('compensation_type', '!=', 'first')]}"/>
                         <label for="compensation_last_olive_qty" attrs="{'invisible': [('compensation_type', '!=', 'last')]}"/>
                         <div name="compensation_last_olive_qty" attrs="{'invisible': [('compensation_type', '!=', 'last')]}">
                             <field name="compensation_last_olive_qty" class="oe_inline"/>
-                            <label string=" kg"/>
+                            <label for="compensation_last_olive_qty"  string=" kg"/>
                         </div>
                         <label for="compensation_ratio" attrs="{'invisible': [('compensation_type', '!=', 'last')]}"/>
                         <div name="compensation_ratio" attrs="{'invisible': [('compensation_type', '!=', 'last')]}">
                             <field name="compensation_ratio" class="oe_inline"/>
-                            <label string=" %"/>
+                            <label for="compensation_ratio" string=" %"/>
                         </div>
                         <label for="compensation_oil_qty" attrs="{'invisible': [('compensation_type', 'not in', ('first', 'last'))]}" string="Compensation Oil Qty"/>
                         <div name="compensation_oil_qty" attrs="{'invisible': [('compensation_type', 'not in', ('first', 'last'))]}">
                             <field name="compensation_oil_qty" class="oe_inline"/>
-                            <label string=" L /" class="oe_inline"/>
+                            <label for="compensation_oil_qty" string=" L /" class="oe_inline"/>
                             <field name="compensation_oil_qty_kg" class="oe_inline"/>
-                            <label string=" kg" class="oe_inline"/>
+                            <label for="compensation_oil_qty_kg" string=" kg" class="oe_inline"/>
                         </div>
                         <label for="decanter_speed"/>
                         <div name="decanter_speed">
                             <field name="decanter_speed" class="oe_inline"/>
-                            <label string=" kg / h"/>
+                            <label for="decanter_speed" string=" kg / h"/>
                         </div>
                     </group>
                     <group name="right">
                         <label for="oil_qty" string="Oil Quantity"/>
                         <div name="oil_qty">
                             <field name="oil_qty" class="oe_inline"/>
-                            <label string=" L /" class="oe_inline"/>
+                            <label for="oil_qty" string=" L /" class="oe_inline"/>
                             <field name="oil_qty_kg" class="oe_inline"/>
-                            <label string=" kg" class="oe_inline"/>
+                            <label for="oil_qty_kg" string=" kg" class="oe_inline"/>
                         </div>
                         <label for="ratio" string="Gross Ratio"/>
                         <div name="ratio">
                             <field name="ratio" class="oe_inline"/>
-                            <label string=" % (L)" class="oe_inline"/>
+                            <label for="ratio" string=" % (L)" class="oe_inline"/>
                         </div>
                         <label for="to_sale_tank_oil_qty" string="To Sale Tank Oil Qty"/>
                         <div name="to_sale_tank_oil_qty">
                             <field name="to_sale_tank_oil_qty" class="oe_inline"/>
-                            <label string=" L"/>
+                            <label for="to_sale_tank_oil_qty" string=" L"/>
                         </div>
                         <field name="sale_location_id" attrs="{'invisible': [('oil_destination', '=', 'withdrawal')]}" domain="[('olive_tank_type', '=', 'regular'), ('oil_product_id', '=', oil_product_id), ('olive_season_id', '=', season_id)]"/>
                         <field name="shrinkage_location_id" domain="[('olive_tank_type', '=', 'shrinkage'), ('olive_season_id', '=', season_id)]"/>
@@ -97,7 +97,7 @@
                         <label for="to_compensation_sale_tank_oil_qty" string="To Compensation Sale Tank Oil Qty" attrs="{'invisible': ['|', ('compensation_type', '!=', 'first'), ('oil_destination', '=', 'withdrawal')]}"/>
                         <div name="to_compensation_sale_tank_oil_qty" attrs="{'invisible': ['|', ('compensation_type', '!=', 'first'), ('oil_destination', '=', 'withdrawal')]}">
                             <field name="to_compensation_sale_tank_oil_qty" class="oe_inline"/>
-                            <label string=" L"/>
+                            <label for="to_compensation_sale_tank_oil_qty" string=" L"/>
                         </div>
                         <field name="compensation_sale_location_id" attrs="{'invisible': ['|', ('compensation_type', '!=', 'first'), ('oil_destination', '=', 'withdrawal')]}" domain="[('olive_tank_type', '=', 'regular'), ('oil_product_id', '=', compensation_oil_product_id), ('olive_season_id', '=', season_id)]"/>
                         <field name="oil_destination"/>

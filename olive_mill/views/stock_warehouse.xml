@@ -13,7 +13,7 @@
     <field name="model">stock.warehouse</field>
     <field name="inherit_id" ref="stock.view_warehouse"/>
     <field name="arch" type="xml">
-        <xpath expr="//field[@name='default_resupply_wh_id']" position="before">
+        <xpath expr="//group[@name='group_resupply']" position="inside">
             <field name="olive_mill" />
         </xpath>
         <xpath expr="//field[@name='reception_steps']/../.." position="before">
@@ -30,18 +30,18 @@
                     <label for="olive_compensation_last_qty"/>
                     <div name="olive_compensation_last_qty">
                         <field name="olive_compensation_last_qty" class="oe_inline"/>
-                        <label string=" kg"/>
+                        <label for="olive_compensation_last_qty" string=" kg"/>
                     </div>
                     <label for="olive_oil_compensation_ratio"/>
                     <div name="olive_oil_compensation_ratio">
                         <field name="olive_oil_compensation_ratio" class="oe_inline"/>
-                        <label string=" %"/>
+                        <label for="olive_oil_compensation_ratio" string=" %"/>
                     </div>
                     <field name="olive_oil_compensation_ratio_update_date"/>
                     <label for="olive_oil_compensation_ratio_days"/>
                     <div name="olive_oil_compensation_ratio_days">
                         <field name="olive_oil_compensation_ratio_days" class="oe_inline"/>
-                        <label string=" last days"/>
+                        <label for="olive_oil_compensation_ratio_days" string=" last days"/>
                     </div>
                     <button name="olive_oil_compensation_ratio_update" type="object" string="Update Compensation Ratio" colspan="2"/>
                 </group>

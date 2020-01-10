@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -48,7 +47,7 @@ class OliveOchard(models.Model):
         if self.zip_id:
             name = self.zip_id.city
             if self.zip_id.name:
-                name = u'%s %s' % (self.zip_id.name, name)
+                name = '%s %s' % (self.zip_id.name, name)
             self.city = name
 
     @api.depends('name', 'city')
@@ -57,6 +56,6 @@ class OliveOchard(models.Model):
         for ochard in self:
             name = ochard.name
             if ochard.city:
-                name = u'%s (%s)' % (name, ochard.city)
+                name = '%s (%s)' % (name, ochard.city)
             res.append((ochard.id, name))
         return res

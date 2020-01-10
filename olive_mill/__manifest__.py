@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -17,7 +16,7 @@
         'product_expiry_simple',
         'base_location',
         # 'stock_no_negative',  # ??
-        'stock_pack_operation_auto_fill',
+        #'stock_pack_operation_auto_fill',
         'report_py3o',
         'base_usability',  # for reports
         'onchange_helper',
@@ -29,7 +28,7 @@
         'data/decimal_precision.xml',
         'data/sequence.xml',
         'data/organic_certifying_entity.xml',
-        'data/cron.xml',
+        #'data/cron.xml',
         'report/report.xml',
         'views/menu.xml',
         'wizard/olive_palox_case_lend_view.xml',

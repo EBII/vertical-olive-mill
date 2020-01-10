@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018-2019 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -22,7 +21,7 @@ class StockProductionLot(models.Model):
             if lot.expiry_date:
                 dname = '[%s] %s' % (lot.expiry_date, dname)
             if lot.olive_production_id:
-                dname = u'%s (%s)' % (dname, lot.olive_production_id.farmers)
+                dname = '%s (%s)' % (dname, lot.olive_production_id.farmers)
             res.append((lot.id, dname))
         return res
 
@@ -63,7 +62,7 @@ class StockProductionLot(models.Model):
         quant = self.quant_ids[0]
         lines = {}  # dict to avoid double entries in arrival lines
         self.browse_recursive_tree(quant, lines)
-        tmp_list = sorted(lines.keys(), key=lambda to_sort: to_sort.arrival_date)
+        tmp_list = sorted(list(lines.keys()), key=lambda to_sort: to_sort.arrival_date)
         res = {}
         for line in tmp_list:
             if line.commercial_partner_id in res:

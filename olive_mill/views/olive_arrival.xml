@@ -81,7 +81,7 @@
                         <label for="olive_qty" string="Total Quantity"/>
                         <div name="olive_qty">
                             <field name="olive_qty" class="oe_inline"/>
-                            <label string=" kg"/>
+                            <label for="olive_qty" string=" kg"/>
                         </div>
                         <field name="returned_regular_case" attrs="{'readonly': ['|', ('olive_culture_type', 'in', ('organic', 'conversion')), ('state', '=', 'done')]}"/>
                         <field name="returned_organic_case" attrs="{'readonly': ['|', ('olive_culture_type', '=', 'regular'), ('state', '=', 'done')]}"/>
@@ -117,22 +117,22 @@
                                 <label for="olive_qty_pressed" string="Olive Qty Pressed"/>
                                 <div name="olive_qty_pressed">
                                     <field name="olive_qty_pressed" class="oe_inline"/>
-                                    <label string=" kg"/>
+                                    <label for="olive_qty_pressed" string=" kg"/>
                                 </div>
                                 <label for="oil_qty_net" string="Net Oil Qty"/>
                                 <div name="oil_qty_net">
                                     <field name="oil_qty_net" class="oe_inline"/>
-                                    <label string=" L"/>
+                                    <label for="oil_qty_net" string=" L"/>
                                 </div>
                                 <label for="oil_ratio_net" string="Oil Net Ratio"/>
                                 <div name="oil_ratio_net">
                                     <field name="oil_ratio_net" class="oe_inline"/>
-                                    <label string=" %"/>
+                                    <label for="oil_ratio_net" string=" %"/>
                                 </div>
                                 <label for="olive_ratio_net" string="Olive Net Ratio"/>
                                 <div name="olive_ratio_net">
                                     <field name="olive_ratio_net" class="oe_inline"/>
-                                    <label string=" kg / L"/>
+                                    <label for="olive_ratio_net" string=" kg / L"/>
                                 </div>
                             </group>
                             <group name="tech" string="Additional Info">
@@ -253,7 +253,7 @@
                 <label for="olive_qty" string="Olive Qty"/>
                 <div name="olive_qty">
                     <field name="olive_qty" class="oe_inline"/>
-                    <label string=" kg"/>
+                    <label for="olive_qty" string=" kg"/>
                 </div>
                 <field name="leaf_removal"/>
                 <field name="variant_id" widget="selection"/>
@@ -268,7 +268,7 @@
                 <div name="mix_withdrawal_oil_qty" attrs="{'invisible': [('oil_destination', '!=', 'mix')]}">
                     <field name="mix_withdrawal_oil_qty"
                         attrs="{'required': [('oil_destination', '=', 'mix')]}" class="oe_inline"/>
-                    <label string=" L"/>
+                    <label for="mix_withdrawal_oil_qty" string=" L"/>
                 </div>
             </group>
             <group name="main-right" string="Production">
@@ -279,64 +279,64 @@
                 <label for="oil_qty" string="Oil Qty"/>
                 <div name="oil_qty">
                     <field name="oil_qty" class="oe_inline"/>
-                    <label string=" L / " class="oe_inline"/>
+                    <label for="oil_qty" string=" L / " class="oe_inline"/>
                     <field name="oil_qty_kg" class="oe_inline"/>
-                    <label string=" kg" class="oe_inline"/>
+                    <label for="oil_qty_kg" string=" kg" class="oe_inline"/>
                 </div>
                 <label for="compensation_oil_qty" string="Compensation Oil Qty" attrs="{'invisible': [('compensation_type', 'not in', ('last', 'first'))]}"/>
                 <div name="compensation_oil_qty" attrs="{'invisible': [('compensation_type', 'not in', ('last', 'first'))]}">
                     <field name="compensation_oil_qty" class="oe_inline"/>
-                    <label string=" L"/>
+                    <label for="compensation_oil_qty" string=" L"/>
                 </div>
                 <label for="oil_qty_with_compensation" string="Oil Qty with Compensation"/>
                 <div name="oil_qty_with_compensation">
                     <field name="oil_qty_with_compensation" class="oe_inline"/>
-                    <label string=" L"/>
+                    <label for="oil_qty_with_compensation" string=" L"/>
                 </div>
 
                 <label for="shrinkage_oil_qty" string="Shrinkage Oil Qty"/>
                 <div name="shrinkage_oil_qty">
                     <field name="shrinkage_oil_qty" class="oe_inline"/>
-                    <label string=" L / " class="oe_inline"/>
+                    <label for="shrinkage_oil_qty" string=" L / " class="oe_inline"/>
                     <field name="shrinkage_oil_qty_kg" class="oe_inline"/>
-                    <label string=" kg" class="oe_inline"/>
+                    <label for="shrinkage_oil_qty_kg" string=" kg" class="oe_inline"/>
                 </div>
                 <label for="withdrawal_oil_qty" string="Withdrawal Oil Qty" attrs="{'invisible': [('oil_destination', 'not in', ('withdrawal', 'mix'))]}"/>
                 <div name="withdrawal_oil_qty" attrs="{'invisible': [('oil_destination', 'not in', ('withdrawal', 'mix'))]}">
                     <field name="withdrawal_oil_qty" class="oe_inline"/>
-                    <label string=" L / " class="oe_inline"/>
+                    <label for="withdrawal_oil_qty" string=" L / " class="oe_inline"/>
                     <field name="withdrawal_oil_qty_kg" class="oe_inline"/>
-                    <label string=" kg" class="oe_inline"/>
+                    <label for="withdrawal_oil_qty_kg" string=" kg" class="oe_inline"/>
                 </div>
                 <label for="filter_loss_oil_qty" string="Oil Qty Lost in Filter" attrs="{'invisible': [('oil_destination', 'not in', ('sale', 'mix'))]}"/>
                 <div name="filter_loss_oil_qty" attrs="{'invisible': [('oil_destination', 'not in', ('sale', 'mix'))]}">
                     <field name="filter_loss_oil_qty" class="oe_inline"/>
-                    <label string=" L" class="oe_inline"/>
+                    <label for="filter_loss_oil_qty" string=" L" class="oe_inline"/>
                 </div>
                 <label for="to_sale_tank_oil_qty" string="Oil Qty to Sale Tank" attrs="{'invisible': [('oil_destination', 'not in', ('sale', 'mix'))]}"/>
                 <div name="to_sale_tank_oil_qty" attrs="{'invisible': [('oil_destination', 'not in', ('sale', 'mix'))]}">
                     <field name="to_sale_tank_oil_qty" class="oe_inline"/>
-                    <label string=" L" class="oe_inline"/>
+                    <label for="to_sale_tank_oil_qty" string=" L" class="oe_inline"/>
                 </div>
                 <label for="sale_oil_qty" string="Oil Qty Sold" attrs="{'invisible': [('oil_destination', 'not in', ('sale', 'mix'))]}"/>
                 <div name="sale_oil_qty" attrs="{'invisible': [('oil_destination', 'not in', ('sale', 'mix'))]}">
                     <field name="sale_oil_qty" class="oe_inline"/>
-                    <label string=" L" class="oe_inline"/>
+                    <label for="sale_oil_qty" string=" L" class="oe_inline"/>
                 </div>
                 <label for="oil_qty_net" string="Net Oil Qty"/>
                 <div name="oil_qty_net">
                     <field name="oil_qty_net" class="oe_inline"/>
-                    <label string=" L" class="oe_inline"/>
+                    <label for="oil_qty_net" string=" L" class="oe_inline"/>
                 </div>
                 <label for="oil_ratio" string="Oil Gross Ratio"/>
                 <div name="oil_ratio">
                     <field name="oil_ratio" class="oe_inline"/>
-                    <label string=" % (L)" class="oe_inline"/>
+                    <label for="oil_ratio" string=" % (L)" class="oe_inline"/>
                 </div>
                 <label for="oil_ratio_net" string="Oil Net Ratio"/>
                 <div name="oil_ratio_net">
                     <field name="oil_ratio_net" class="oe_inline"/>
-                    <label string=" % (L)" class="oe_inline"/>
+                    <label for="oil_ratio_net" string=" % (L)" class="oe_inline"/>
                 </div>
             </group>
             </group>
@@ -385,7 +385,7 @@
                 <div name="mix_withdrawal_oil_qty" attrs="{'invisible': [('oil_destination', '!=', 'mix')]}">
                     <field name="mix_withdrawal_oil_qty"
                         attrs="{'required': [('oil_destination', '=', 'mix')]}" class="oe_inline"/>
-                    <label string=" L"/>
+                    <label for="mix_withdrawal_oil_qty" string=" L"/>
                 </div>
 
                 <field name="oil_product_id"
@@ -563,7 +563,7 @@
             <field name="product_id"/>
             <field name="product_olive_type" invisible="1"/>
             <field name="qty"/>
-            <field name="uom_id" groups="product.group_uom"/>
+            <field name="uom_id" groups="uom.group_uom"/>
             <field name="fillup"/>
         </tree>
     </field>

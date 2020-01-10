@@ -27,7 +27,7 @@
                     <label for="area_total"/>
                     <div name="area_total">
                         <field name="area_total" class="oe_inline"/>
-                        <label string=" ha" class="oe_inline"/>
+                        <label  for="area_total" string=" ha" class="oe_inline"/>
                     </div>
                 </group>
                 <group name="parcel" string="Parcels">

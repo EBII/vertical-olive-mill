@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -325,7 +324,7 @@ class OliveOilProduction(models.Model):
         sloc = self.warehouse_id.olive_get_shrinkage_tank(oil_product)
 
         self.write({
-            'farmers': u' / '.join(farmers),
+            'farmers': ' / '.join(farmers),
             'sample': sample,
             'state': 'ratio',
             'oil_product_id': oil_product.id,

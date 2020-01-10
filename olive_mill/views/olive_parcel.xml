@@ -19,7 +19,7 @@
                 <label for="area"/>
                 <div name="area">
                     <field name="area" class="oe_inline"/>
-                    <label string=" ha" class="oe_inline"/>
+                    <label for="area" string=" ha" class="oe_inline"/>
                 </div>
                 <field name="tree_qty"/>
                 <field name="variant_ids" widget="many2many_tags"/>

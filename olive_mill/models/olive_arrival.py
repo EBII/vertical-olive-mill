@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -831,7 +830,7 @@ class OliveArrivalLine(models.Model):
         for rec in self:
             name = rec.name
             if rec.commercial_partner_id:
-                name = u'%s (%s, %s)' % (name, rec.commercial_partner_id.name, rec.variant_id.name)
+                name = '%s (%s, %s)' % (name, rec.commercial_partner_id.name, rec.variant_id.name)
             res.append((rec.id, name))
         return res
 
@@ -990,8 +989,8 @@ class OliveArrivalLine(models.Model):
                 else:
                     saledict[arrival] = {product: line.sale_oil_qty}
         total_oil_qty = 0.0
-        for arrival, pdict in saledict.items():
-            for product, quantity in pdict.items():
+        for arrival, pdict in list(saledict.items()):
+            for product, quantity in list(pdict.items()):
                 total_oil_qty += quantity
                 # TODO: move to prepare line method
                 il_vals = self.pre_prepare_invoice_line(product, invoice)
@@ -1127,7 +1126,7 @@ class OliveArrivalLine(models.Model):
             qty * company.olive_oil_density, precision_digits=pr_oil)
         il_vals['quantity'] = qty_kg
         il_vals['price_unit'] = price_unit_kg
-        il_vals['name'] += _(u" (%s L = %s kg)") % (
+        il_vals['name'] += _(" (%s L = %s kg)") % (
             formatLang(self.env, qty, dp='Olive Oil Volume'),
             formatLang(self.env, qty_kg, dp='Olive Oil Volume'))
         ailo.create(il_vals)

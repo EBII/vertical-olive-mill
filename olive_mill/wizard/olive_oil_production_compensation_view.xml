@@ -23,18 +23,18 @@
                 <label for="compensation_last_olive_qty" attrs="{'invisible': [('compensation_type', '!=', 'last')]}"/>
                 <div name="compensation_last_olive_qty" attrs="{'invisible': [('compensation_type', '!=', 'last')]}">
                     <field name="compensation_last_olive_qty" class="oe_inline" attrs="{'required': [('compensation_type', '=', 'last')]}"/>
-                    <label string=" kg" class="oe_inline"/>
+                    <label for="compensation_last_olive_qty" string=" kg" class="oe_inline"/>
                 </div>
                 <label for="compensation_ratio" attrs="{'invisible': [('compensation_type', '!=', 'last')]}"/>
                 <div name="compensation_ratio" attrs="{'invisible': [('compensation_type', '!=', 'last')]}">
                     <field name="compensation_ratio" class="oe_inline" attrs="{'required': [('compensation_type', '=', 'last')]}"/>
-                    <label string=" %" class="oe_inline"/>
+                    <label for="compensation_ratio" string=" %" class="oe_inline"/>
                 </div>
                 <field name="compensation_ratio_update_date" attrs="{'invisible': [('compensation_type', '!=', 'last')]}"/>
                 <label for="compensation_last_oil_qty" attrs="{'invisible': [('compensation_type', '!=', 'last')]}"/>
                 <div name="compensation_last_oil_qty" attrs="{'invisible': [('compensation_type', '!=', 'last')]}">
                     <field name="compensation_last_oil_qty" class="oe_inline"/>
-                    <label string=" L" class="oe_inline"/>
+                    <label for="compensation_last_oil_qty" string=" L" class="oe_inline"/>
                 </div>
             </group>
             <footer>

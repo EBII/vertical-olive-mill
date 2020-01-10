@@ -45,23 +45,23 @@
                         <group name="average" string="Past Data Average">
                             <label for="past_average_ratio_net" string="Average Net Ratio"/>
                             <div name="past_average_ratio_net">
-                                <field name="past_average_ratio_net" class="oe_inline"/> %
+                                <field for="past_average_ratio_net" name="past_average_ratio_net" class="oe_inline"/> %
                             </div>
                             <label for="past_average_olive_qty" string="Average Olive Qty"/>
                             <div name="past_average_olive_qty">
-                                <field name="past_average_olive_qty" class="oe_inline"/> kg
+                                <field for="past_average_olive_qty" name="past_average_olive_qty" class="oe_inline"/> kg
                             </div>
                             <label for="past_average_oil_qty_net" string="Average Net Oil Qty"/>
                             <div name="past_average_oil_qty_net">
-                                <field name="past_average_oil_qty_net" class="oe_inline"/> L
+                                <field for="past_average_oil_qty_net" name="past_average_oil_qty_net" class="oe_inline"/> L
                             </div>
                             <label for="past_average_sale_olive_qty" string="Average Sale Olive Qty"/>
                             <div name="past_average_sale_olive_qty">
-                                <field name="past_average_sale_olive_qty" class="oe_inline"/> kg
+                                <field for="past_average_sale_olive_qty" name="past_average_sale_olive_qty" class="oe_inline"/> kg
                             </div>
                             <label for="past_average_sale_oil_qty" string="Average Sale Oil Qty"/>
                             <div name="past_average_sale_oil_qty">
-                                <field name="past_average_sale_oil_qty" class="oe_inline"/> L
+                                <field for="past_average_sale_oil_qty" name="past_average_sale_oil_qty" class="oe_inline"/> L
                             </div>
                         </group>
                     </group>
@@ -70,7 +70,7 @@
                             <field name="n1_season_id"/>
                             <label for="n1_ratio_net" string="Net Ratio"/>
                             <div name="n1_ratio_net">
-                                <field name="n1_ratio_net" class="oe_inline"/> %
+                                <field for="n1_ratio_net" name="n1_ratio_net" class="oe_inline"/> %
                             </div>
                             <label for="n1_olive_qty" string="Olive Qty"/>
                             <div name="n1_olive_qty">

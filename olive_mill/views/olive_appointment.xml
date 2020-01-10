@@ -96,7 +96,7 @@
                         <label for="withdrawal_oil_qty" attrs="{'invisible': [('oil_destination', '!=', 'mix')]}"/>
                         <div name="withdrawal_oil_qty" attrs="{'invisible': [('oil_destination', '!=', 'mix')]}">
                             <field name="withdrawal_oil_qty" class="oe_inline"/>
-                            <label string=" L" class="oe_inline"/>
+                            <label for="withdrawal_oil_qty" string=" L" class="oe_inline"/>
                         </div>
                     </group>
                     <group name="withdrawal" attrs="{'invisible': [('appointment_type', '!=', 'withdrawal')]}">

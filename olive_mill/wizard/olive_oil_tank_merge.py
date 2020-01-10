@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Barroux Abbey (https://www.barroux.org/)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -121,7 +120,7 @@ class OliveOilTankMerge(models.TransientModel):
                 raw_move = productid2rawmoves[ris_tank_product_id]
                 raw_move.product_uom_qty = qrg['qty']
                 productid2rawmoves.pop(ris_tank_product_id)
-            for empty_raw_move in productid2rawmoves.values():
+            for empty_raw_move in list(productid2rawmoves.values()):
                 empty_raw_move.product_uom_qty = 0
                 empty_raw_move.action_cancel()
 
@@ -167,11 +166,10 @@ class OliveOilTankMerge(models.TransientModel):
         mo.button_mark_done()
         post_mo_qty = loc.olive_oil_tank_check()
         if float_compare(qty, post_mo_qty, precision_digits=pr_oil):
-            raise (_(
+            raise _(
                 "In tank '%s', the oil quantity after the merge (%s) "
                 "is different from the oil quantity before the merge (%s). "
-                "This should never happen.") % (
-                    loc.name, post_mo_qty, qty))
+                "This should never happen.")
         action = self.env['ir.actions.act_window'].for_xml_id(
             'mrp', 'mrp_production_action')
         action.update({
