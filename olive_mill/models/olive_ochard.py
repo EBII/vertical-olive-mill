@@ -16,7 +16,7 @@ class OliveOchard(models.Model):
         'res.partner', string='Olive Farmer', ondelete='cascade', index=True,
         domain=[('parent_id', '=', False), ('olive_farmer', '=', True)])
     active = fields.Boolean(default=True)
-    zip_id = fields.Many2one('res.better.zip', 'City/Zip Shortcut')
+    zip_id = fields.Many2one('res.city.zip', 'City/Zip Shortcut')
     city = fields.Char('City')
     parcel_ids = fields.One2many(
         'olive.parcel', 'ochard_id', string='Parcels')

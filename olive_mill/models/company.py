@@ -155,6 +155,7 @@ class ResCompany(models.Model):
 
     def get_current_season(self):
         self.ensure_one()
+        import pdb; pdb.set_trace()
         today = fields.Date.context_today(self)
         season = self.env['olive.season'].search([
             ('start_date', '<=', today),
