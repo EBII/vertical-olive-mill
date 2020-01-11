@@ -52,7 +52,7 @@ class OliveOilTankMerge(models.TransientModel):
             raise UserError(_(
                 "The oil product '%s' should only have a single bill "
                 "of material.") % product.display_name)
-        liter_uom = self.env.ref('product.product_uom_litre')
+        liter_uom = self.env.ref('uom.product_uom_litre')
         bom = boms[0]
         if bom.product_uom_id != liter_uom:
             raise UserError(_(

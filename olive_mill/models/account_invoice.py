@@ -47,7 +47,7 @@ class AccountInvoice(models.Model):
 
     def olive_in_invoice_price_update(self):
         self.ensure_one()
-        liter_uom = self.env.ref('product.product_uom_litre')
+        liter_uom = self.env.ref('uom.product_uom_litre')
         for iline in self.invoice_line_ids:
             oalines = self.env['olive.arrival.line'].search([
                 ('in_invoice_line_id', '=', iline.id),

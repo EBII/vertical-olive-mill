@@ -51,7 +51,7 @@ class ProductTemplate(models.Model):
     # DUPLICATED in product product
     @api.onchange('olive_type')
     def olive_type_change(self):
-        liter_uom = self.env.ref('product.product_uom_litre')
+        liter_uom = self.env.ref('uom.product_uom_litre')
         if self.olive_type == 'oil':
             if self.uom_id != liter_uom:
                 self.uom_id = liter_uom
@@ -68,8 +68,8 @@ class ProductTemplate(models.Model):
 
     @api.constrains('olive_type', 'uom_id', 'olive_culture_type', 'type')
     def check_olive_type(self):
-        liter_uom = self.env.ref('product.product_uom_litre')
-        unit_categ_uom = self.env.ref('product.product_uom_categ_unit')
+        liter_uom = self.env.ref('uom.product_uom_litre')
+        unit_categ_uom = self.env.ref('uom.product_uom_categ_unit')
         for pt in self:
             if pt.olive_type == 'oil':
                 if not pt.olive_culture_type:
@@ -126,7 +126,7 @@ class ProductProduct(models.Model):
     # DUPLICATED in product template
     @api.onchange('olive_type')
     def olive_type_change(self):
-        liter_uom = self.env.ref('product.product_uom_litre')
+        liter_uom = self.env.ref('uom.product_uom_litre')
         if self.olive_type == 'oil':
             if self.uom_id != liter_uom:
                 self.uom_id = liter_uom
@@ -185,7 +185,7 @@ class ProductProduct(models.Model):
                 "with an oil product. This scenario is not supported for "
                 "the moment.") % (bom.display_name, bom.id))
         oil_bom_line = oil_bom_lines[0]
-        liter_uom = self.env.ref('product.product_uom_litre')
+        liter_uom = self.env.ref('uom.product_uom_litre')
         if oil_bom_line.product_uom_id != liter_uom:
             raise UserError(_(
                 "The component line with product '%s' of the "

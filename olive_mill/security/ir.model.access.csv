@@ -45,5 +45,4 @@ access_olive_oil_analysis_user,Full access on olive.oil.analysis,model_olive_oil
 access_olive_oil_analysis_line_user,Full access on olive.oil.analysis.line,model_olive_oil_analysis_line,stock.group_stock_user,1,1,1,1
 access_stock_warehouse_operator,Read access on stock.warehouse,stock.model_stock_warehouse,olive_operator,1,0,0,0
 access_stock_location_operator,Read access on stock.location,stock.model_stock_location,olive_operator,1,0,0,0
-access_stock_location_operator,Read access on stock.location,stock.model_stock_location,olive_operator,1,0,0,0
 access_stock_move_operator,Read access on stock.move,stock.model_stock_move,olive_operator,1,0,0,0

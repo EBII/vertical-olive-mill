@@ -50,7 +50,7 @@ class OliveSeason(models.Model):
     @api.depends('start_date')
     def _compute_year(self):
         for season in self:
-            season.year = season.start_date[:4]
+            season.year = season.start_date.year
 
     def _compute_totals(self):
         oalo = self.env['olive.arrival.line']
