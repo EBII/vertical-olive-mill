@@ -132,7 +132,7 @@ class StockLocation(models.Model):
 
         # raise if there are reservations
         reserved_quants_count = sqo.search([
-            ('location_id', '=', self.id), ('reservation_id', '!=', False)],
+            ('location_id', '=', self.id), ('reserved_quantity', '!=', 0.0)],
             count=True)
         if reserved_quants_count:
             raise UserError(_(
@@ -228,7 +228,7 @@ class StockLocation(models.Model):
                         "There is a negative quant ID %d on olive tank %s. "
                         "This should never happen.") % (
                             quant.id, src_loc.display_name))
-                if quant.reservation_id:
+                if quant.reserved_quantity != 0.0:
                     raise UserError(_(
                         "There is a reserved quant ID %d on olive tank %s. "
                         "This must be investigated before trying a tank "
@@ -246,7 +246,7 @@ class StockLocation(models.Model):
                     'picking_id': pick.id,
                 }
                 move = smo.create(mvals)
-                qvals = {'reservation_id': move.id}
+                qvals = {'reserved_quantity': move.product_qty}
                 if dest_partner and quant.owner_id != dest_partner:
                     qvals['owner_id'] = dest_partner.id
                 quant.sudo().write(qvals)

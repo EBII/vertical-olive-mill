@@ -33,9 +33,9 @@ class OliveWithdrawal(models.TransientModel):
         commercial_partner = self.partner_id.commercial_partner_id
         quants_group_product = self.env['stock.quant'].read_group([
             ('location_id', '=', src_loc.id),
-            ('reservation_id', '=', False),
+            ('reserved_quantity', '=', False),
             ('owner_id', '=', commercial_partner.id),
-            ], ['product_id', 'qty'], ['product_id'])
+            ], ['product_id', 'quantity'], ['product_id'])
         if not quants_group_product:
             raise UserError(_(
                 "There are no unreserved quants on the stock location '%s' "

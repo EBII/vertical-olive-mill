@@ -203,10 +203,10 @@ class OliveOilBottling(models.TransientModel):
             qrg = sqo.read_group(
                 [('location_id', '=', self.other_src_location_id.id),
                  ('product_id', '=', bom_line.product_id.id),
-                 ('reservation_id', '=', False)],
-                ['qty'], [])
+                 ('reserved_quantity', '=', False)],
+                ['quantity'], [])
 
-            free_start_qty = qrg and qrg[0]['qty'] or 0
+            free_start_qty = qrg and qrg[0]['quantity'] or 0
             uom = bom_line.product_id.uom_id
             if float_compare(free_start_qty, qty_required, precision_digits=0) <= 0:
                 raise UserError(_(

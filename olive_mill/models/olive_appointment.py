@@ -109,7 +109,7 @@ class OliveAppointment(models.Model):
     def _compute_date(self):
         # TODO add support for TZ
         for app in self:
-            app.date = app.start_datetime and app.start_datetime[:10] or False
+            app.date = app.start_datetime.date() or False
 
     @api.depends('start_datetime', 'qty', 'palox_qty')
     def _compute_total_qty_same_day(self):
@@ -118,7 +118,7 @@ class OliveAppointment(models.Model):
             total_palox_same_day = 0.0
             if app.start_datetime:
                 rg_res = self.read_group([
-                    ('date', '=', app.start_datetime[:10]),
+                    ('date', '=', app.start_datetime.date()),
                     ('appointment_type', 'in', ARRIVAL_TYPES)], ['qty', 'palox_qty'], [])
                 total_qty_same_day = rg_res and rg_res[0]['qty'] or 0
                 total_palox_same_day = rg_res and rg_res[0]['palox_qty'] or 0
@@ -297,6 +297,7 @@ class OliveAppointment(models.Model):
 
     def report_show_timeslot(self):
         # show timeslot in right TZ
+        # TODO Test this function date not string
         self.ensure_one()
         start_datetime_tz = fields.Datetime.context_timestamp(
             self, fields.Datetime.from_string(self.start_datetime))

@@ -92,10 +92,10 @@ class OliveOilPicking(models.TransientModel):
             qrg = sqo.read_group(
                 [('location_id', '=', self.container_src_location_id.id),
                  ('product_id', '=', cline.product_id.id),
-                 ('reservation_id', '=', False)],
-                ['qty'], [])
+                 ('reserved_quantity', '=', False)],
+                ['quantity'], [])
 
-            free_start_qty = qrg and qrg[0]['qty'] or 0
+            free_start_qty = qrg and qrg[0]['quantity'] or 0
             uom = cline.product_id.uom_id
             if float_compare(
                     free_start_qty, cline.qty, precision_digits=0) <= 0:
@@ -213,7 +213,7 @@ class OliveOilPicking(models.TransientModel):
         # Oil : assign to move
         action = True
         if self.move_id:
-            if sqo.search([('reservation_id', '=', self.move_id.id)]):
+            if sqo.search([('reserved_quantity', '!=', 0.0)]):
                 raise UserError(_(
                     "The stock move with product '%s' already has a "
                     "reservation. It is certainly due to the fact that "
@@ -224,7 +224,7 @@ class OliveOilPicking(models.TransientModel):
                         self.move_id.product_id.display_name,
                         self.move_id.location_id.display_name))
             for quant in oil_move.quant_ids:
-                quant.sudo().reservation_id = self.move_id.id
+                quant.sudo().reserved_quantity = self.move_id.product_qty
             if self.picking_id:
                 self.picking_id.action_assign()
                 if self.picking_id.olive_oil_picking_wizard_next_move_id:

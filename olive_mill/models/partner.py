@@ -166,9 +166,10 @@ class ResPartner(models.Model):
                 ('location_id', 'in', withdrawal_locations.ids),
                 ('product_id', 'in', olive_products.ids),
                 ('owner_id', '=', self.id)],
-                ['qty'], [])
+                ['quantity'], [])
+
             if withdrawal_res:
-                olive_oil_qty_to_withdraw = withdrawal_res[0]['qty'] or 0.0
+                olive_oil_qty_to_withdraw = withdrawal_res[0]['quantity'] or 0.0
             olive_oil_qty_withdrawn_current_season = olive_oil_qty_withdrawal_current_season - olive_oil_qty_to_withdraw
         self.olive_lended_regular_case = olive_lended_regular_case
         self.olive_lended_organic_case = olive_lended_organic_case
