@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018-2019 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="fruit_season_form" model="ir.ui.view">
+    <field name="name">fruit.season.form</field>
+    <field name="model">fruit.season</field>
+    <field name="arch" type="xml">
+        <form string="Fruit Season">
+            <header>
+                <button class="btn-primary" string="Generate Partner Organic Certification" type="object" name="generate_partner_organic_certif" attrs="{'invisible': [('partner_organic_certif_generated', '=', True)]}"/>
+            </header>
+            <group name="main">
+                <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="early_bird_date"/>
+                <field name="default_expiry_date"/>
+                <field name="show_on_dashboard"/>
+                <field name="partner_organic_certif_generated" invisible="1"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="fruit_season_tree" model="ir.ui.view">
+    <field name="name">fruit.season.tree</field>
+    <field name="model">fruit.season</field>
+    <field name="arch" type="xml">
+        <tree string="Fruit Seasons">
+            <field name="name"/>
+            <field name="start_date"/>
+            <field name="end_date"/>
+            <field name="early_bird_date"/>
+            <field name="default_expiry_date"/>
+        </tree>
+    </field>
+</record>
+
+<record id="fruit_season_search" model="ir.ui.view">
+    <field name="name">fruit.season.search</field>
+    <field name="model">fruit.season</field>
+    <field name="arch" type="xml">
+        <search string="Search Fruit Seasons">
+            <field name="name"/>
+            <separator/>
+            <filter name="dashboard" string="Favorites" domain="[('show_on_dashboard', '=', True)]"/>
+        </search>
+    </field>
+</record>
+
+<record id="fruit_season_action" model="ir.actions.act_window">
+    <field name="name">Seasons</field>
+    <field name="res_model">fruit.season</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="fruit_season_menu" action="fruit_season_action" parent="fruit_config_menu" sequence="40"/>
+
+<!-- DASHBOARD -->
+<record id="dashboard_fruit_season_kanban" model="ir.ui.view">
+    <field name="name">fruit.season.dashboard.kanban</field>
+    <field name="model">fruit.season</field>
+    <field name="arch" type="xml">
+        <kanban create="false" class="oe_background_grey o_kanban_dashboard o_account_kanban">
+            <field name="id"/>
+            <field name="name"/>
+            <field name="fruit_qty_arrived"/>
+            <field name="fruit_qty"/>
+            <field name="juice_qty_with_compensation"/>
+            <field name="gross_ratio"/>
+            <field name="sale_juice_qty"/>
+            <field name="withdrawal_juice_qty"/>
+            <templates>
+                <t t-name="kanban-box">
+                    <div t-attf-class="#{kanban_color(0)}">
+                        <t t-call="SeasonTop"/>
+                        <div class="container o_kanban_card_content o_visible">
+                            <div class="row">
+                                <t t-call="SeasonBody"/>
+                            </div>
+                            <t t-call="SeasonBodyGraph"/>
+                        </div>
+                        <!--
+                        <div class="container o_kanban_card_manage_pane o_invisible">
+                            <t t-call="SeasonManage"/>
+                        </div> -->
+                    </div>
+                </t>
+
+                <t t-name="SeasonTop">
+                    <div class="o_kanban_card_header">
+                        <div class="o_kanban_card_header_title">
+                            <div class="o_primary">
+                                <a type="object" name="dashboard_open_action"><field name="name"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                <t t-name="SeasonBody">
+                    <div class="col-xs-6 o_kanban_primary_left">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <span title="Total Fruit">Total Fruit Arrived</span>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <span><t t-esc="record.fruit_qty_arrived.raw_value"/> kg</span>
+                            </div>
+                            <div class="col-xs-6">
+                                <span title="Total Fruit">Total Fruit Pressed</span>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <span><t t-esc="record.fruit_qty.raw_value"/> kg</span>
+                            </div>
+                            <div class="col-xs-6">
+                                <span title="Total Fruit">Gross Ratio</span>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <span><t t-esc="record.gross_ratio.raw_value"/> %</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 o_kanban_primary_right">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <span title="Total Fruit">Total Juice</span>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <span><t t-esc="record.juice_qty_with_compensation.raw_value"/> L</span>
+                            </div>
+                            <div class="col-xs-6">
+                                <span title="Total Fruit">Total Sale Juice</span>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <span><t t-esc="record.sale_juice_qty.raw_value"/> L</span>
+                            </div>
+                            <div class="col-xs-6">
+                                <span title="Total Fruit">Total Withdrawal Juice</span>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <span><t t-esc="record.withdrawal_juice_qty.raw_value"/> L</span>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                <t t-name="SeasonBodyGraph">
+                    <div class="o_kanban_graph_section">
+                        <field name="kanban_dashboard_graph" t-att-graph_type="'line'" widget="dashboard_graph"/>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
+
+<record id="dashboard_fruit_season_action" model="ir.actions.act_window">
+    <field name="name">Dashboard</field>
+    <field name="res_model">fruit.season</field>
+    <field name="view_mode">kanban,form</field>
+    <field name="usage">menu</field>
+    <field name="context">{'search_default_dashboard': True}</field>
+</record>
+
+<menuitem id="dashboard_fruit_season_menu" action="dashboard_fruit_season_action" parent="fruit_root_menu" sequence="1"/>
+
+
+</odoo>

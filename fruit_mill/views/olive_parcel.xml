@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="fruit_parcel_form" model="ir.ui.view">
+    <field name="name">fruit.parcel.form</field>
+    <field name="model">fruit.parcel</field>
+    <field name="arch" type="xml">
+        <form string="Fruit Parcel">
+            <group name="main">
+                <field name="ochard_id" invisible="not context.get('fruit_parcel_main_view')"/>
+                <field name="partner_id" invisible="not context.get('fruit_parcel_main_view')"/>
+                <field name="land_registry_ref"/>
+                <label for="area"/>
+                <div name="area">
+                    <field name="area" class="oe_inline"/>
+                    <label for="area" string=" ha" class="oe_inline"/>
+                </div>
+                <field name="tree_qty"/>
+                <field name="variant_ids" widget="many2many_tags"/>
+                <field name="density"/>
+                <field name="planted_year"/>
+                <field name="irrigation"/>
+                <field name="cultivation_method"/>
+                <field name="notes"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="fruit_parcel_tree" model="ir.ui.view">
+    <field name="name">fruit.parcel.tree</field>
+    <field name="model">fruit.parcel</field>
+    <field name="arch" type="xml">
+        <tree string="Fruit Parcels">
+            <field name="ochard_id" invisible="not context.get('fruit_parcel_main_view')"/>
+            <field name="partner_id" invisible="not context.get('fruit_parcel_main_view')"/>
+            <field name="land_registry_ref"/>
+            <field name="area" sum="1"/>
+            <field name="tree_qty" sum="1"/>
+            <field name="variant_label"/>
+            <field name="density"/>
+            <field name="planted_year"/>
+            <field name="irrigation"/>
+            <field name="cultivation_method"/>
+        </tree>
+    </field>
+</record>
+
+<record id="fruit_parcel_search" model="ir.ui.view">
+    <field name="name">fruit.parcel.search</field>
+    <field name="model">fruit.parcel</field>
+    <field name="arch" type="xml">
+        <search string="Search Fruit Parcels">
+            <field name="partner_id"/>
+            <field name="ochard_id"/>
+            <group string="Group By" name="groupby">
+                <filter name="partner_groupby" string="Farmer" context="{'group_by': 'partner_id'}"/>
+                <filter name="ochard_groupby" string="Ochard" context="{'group_by': 'ochard_id'}"/>
+                <filter name="irrigation_groupby" string="Irrigation" context="{'group_by': 'irrigation'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="fruit_parcel_action" model="ir.actions.act_window">
+    <field name="name">Parcels</field>
+    <field name="res_model">fruit.parcel</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{'fruit_parcel_main_view': True}</field>
+</record>
+
+<menuitem id="fruit_parcel_menu" action="fruit_parcel_action" parent="fruit_data_menu" sequence="70"/>
+
+</odoo>

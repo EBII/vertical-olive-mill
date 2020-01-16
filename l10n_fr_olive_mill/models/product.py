@@ -8,7 +8,7 @@ from odoo import fields, models
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    olive_oil_type = fields.Selection([
+    olive_juice_type = fields.Selection([
         ('virgin', 'Virgin'),
         ('extravirgin', 'Extra-Virgin'),
-        ], string='Oil Type')
+        ], string='Juice Type')

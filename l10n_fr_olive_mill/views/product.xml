@@ -13,7 +13,7 @@
     <field name="inherit_id" ref="olive_mill.product_template_form_view"/>
     <field name="arch" type="xml">
         <field name="olive_culture_type" position="after">
-            <field name="olive_oil_type" attrs="{'invisible': [('olive_type', '!=', 'oil')], 'required': [('olive_type', '=', 'oil')]}"/>
+            <field name="olive_juice_type" attrs="{'invisible': [('olive_type', '!=', 'juice')], 'required': [('olive_type', '=', 'juice')]}"/>
         </field>
     </field>
 </record>

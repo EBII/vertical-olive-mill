@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--&lt;!&ndash;-->
+<!--  Copyright 2018-2019 Barroux Abbey (http://www.barroux.org/)-->
+<!--  @author: Alexis de Lattre <alexis.delattre@akretion.com>-->
+<!--  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).-->
+<!--&ndash;&gt;-->
+
+<odoo>
+
+<!--<record id="fruit_culture_report" model="ir.actions.report">-->
+<!--    <field name="name">Fruit Culture Form</field>-->
+<!--    <field name="model">res.partner</field>-->
+<!--    <field name="report_name">res.partner.fruit.culture</field>-->
+<!--    <field name="report_type">py3o</field>-->
+<!--    <field name="py3o_filetype">odt</field>-->
+<!--    <field name="module">fruit_mill</field>-->
+<!--    <field name="py3o_multi_in_one" eval="True"/>-->
+<!--    <field name="py3o_template_fallback">report/fruit_culture_form.odt</field>-->
+<!--    <field name="print_report_name">'Fruit_culture_' + (object.commercial_partner_id.ref or (object.commercial_partner_id.name and object.commercial_partner_id.name.replace(' ', '_') or 'no-name')) + '.odt'</field>-->
+<!--</record>-->
+
+<!--<record id="button_fruit_culture_report" model="ir.values">-->
+<!--    <field name="key2">client_print_multi</field>-->
+<!--    <field name="model">res.partner</field>-->
+<!--    <field name="name">Fruit Culture Form</field>-->
+<!--    <field name="value" eval="'ir.actions.report,%d'%fruit_culture_report" />-->
+<!--</record>-->
+
+<!--<record id="fruit_parcel_report" model="ir.actions.report">-->
+<!--    <field name="name">Fruit Parcel</field>-->
+<!--    <field name="model">res.partner</field>-->
+<!--    <field name="report_name">res.partner.fruit.parcel</field>-->
+<!--    <field name="report_type">py3o</field>-->
+<!--    <field name="py3o_filetype">odt</field>-->
+<!--    <field name="module">fruit_mill</field>-->
+<!--    <field name="py3o_template_fallback">report/fruit_parcel.odt</field>-->
+<!--    <field name="print_report_name">'Fruit_parcel_' + (object.commercial_partner_id.ref or (object.commercial_partner_id.name and object.commercial_partner_id.name.replace(' ', '_') or 'no-name')) + '.odt'</field>-->
+<!--    <field name="py3o_multi_in_one" eval="True"/>-->
+<!--</record>-->
+
+<!--<record id="button_fruit_parcel_report" model="ir.values">-->
+<!--    <field name="key2">client_print_multi</field>-->
+<!--    <field name="model">res.partner</field>-->
+<!--    <field name="name">Fruit Parcel Form</field>-->
+<!--    <field name="value" eval="'ir.actions.report,%d'%fruit_parcel_report" />-->
+<!--</record>-->
+
+<record id="fruit_juice_production_report" model="ir.actions.report">
+    <field name="name">Fruit Juice Production</field>
+    <field name="model">fruit.juice.production</field>
+    <field name="report_name">fruit.juice.production</field>
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">odt</field>
+    <field name="module">fruit_mill</field>
+    <field name="py3o_template_fallback">report/fruit_juice_production.odt</field>
+    <field name="print_report_name">'Fruit_juice_production_' + object.name + '.odt'</field>
+    <field name="py3o_multi_in_one" eval="True"/>
+</record>
+
+<record id="button_fruit_juice_production_report" model="ir.actions.server">
+    <field name="key2">client_print_multi</field>
+    <field name="model_id" ref="fruit_mill.fruit_juice_production_report"/>
+    <field name="name">Fruit Juice Production</field>
+    <field name="model_binding" ref="base.model_ir_actions_report"></field>
+    <field name="value" eval="'ir.actions.report,%d'%fruit_juice_production_report" />
+</record>
+
+<!--<record id="fruit_juice_delivery_report" model="ir.actions.report">-->
+<!--    <field name="name">Fruit Juice Withdrawal</field>-->
+<!--    <field name="model">stock.picking</field>-->
+<!--    <field name="report_name">fruit.juice.delivery</field>-->
+<!--    <field name="report_type">py3o</field>-->
+<!--    <field name="py3o_filetype">odt</field>-->
+<!--    <field name="module">fruit_mill</field>-->
+<!--    <field name="py3o_template_fallback">report/juice_delivery.odt</field>-->
+<!--    <field name="print_report_name">'BL-' + object.name.replace('/', '_') + '-' + (object.state == 'done' and object.date_done[:10] or '') + '-' + (object.partner_id and object.partner_id.commercial_partner_id.name.replace(' ', '_') or '') + '.odt'</field>-->
+<!--    <field name="py3o_multi_in_one" eval="True"/>-->
+<!--</record>-->
+
+<!--<record id="button_fruit_juice_delivery_report" model="ir.values">-->
+<!--    <field name="key2">client_print_multi</field>-->
+<!--    <field name="model">stock.picking</field>-->
+<!--    <field name="name">Fruit Juice Withdrawal</field>-->
+<!--    <field name="value" eval="'ir.actions.report,%d'%fruit_juice_delivery_report" />-->
+<!--</record>-->
+
+<!--<record id="fruit_prodlot_tracability_report" model="ir.actions.report">-->
+<!--    <field name="name">Fruit Juice Tracability</field>-->
+<!--    <field name="model">stock.production.lot</field>-->
+<!--    <field name="report_name">fruit.prodlot.tracability</field>-->
+<!--    <field name="report_type">py3o</field>-->
+<!--    <field name="py3o_filetype">odt</field>-->
+<!--    <field name="module">fruit_mill</field>-->
+<!--    <field name="py3o_template_fallback">report/prodlot_tracability.odt</field>-->
+<!--    <field name="print_report_name">'Fruit_juice_tracability-Lot_' + object.name + '.odt'</field>-->
+<!--</record>-->
+
+<!--<record id="button_fruit_prodlot_tracability_report" model="ir.values">-->
+<!--    <field name="key2">client_print_multi</field>-->
+<!--    <field name="model">stock.production.lot</field>-->
+<!--    <field name="name">Fruit Juice Tracability</field>-->
+<!--    <field name="value" eval="'ir.actions.report,%d'%fruit_prodlot_tracability_report" />-->
+<!--</record>-->
+
+<!--<record id="fruit_juice_analysis_report" model="ir.actions.report">-->
+<!--    <field name="name">Fruit Juice Analysis</field>-->
+<!--    <field name="model">fruit.juice.analysis</field>-->
+<!--    <field name="report_name">fruit.juice.analysis</field>-->
+<!--    <field name="report_type">py3o</field>-->
+<!--    <field name="py3o_filetype">odt</field>-->
+<!--    <field name="module">fruit_mill</field>-->
+<!--    <field name="py3o_template_fallback">report/fruit_juice_analysis.odt</field>-->
+<!--    <field name="print_report_name">'Analysis-' + object.name + '.odt'</field>-->
+<!--</record>-->
+
+<!--<record id="button_fruit_juice_analysis_report" model="ir.values">-->
+<!--    <field name="key2">client_print_multi</field>-->
+<!--    <field name="model">fruit.juice.analysis</field>-->
+<!--    <field name="name">Fruit Juice Analysis</field>-->
+<!--    <field name="value" eval="'ir.actions.report,%d'%fruit_juice_analysis_report" />-->
+<!--</record>-->
+
+<!--<record id="fruit_appointment_day_report" model="ir.actions.report">-->
+<!--    <field name="name">Print Appointments</field>-->
+<!--    <field name="model">fruit.appointment.print</field>-->
+<!--    <field name="report_name">fruit.appointment.day</field>-->
+<!--    <field name="report_type">py3o</field>-->
+<!--    <field name="py3o_filetype">odt</field>-->
+<!--    <field name="module">fruit_mill</field>-->
+<!--    <field name="py3o_template_fallback">report/fruit_appointment_day.odt</field>-->
+<!--    <field name="print_report_name">'Appointments-' + object.date + '.odt'</field>-->
+<!--</record>-->
+
+<!--<record id="fruit_juice_production_day_report" model="ir.actions.report">-->
+<!--    <field name="name">Print Fruit Juice Production</field>-->
+<!--    <field name="model">fruit.juice.production.day.print</field>-->
+<!--    <field name="report_name">fruit.juice.production.day</field>-->
+<!--    <field name="report_type">py3o</field>-->
+<!--    <field name="py3o_filetype">odt</field>-->
+<!--    <field name="module">fruit_mill</field>-->
+<!--    <field name="py3o_template_fallback">report/fruit_juice_production_day.odt</field>-->
+<!--    <field name="print_report_name">'Production-' + object.date + '.odt'</field>-->
+<!--</record>-->
+
+<!--<record id="fruit_arrival_report" model="ir.actions.report">-->
+<!--    <field name="name">Fruit Arrival</field>-->
+<!--    <field name="model">fruit.arrival</field>-->
+<!--    <field name="report_name">fruit.arrival</field>-->
+<!--    <field name="report_type">py3o</field>-->
+<!--    <field name="py3o_filetype">odt</field>-->
+<!--    <field name="module">fruit_mill</field>-->
+<!--    <field name="py3o_template_fallback">report/fruit_arrival.odt</field>-->
+<!--    <field name="print_report_name">'Arrival-' + object.name + '.odt'</field>-->
+<!--</record>-->
+
+<!--<record id="button_fruit_arrival_report" model="ir.values">-->
+<!--    <field name="key2">client_print_multi</field>-->
+<!--    <field name="model">fruit.arrival</field>-->
+<!--    <field name="name">Fruit Arrival</field>-->
+<!--    <field name="value" eval="'ir.actions.report,%d'%fruit_arrival_report" />-->
+<!--</record>-->
+
+<!--<record id="fruit_partner_warnings_report" model="ir.actions.report">-->
+<!--    <field name="name">Print Farmer Warnings</field>-->
+<!--    <field name="model">fruit.partner.warning.print</field>-->
+<!--    <field name="report_name">fruit.partner.warning</field>-->
+<!--    <field name="report_type">py3o</field>-->
+<!--    <field name="py3o_filetype">odt</field>-->
+<!--    <field name="module">fruit_mill</field>-->
+<!--    <field name="py3o_template_fallback">report/fruit_partner_warning.odt</field>-->
+<!--    <field name="print_report_name">'Warnings-' + object.season_id.name.replace(' ', '_') + '.odt'</field>-->
+<!--</record>-->
+
+</odoo>

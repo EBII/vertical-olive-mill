@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="fruit_juice_production_form" model="ir.ui.view">
+    <field name="name">fruit.juice.production.form</field>
+    <field name="model">fruit.juice.production</field>
+    <field name="arch" type="xml">
+        <form string="Juice Production">
+            <header>
+                <button name="draft2ratio" string="Get Arrival Lines" class="btn-primary" states="draft" type="object"/>
+                <button name="detach_lines" string="Detach Arrival Lines" type="object" attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('line_ids', '=', [])]}"/>
+                <button name="%(fruit_juice_production_compensation_action)d" string="Change Compensation Type" class="btn-primary" states="ratio" type="action" context="{'default_production_id': active_id}"/>
+                <button name="start_ratio2force" string="Enter Result" class="btn-primary" states="ratio" type="object"/>
+                <button name="%(fruit_juice_production_force_ratio_action)d" string="Force a Ratio" class="btn-primary" states="force" type="action" context="{'default_production_id': active_id}"/>
+                <button name="force2pack" string="Go to Next Step" class="btn-primary" states="force" type="object"/>
+                <button name="%(fruit_juice_production_pack2check_action)d" string="Pack" class="btn-primary" states="pack" type="action" context="{'default_production_id': active_id}"/>
+                <button name="check2done" string="Mark as Done" class="btn-primary" states="check" type="object" confirm="You are about to terminate and lock this juice production. Are you sure?" groups="stock.group_stock_user"/>
+                <button name="back2draft" string="Back to Draft" class="btn-default" states="cancel" type="object"/>
+                <button name="%(fruit_juice_production_product_swap_action)d" string="Swap Juice Type" type="action" context="{'default_production_id': active_id}" states="ratio,force,pack,check"/>
+                <button name="%(fruit_juice_production_report)d" string="Print" type="action" states="ratio,force,pack,check,done"/>
+                <button name="cancel" string="Cancel" class="btn-default" states="draft,ratio,force,pack,check" confirm="Are you sure you want to cancel this juice production ?" type="object"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,ratio,force,pack,check,done"/>
+            </header>
+            <sheet>
+                <field name="fruit_culture_type_logo" widget="image" class="oe_avatar" attrs="{'invisible': [('fruit_culture_type_logo', '=', False)]}"/>
+                <div class="oe_title">
+                    <label for="name"/>
+                    <h1>
+                        <field name="name" readonly="1"/>
+                    </h1>
+                </div>
+                <group name="main">
+                    <group name="left">
+                        <field name="palox_id" domain="[('juice_product_id', '!=', False)]"/>
+                        <field name="date"/>
+                        <field name="day_position"/>
+                        <field name="juice_product_id"/>
+                        <field name="fruit_culture_type" invisible="1"/>
+                        <label for="fruit_qty"/>
+                        <div name="fruit_qty">
+                            <field name="fruit_qty" class="oe_inline"/>
+                            <label for="fruit_qty" string=" kg" class="oe_inline"/>
+                        </div>
+                        <field name="compensation_type"/>
+                        <field name="compensation_juice_product_id" attrs="{'invisible': [('compensation_type', '!=', 'first')]}"/>
+                        <label for="compensation_last_fruit_qty" attrs="{'invisible': [('compensation_type', '!=', 'last')]}"/>
+                        <div name="compensation_last_fruit_qty" attrs="{'invisible': [('compensation_type', '!=', 'last')]}">
+                            <field name="compensation_last_fruit_qty" class="oe_inline"/>
+                            <label for="compensation_last_fruit_qty"  string=" kg"/>
+                        </div>
+                        <label for="compensation_ratio" attrs="{'invisible': [('compensation_type', '!=', 'last')]}"/>
+                        <div name="compensation_ratio" attrs="{'invisible': [('compensation_type', '!=', 'last')]}">
+                            <field name="compensation_ratio" class="oe_inline"/>
+                            <label for="compensation_ratio" string=" %"/>
+                        </div>
+                        <label for="compensation_juice_qty" attrs="{'invisible': [('compensation_type', 'not in', ('first', 'last'))]}" string="Compensation Juice Qty"/>
+                        <div name="compensation_juice_qty" attrs="{'invisible': [('compensation_type', 'not in', ('first', 'last'))]}">
+                            <field name="compensation_juice_qty" class="oe_inline"/>
+                            <label for="compensation_juice_qty" string=" L /" class="oe_inline"/>
+                            <field name="compensation_juice_qty_kg" class="oe_inline"/>
+                            <label for="compensation_juice_qty_kg" string=" kg" class="oe_inline"/>
+                        </div>
+                        <label for="decanter_speed"/>
+                        <div name="decanter_speed">
+                            <field name="decanter_speed" class="oe_inline"/>
+                            <label for="decanter_speed" string=" kg / h"/>
+                        </div>
+                    </group>
+                    <group name="right">
+                        <label for="juice_qty" string="Juice Quantity"/>
+                        <div name="juice_qty">
+                            <field name="juice_qty" class="oe_inline"/>
+                            <label for="juice_qty" string=" L /" class="oe_inline"/>
+                            <field name="juice_qty_kg" class="oe_inline"/>
+                            <label for="juice_qty_kg" string=" kg" class="oe_inline"/>
+                        </div>
+                        <label for="ratio" string="Gross Ratio"/>
+                        <div name="ratio">
+                            <field name="ratio" class="oe_inline"/>
+                            <label for="ratio" string=" % (L)" class="oe_inline"/>
+                        </div>
+                        <label for="to_sale_tank_juice_qty" string="To Sale Tank Juice Qty"/>
+                        <div name="to_sale_tank_juice_qty">
+                            <field name="to_sale_tank_juice_qty" class="oe_inline"/>
+                            <label for="to_sale_tank_juice_qty" string=" L"/>
+                        </div>
+                        <field name="sale_location_id" attrs="{'invisible': [('juice_destination', '=', 'withdrawal')]}" domain="[('fruit_tank_type', '=', 'regular'), ('juice_product_id', '=', juice_product_id), ('fruit_season_id', '=', season_id)]"/>
+                        <field name="shrinkage_location_id" domain="[('fruit_tank_type', '=', 'shrinkage'), ('fruit_season_id', '=', season_id)]"/>
+                        <field name="withdrawal_location_id" attrs="{'invisible': [('juice_destination', '=', 'sale')]}"/>
+                        <field name="compensation_location_id" attrs="{'invisible': [('compensation_type', 'not in', ('first', 'last'))]}" domain="[('fruit_tank_type', '=', 'compensation'), ('fruit_season_id', '=', season_id)]"/>
+                        <label for="to_compensation_sale_tank_juice_qty" string="To Compensation Sale Tank Juice Qty" attrs="{'invisible': ['|', ('compensation_type', '!=', 'first'), ('juice_destination', '=', 'withdrawal')]}"/>
+                        <div name="to_compensation_sale_tank_juice_qty" attrs="{'invisible': ['|', ('compensation_type', '!=', 'first'), ('juice_destination', '=', 'withdrawal')]}">
+                            <field name="to_compensation_sale_tank_juice_qty" class="oe_inline"/>
+                            <label for="to_compensation_sale_tank_juice_qty" string=" L"/>
+                        </div>
+                        <field name="compensation_sale_location_id" attrs="{'invisible': ['|', ('compensation_type', '!=', 'first'), ('juice_destination', '=', 'withdrawal')]}" domain="[('fruit_tank_type', '=', 'regular'), ('juice_product_id', '=', compensation_juice_product_id), ('fruit_season_id', '=', season_id)]"/>
+                        <field name="juice_destination"/>
+                        <field name="sample"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page name="lines" string="Arrival Lines">
+                        <group name="lines">
+                            <field name="line_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="commercial_partner_id"/>
+                                    <field name="withdrawal_juice_qty_kg" sum="1"/>
+                                    <field name="juice_destination"/>
+                                    <field name="fruit_qty" sum="1"/>
+                                    <field name="shrinkage_juice_qty" sum="1"/>
+                                    <field name="filter_loss_juice_qty" sum="1"/>
+                                    <field name="withdrawal_juice_qty" sum="1"/>
+                                    <field name="to_sale_tank_juice_qty" sum="1"/>
+                                    <field name="sale_juice_qty" sum="1"/>
+                                    <field name="juice_ratio_net"/>
+                                    <field name="state" invisible="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page name="additional" string="Additional Info">
+                        <group name="tech">
+                            <field name="warehouse_id"/>
+                            <field name="season_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="done_datetime" states="done"/>
+                            <field name="shrinkage_move_id" states="done"/>
+                            <field name="sale_move_id" attrs="{'invisible': ['|', ('state', '!=', 'done'), ('juice_destination', '=', 'withdrawal')]}"/>
+                            <field name="compensation_last_move_id" attrs="{'invisible': ['|', ('state', '!=', 'done'), ('compensation_type', '!=', 'last')]}"/>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="fruit_juice_production_tree" model="ir.ui.view">
+    <field name="name">fruit.juice.production.tree</field>
+    <field name="model">fruit.juice.production</field>
+    <field name="arch" type="xml">
+        <tree string="Juice Productions" decoration-info="state not in ('cancel', 'done')" decoration-muted="state == 'cancel'">
+            <field name="sequence" widget="handle"/>
+            <field name="name"/>
+            <field name="date"/>
+            <field name="palox_id"/>
+            <field name="compensation_type"/>
+            <field name="juice_destination"/>
+            <field name="farmers"/>
+            <field name="fruit_qty" string="Total Fruit Qty (kg)"/>
+            <field name="juice_qty" string="Juice Qty (L)"/>
+            <!--  <field name="ratio"/> -->
+            <field name="sale_location_id"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="fruit_juice_production_search" model="ir.ui.view">
+    <field name="name">fruit.juice.production.search</field>
+    <field name="model">fruit.juice.production</field>
+    <field name="arch" type="xml">
+        <search string="Search Juice Productions">
+            <field name="name"/>
+            <field name="date"/>
+            <separator/>
+            <filter name="today" string="Today" domain="[('date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+            <filter name="tomorrow" string="Tomorrow" domain="[('date', '=', (context_today() + datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]"/>
+            <filter name="day-after-tomorrow" string="Day after Tomorrow" domain="[('date', '=', (context_today() + datetime.timedelta(days=2)).strftime('%Y-%m-%d'))]"/>
+            <separator/>
+            <filter name="current_season" string="Current Season" domain="[('season_id', '=', 'CURRENT_SEASON_ID')]"/>
+            <separator/>
+            <filter string="In Progress" domain="[('state', 'not in', ('done', 'cancel'))]" name="progress"/>
+            <filter string="Done" domain="[('state', '=', 'done')]" name="done"/>
+            <separator/>
+            <group string="Group By" name="groupby">
+                <filter name="day_groupby" string="Day" context="{'group_by': 'date:day'}"/>
+                <filter name="week_groupby" string="Week" context="{'group_by': 'date:week'}"/>
+                <filter name="month_groupby" string="Month" context="{'group_by': 'date:month'}"/>
+                <filter name="season_groupby" string="Season" context="{'group_by': 'season_id'}"/>
+                <filter name="state_groupby" string="State" context="{'group_by': 'state'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="fruit_juice_production_pivot" model="ir.ui.view">
+    <field name="name">fruit.juice.production.pivot</field>
+    <field name="model">fruit.juice.production</field>
+    <field name="arch" type="xml">
+        <pivot string="Fruit Juice Productions">
+            <field name="date" type="row" interval="day"/>
+        </pivot>
+    </field>
+</record>
+
+<record id="fruit_juice_production_graph" model="ir.ui.view">
+    <field name="name">fruit.juice.production.graph</field>
+    <field name="model">fruit.juice.production</field>
+    <field name="arch" type="xml">
+        <graph string="Fruit Juice Productions">
+            <field name="date" type="row" interval="day"/>
+        </graph>
+    </field>
+</record>
+
+<record id="fruit_juice_production_action" model="ir.actions.act_window">
+    <field name="name">Juice Productions</field>
+    <field name="res_model">fruit.juice.production</field>
+    <field name="view_mode">tree,form,pivot,graph</field>
+    <field name="context">{'search_default_current_season': True, 'search_default_progress': True}</field>
+</record>
+
+<menuitem id="fruit_juice_production_menu" action="fruit_juice_production_action" parent="fruit_operations_menu" sequence="30"/>
+
+</odoo>

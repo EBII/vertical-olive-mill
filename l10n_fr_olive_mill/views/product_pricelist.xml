@@ -14,7 +14,7 @@
     <field name="inherit_id" ref="product.product_pricelist_view"/>
     <field name="arch" type="xml">
         <field name="currency_id" position="after">
-            <field name="olive_oil_distributor"/>
+            <field name="olive_juice_distributor"/>
         </field>
     </field>
 </record>
@@ -25,7 +25,7 @@
     <field name="inherit_id" ref="product.product_pricelist_view_tree"/>
     <field name="arch" type="xml">
         <field name="currency_id" position="after">
-            <field name="olive_oil_distributor"/>
+            <field name="olive_juice_distributor"/>
         </field>
     </field>
 </record>
@@ -37,8 +37,8 @@
     <field name="arch" type="xml">
         <filter name="inactive" position="after">
             <separator/>
-            <filter name="olive_oil_distributor" string="Olive Oil Distributor"
-                    domain="[('olive_oil_distributor', '=', True)]"/>
+            <filter name="olive_juice_distributor" string="Olive Juice Distributor"
+                    domain="[('olive_juice_distributor', '=', True)]"/>
         </filter>
     </field>
 </record>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2019 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+
+<record id="fruit_preseason_poll_form" model="ir.ui.view">
+    <field name="name">fruit.preseason.poll.form</field>
+    <field name="model">fruit.preseason.poll</field>
+    <field name="arch" type="xml">
+        <form string="Pre-season Poll">
+            <header>
+                <button type="object" name="update_past_data" string="Get Past Data" class="btn-primary" attrs="{'invisible': [('past_data_ok', '=', True)]}"/>
+            </header>
+            <sheet>
+                <field name="fruit_organic_certified_logo" widget="image" class="oe_avatar" attrs="{'invisible': [('fruit_organic_certified_logo', '=', False)]}"/>
+                <group name="main">
+                    <group name="left" string="Poll" col="1">
+                        <group name="top-left">
+                            <field name="partner_id"/>
+                            <field name="season_id"/>
+                            <field name="past_data_ok" invisible="1"/>
+                            <field name="fruit_culture_type" invisible="1"/>
+                        </group>
+                        <group name="lines" col="1">
+                            <field name="line_ids" nolabel="1" context="{'default_fruit_culture_type': fruit_culture_type}">
+                                <tree editable="bottom">
+                                    <field name="fruit_qty" sum="1"/>
+                                    <field name="sale_fruit_qty" sum="1"/>
+                                    <field name="juice_product_id"
+                                        domain="[('fruit_type', '=', 'juice'), ('fruit_culture_type', '=', fruit_culture_type)]"
+                                        attrs="{'required': [('sale_fruit_qty', '>', 0)]}"
+                                        options="{'no_open': True, 'no_create': True, 'no_create_edit': True}"/>
+                                    <!-- widget="selection" in tree view sometimes causes bug, no I use no_open, no_create, no_create_edit -->
+                                    <field name="juice_qty" sum="1"/>
+                                    <field name="sale_juice_qty" sum="1"/>
+                                    <field name="fruit_culture_type" invisible="0"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group name="average" string="Past Data Average">
+                            <label for="past_average_ratio_net" string="Average Net Ratio"/>
+                            <div name="past_average_ratio_net">
+                                <field for="past_average_ratio_net" name="past_average_ratio_net" class="oe_inline"/> %
+                            </div>
+                            <label for="past_average_fruit_qty" string="Average Fruit Qty"/>
+                            <div name="past_average_fruit_qty">
+                                <field for="past_average_fruit_qty" name="past_average_fruit_qty" class="oe_inline"/> kg
+                            </div>
+                            <label for="past_average_juice_qty_net" string="Average Net Juice Qty"/>
+                            <div name="past_average_juice_qty_net">
+                                <field for="past_average_juice_qty_net" name="past_average_juice_qty_net" class="oe_inline"/> L
+                            </div>
+                            <label for="past_average_sale_fruit_qty" string="Average Sale Fruit Qty"/>
+                            <div name="past_average_sale_fruit_qty">
+                                <field for="past_average_sale_fruit_qty" name="past_average_sale_fruit_qty" class="oe_inline"/> kg
+                            </div>
+                            <label for="past_average_sale_juice_qty" string="Average Sale Juice Qty"/>
+                            <div name="past_average_sale_juice_qty">
+                                <field for="past_average_sale_juice_qty" name="past_average_sale_juice_qty" class="oe_inline"/> L
+                            </div>
+                        </group>
+                    </group>
+                    <group name="right" col="1">
+                        <group name="n-1" string="Past Data N-1">
+                            <field name="n1_season_id"/>
+                            <label for="n1_ratio_net" string="Net Ratio"/>
+                            <div name="n1_ratio_net">
+                                <field for="n1_ratio_net" name="n1_ratio_net" class="oe_inline"/> %
+                            </div>
+                            <label for="n1_fruit_qty" string="Fruit Qty"/>
+                            <div name="n1_fruit_qty">
+                                <field name="n1_fruit_qty" class="oe_inline"/> kg
+                            </div>
+                            <label for="n1_juice_qty_net" string="Net Juice Qty"/>
+                            <div name="n1_juice_qty_net">
+                                <field name="n1_juice_qty_net" class="oe_inline"/> L
+                            </div>
+                            <label for="n1_sale_fruit_qty" string="Sale Fruit Qty"/>
+                            <div name="n1_sale_fruit_qty">
+                                <field name="n1_sale_fruit_qty" class="oe_inline"/> kg
+                            </div>
+                            <label for="n1_sale_juice_qty" string="Sale Juice Qty"/>
+                            <div name="n1_sale_juice_qty">
+                                <field name="n1_sale_juice_qty" class="oe_inline"/> L
+                            </div>
+                        </group>
+                        <group name="n-2" string="Past Data N-2">
+                            <field name="n2_season_id"/>
+                            <label for="n2_ratio_net" string="Net Ratio"/>
+                            <div name="n2_ratio_net">
+                                <field name="n2_ratio_net" class="oe_inline"/> %
+                            </div>
+                            <label for="n2_fruit_qty" string="Fruit Qty"/>
+                            <div name="n2_fruit_qty">
+                                <field name="n2_fruit_qty" class="oe_inline"/> kg
+                            </div>
+                            <label for="n2_juice_qty_net" string="Net Juice Qty"/>
+                            <div name="n2_juice_qty_net">
+                                <field name="n2_juice_qty_net" class="oe_inline"/> L
+                            </div>
+                            <label for="n2_sale_fruit_qty" string="Sale Fruit Qty"/>
+                            <div name="n2_sale_fruit_qty">
+                                <field name="n2_sale_fruit_qty" class="oe_inline"/> kg
+                            </div>
+                            <label for="n2_sale_juice_qty" string="Sale Juice Qty"/>
+                            <div name="n2_sale_juice_qty">
+                                <field name="n2_sale_juice_qty" class="oe_inline"/> L
+                            </div>
+                        </group>
+                        <group name="n-3" string="Past Data N-3">
+                            <field name="n3_season_id"/>
+                            <label for="n3_ratio_net" string="Net Ratio"/>
+                            <div name="n3_ratio_net">
+                                <field name="n3_ratio_net" class="oe_inline"/> %
+                            </div>
+                            <label for="n3_fruit_qty" string="Fruit Qty"/>
+                            <div name="n3_fruit_qty">
+                                <field name="n3_fruit_qty" class="oe_inline"/> kg
+                            </div>
+                            <label for="n3_juice_qty_net" string="Net Juice Qty"/>
+                            <div name="n3_juice_qty_net">
+                                <field name="n3_juice_qty_net" class="oe_inline"/> L
+                            </div>
+                            <label for="n3_sale_fruit_qty" string="Sale Fruit Qty"/>
+                            <div name="n3_sale_fruit_qty">
+                                <field name="n3_sale_fruit_qty" class="oe_inline"/> kg
+                            </div>
+                            <label for="n3_sale_juice_qty" string="Sale Juice Qty"/>
+                            <div name="n3_sale_juice_qty">
+                                <field name="n3_sale_juice_qty" class="oe_inline"/> L
+                            </div>
+                        </group>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="fruit_preseason_poll_tree" model="ir.ui.view">
+    <field name="name">fruit.preseason.poll.tree</field>
+    <field name="model">fruit.preseason.poll</field>
+    <field name="arch" type="xml">
+        <tree string="Pre-season Polls">
+            <field name="partner_id"/>
+            <field name="season_id"/>
+            <field name="past_average_ratio_net"/>
+            <field name="past_average_fruit_qty"/>
+            <field name="past_average_juice_qty_net"/>
+            <field name="past_average_sale_fruit_qty"/>
+            <field name="past_average_sale_juice_qty"/>
+        </tree>
+    </field>
+</record>
+
+<record id="fruit_preseason_poll_search" model="ir.ui.view">
+    <field name="name">fruit.preseason.poll.search</field>
+    <field name="model">fruit.preseason.poll</field>
+    <field name="arch" type="xml">
+        <search string="Pre-season Polls">
+            <field name="partner_id" operator="child_of"/>
+            <separator/>
+            <filter name="current_season" string="Current Season" domain="[('season_id', '=', 'CURRENT_SEASON_ID')]"/>
+            <!-- The above filter works together with inherit of fields_view_get().
+                Before using this solution, I tried to use an ir.actions.server
+                that inject a variable current_season_id in the context
+                and use a filter with
+                domain="[('season_id', '=', context.get('current_season_id'))]"
+                but it didn't work -->
+            <group string="Group By" name="groupby">
+                <filter name="season_groupby" string="Season" context="{'group_by': 'season_id'}"/>
+                <filter name="commercial_partner_groupby" string="Partner" context="{'group_by': 'commercial_partner_id'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="fruit_preseason_poll_action" model="ir.actions.act_window">
+    <field name="name">Pre-season Polls</field>
+    <field name="res_model">fruit.preseason.poll</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{'search_default_current_season': 1}</field>
+</record>
+
+<menuitem id="fruit_preseason_poll_menu" action="fruit_preseason_poll_action" parent="fruit_operations_menu" sequence="5"/>
+
+
+<!-- LINES -->
+<record id="fruit_preseason_poll_line_tree" model="ir.ui.view">
+    <field name="name">fruit.preseason.poll.line.tree</field>
+    <field name="model">fruit.preseason.poll.line</field>
+    <field name="arch" type="xml">
+        <tree string="Pre-season Poll Lines" edit="0" create="0">
+            <field name="commercial_partner_id"/>
+            <field name="season_id"/>
+            <field name="fruit_qty" sum="1"/>
+            <field name="sale_fruit_qty" sum="1"/>
+            <field name="juice_product_id"/>
+            <field name="juice_qty" sum="1"/>
+            <field name="sale_juice_qty" sum="1"/>
+        </tree>
+    </field>
+</record>
+
+<record id="fruit_preseason_poll_line_pivot" model="ir.ui.view">
+    <field name="name">fruit.preseason.poll.line.pivot</field>
+    <field name="model">fruit.preseason.poll.line</field>
+    <field name="arch" type="xml">
+        <pivot string="Pre-season Polls">
+            <field name="juice_product_id" type="row"/>
+            <field name="fruit_qty" type="measure"/>
+            <field name="juice_qty" type="measure"/>
+            <field name="sale_juice_qty" type="measure"/>
+        </pivot>
+    </field>
+</record>
+
+<record id="fruit_preseason_poll_line_search" model="ir.ui.view">
+    <field name="name">fruit.preseason.poll.line.search</field>
+    <field name="model">fruit.preseason.poll.line</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="commercial_partner_id"/>
+            <field name="season_id"/>
+            <field name="juice_product_id"/>
+            <separator/>
+            <filter name="current_season" string="Current Season" domain="[('season_id', '=', 'CURRENT_SEASON_ID')]"/>
+            <group name="groupby">
+                <filter name="partner_groupby" string="Fruit Farmer" context="{'group_by': 'commercial_partner_id'}"/>
+                <filter name="season_groupby" string="Season" context="{'group_by': 'season_id'}"/>
+                <filter name="juice_product_groupby" string="Juice Type" context="{'group_by': 'juice_product_id'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+
+<record id="fruit_preseason_poll_line_action" model="ir.actions.act_window">
+    <field name="name">Pre-season Polls</field>
+    <field name="res_model">fruit.preseason.poll.line</field>
+    <field name="view_mode">pivot,tree</field>
+    <field name="context">{'search_default_current_season': 1}</field>
+</record>
+
+<menuitem id="fruit_preseason_poll_line_menu" action="fruit_preseason_poll_line_action" parent="fruit_report_menu" sequence="50"/>
+
+
+
+
+</odoo>

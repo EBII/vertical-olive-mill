@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+
+<record id="fruit_arrival_seq" model="ir.sequence">
+    <field name="name">Fruit Arrival</field>
+    <field name="code">fruit.arrival</field>
+    <field name="prefix">BE-%(year)s-</field>
+    <field name="padding">4</field>
+    <field name="number_next">1</field>
+    <field name="use_date_range" eval="True"/>
+    <field name="company_id" eval="False"/>
+</record>
+
+<record id="fruit_juice_production_seq" model="ir.sequence">
+    <field name="name">Fruit Juice Production</field>
+    <field name="code">fruit.juice.production</field>
+    <field name="prefix">P-%(year)s-</field>
+    <field name="padding">3</field>
+    <field name="number_next">1</field>
+    <field name="use_date_range" eval="True"/>
+    <field name="company_id" eval="False"/>
+</record>
+
+<record id="fruit_juice_merge_lot_seq" model="ir.sequence">
+    <field name="name">Fruit Juice Merge Lot</field>
+    <field name="code">fruit.juice.merge.lot</field>
+    <field name="prefix">FUSION</field>
+    <field name="padding">4</field>
+    <field name="number_next">1</field>
+    <field name="company_id" eval="False"/>
+</record>
+
+<record id="fruit_juice_analysis_seq" model="ir.sequence">
+    <field name="name">Fruit Juice Analysis</field>
+    <field name="code">fruit.juice.analysis</field>
+    <field name="prefix">AN-%(year)s-</field>
+    <field name="padding">3</field>
+    <field name="number_next">1</field>
+    <field name="company_id" eval="False"/>
+</record>
+
+
+</odoo>

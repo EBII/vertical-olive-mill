@@ -34,111 +34,111 @@ class OliveAgrimerReport(models.Model):
     olive_pressed_qty = fields.Float(
         string='Olive Pressed (kg)', digits=dp.get_precision('Olive Weight'),
         states={'done': [('readonly', True)]})
-    organic_virgin_oil_produced = fields.Float(
-        string='Organic Virgin Olive Oil Produced (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    organic_virgin_juice_produced = fields.Float(
+        string='Organic Virgin Olive Juice Produced (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    organic_extravirgin_oil_produced = fields.Float(
-        string='Organic Extra Virgin Olive Oil Produced (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    organic_extravirgin_juice_produced = fields.Float(
+        string='Organic Extra Virgin Olive Juice Produced (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    regular_virgin_oil_produced = fields.Float(
-        string='Regular Virgin Olive Oil Produced (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    regular_virgin_juice_produced = fields.Float(
+        string='Regular Virgin Olive Juice Produced (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    regular_extravirgin_oil_produced = fields.Float(
-        string='Regular Extra Virgin Olive Oil Produced (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    regular_extravirgin_juice_produced = fields.Float(
+        string='Regular Extra Virgin Olive Juice Produced (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    # Oil OUT
+    # Juice OUT
     # Shrinkage
-    shrinkage_organic_virgin_oil = fields.Float(
-        string='Shrinkage Organic Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    shrinkage_organic_virgin_juice = fields.Float(
+        string='Shrinkage Organic Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    shrinkage_organic_extravirgin_oil = fields.Float(
-        string='Shrinkage Organic Extra Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    shrinkage_organic_extravirgin_juice = fields.Float(
+        string='Shrinkage Organic Extra Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    shrinkage_regular_virgin_oil = fields.Float(
-        string='Shrinkage Regular Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    shrinkage_regular_virgin_juice = fields.Float(
+        string='Shrinkage Regular Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    shrinkage_regular_extravirgin_oil = fields.Float(
-        string='Shrinkage Regular Extra Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    shrinkage_regular_extravirgin_juice = fields.Float(
+        string='Shrinkage Regular Extra Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    # WITHDRAWAL (product = oil /
+    # WITHDRAWAL (product = juice /
     # selected source location wh.olive_withdrawal_loc_id)
-    withdrawal_organic_virgin_oil = fields.Float(
-        string='Withdrawal Organic Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    withdrawal_organic_virgin_juice = fields.Float(
+        string='Withdrawal Organic Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    withdrawal_organic_extravirgin_oil = fields.Float(
-        string='Organic Extra Virgin Oil Withdrawal (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    withdrawal_organic_extravirgin_juice = fields.Float(
+        string='Organic Extra Virgin Juice Withdrawal (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    withdrawal_regular_virgin_oil = fields.Float(
-        string='Regular Virgin Oil Withdrawal (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    withdrawal_regular_virgin_juice = fields.Float(
+        string='Regular Virgin Juice Withdrawal (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    withdrawal_regular_extravirgin_oil = fields.Float(
-        string='Regular Extra Virgin Oil Withdrawal (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    withdrawal_regular_extravirgin_juice = fields.Float(
+        string='Regular Extra Virgin Juice Withdrawal (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
     # CONSUMER sale (product = bottles /
     # no partner or partner with other pricelists)
     # we don't use fiscal positions, because the fp 'import/export dom-tom' can
     # we used both for B2C and B2B
-    sale_consumer_organic_virgin_oil = fields.Float(
-        string='Sale to Consumers of Organic Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_consumer_organic_virgin_juice = fields.Float(
+        string='Sale to Consumers of Organic Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    sale_consumer_organic_extravirgin_oil = fields.Float(
-        string='Sale to Consumers of Organic Extra Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_consumer_organic_extravirgin_juice = fields.Float(
+        string='Sale to Consumers of Organic Extra Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    sale_consumer_regular_virgin_oil = fields.Float(
-        string='Sale to Consumers of Regular Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_consumer_regular_virgin_juice = fields.Float(
+        string='Sale to Consumers of Regular Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    sale_consumer_regular_extravirgin_oil = fields.Float(
-        string='Sale to Consumers of Regular Extra Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_consumer_regular_extravirgin_juice = fields.Float(
+        string='Sale to Consumers of Regular Extra Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
     # DISTRIBUTOR sale (product = bottles / partner with selected pricelist)
-    sale_distributor_organic_virgin_oil = fields.Float(
-        string='Sale to Distributors of Organic Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_distributor_organic_virgin_juice = fields.Float(
+        string='Sale to Distributors of Organic Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    sale_distributor_organic_extravirgin_oil = fields.Float(
-        string='Sale to Distributors of Organic Extra Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_distributor_organic_extravirgin_juice = fields.Float(
+        string='Sale to Distributors of Organic Extra Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    sale_distributor_regular_virgin_oil = fields.Float(
-        string='Sale to Distributors of Regular Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_distributor_regular_virgin_juice = fields.Float(
+        string='Sale to Distributors of Regular Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    sale_distributor_regular_extravirgin_oil = fields.Float(
-        string='Sale to Distributors of Regular Extra Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_distributor_regular_extravirgin_juice = fields.Float(
+        string='Sale to Distributors of Regular Extra Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    # LOOSE sale (product = oil / all other source locations)
-    sale_loose_organic_virgin_oil = fields.Float(
-        string='Loose Sale of Organic Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    # LOOSE sale (product = juice / all other source locations)
+    sale_loose_organic_virgin_juice = fields.Float(
+        string='Loose Sale of Organic Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    sale_loose_organic_extravirgin_oil = fields.Float(
-        string='Loose Sale of Organic Extra Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_loose_organic_extravirgin_juice = fields.Float(
+        string='Loose Sale of Organic Extra Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    sale_loose_regular_virgin_oil = fields.Float(
-        string='Loose Sale of Regular Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_loose_regular_virgin_juice = fields.Float(
+        string='Loose Sale of Regular Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
-    sale_loose_regular_extravirgin_oil = fields.Float(
-        string='Loose Sale of Regular Extra Virgin Oil (L)',
-        digits=dp.get_precision('Olive Oil Volume'),
+    sale_loose_regular_extravirgin_juice = fields.Float(
+        string='Loose Sale of Regular Extra Virgin Juice (L)',
+        digits=dp.get_precision('Olive Juice Volume'),
         states={'done': [('readonly', True)]})
 
     state = fields.Selection([
@@ -185,23 +185,23 @@ class OliveAgrimerReport(models.Model):
             ], ['olive_qty'], [])
         vals['olive_pressed_qty'] = rg and rg[0]['olive_qty'] or 0.0
 
-    def _compute_oil_produced(self, vals, oiltype2oilproducts):
-        for oil_type, oil_products in list(oiltype2oilproducts.items()):
-            net_fieldname = '%s_oil_produced' % oil_type
-            shrinkage_fieldname = 'shrinkage_%s_oil' % oil_type
+    def _compute_juice_produced(self, vals, juicetype2juiceproducts):
+        for juice_type, juice_products in list(juicetype2juiceproducts.items()):
+            net_fieldname = '%s_juice_produced' % juice_type
+            shrinkage_fieldname = 'shrinkage_%s_juice' % juice_type
             rg = self.env['olive.arrival.line'].read_group([
-                ('oil_product_id', 'in', oil_products.ids),
+                ('juice_product_id', 'in', juice_products.ids),
                 ('production_date', '>=', self.date_start),
                 ('production_date', '<=', self.date_end),
                 ('production_state', '=', 'done'),
                 ('company_id', '=', self.company_id.id),
-                ], ['oil_qty_net', 'shrinkage_oil_qty'], [])
-            vals[net_fieldname] = rg and rg[0]['oil_qty_net'] or 0.0
+                ], ['juice_qty_net', 'shrinkage_juice_qty'], [])
+            vals[net_fieldname] = rg and rg[0]['juice_qty_net'] or 0.0
             vals[shrinkage_fieldname] =\
-                rg and rg[0]['shrinkage_oil_qty'] or 0.0
+                rg and rg[0]['shrinkage_juice_qty'] or 0.0
 
-    def _compute_oil_out(
-            self, vals, oiltype2oilproducts, bottle2oiltypevol):
+    def _compute_juice_out(
+            self, vals, juicetype2juiceproducts, bottle2juicetypevol):
         smo = self.env['stock.move']
         move_common_domain = [
             ('state', '=', 'done'),
@@ -217,39 +217,39 @@ class OliveAgrimerReport(models.Model):
         withdrawal_locs = self.env['stock.location']
         for olive_wh in olive_whs:
             withdrawal_locs += olive_wh.olive_withdrawal_loc_id
-        for oil_type, oil_products in list(oiltype2oilproducts.items()):
+        for juice_type, juice_products in list(juicetype2juiceproducts.items()):
             move_rg = smo.read_group(
                 move_common_domain + [
-                    ('product_id', 'in', oil_products.ids),
+                    ('product_id', 'in', juice_products.ids),
                     ('location_id', 'in', withdrawal_locs.ids),
                     ('location_dest_id.usage', '=', 'customer'),
                 ], ['product_uom_qty'], [])
             return_move_rg = smo.read_group(
                 move_common_domain + [
-                    ('product_id', 'in', oil_products.ids),
+                    ('product_id', 'in', juice_products.ids),
                     ('location_id.usage', '=', 'customer'),
                     ('location_dest_id', 'in', withdrawal_locs.ids),
                 ], ['product_uom_qty'], [])
             qty = move_rg and move_rg[0]['product_uom_qty'] or 0.0
             return_qty = return_move_rg and\
                 return_move_rg[0]['product_uom_qty'] or 0.0
-            withdrawal_fieldname = 'withdrawal_%s_oil' % oil_type
+            withdrawal_fieldname = 'withdrawal_%s_juice' % juice_type
             vals[withdrawal_fieldname] = qty - return_qty
         # Loose
-        for oil_type, oil_products in list(oiltype2oilproducts.items()):
+        for juice_type, juice_products in list(juicetype2juiceproducts.items()):
             move_rg = smo.read_group(
                 move_common_domain + [
-                    ('product_id', 'in', oil_products.ids),
+                    ('product_id', 'in', juice_products.ids),
                     ('location_id', 'not in', withdrawal_locs.ids),
                     ('location_dest_id.usage', '=', 'customer'),
                 ], ['product_uom_qty'], [])
             return_move_rg = smo.read_group(
                 move_common_domain + [
-                    ('product_id', 'in', oil_products.ids),
+                    ('product_id', 'in', juice_products.ids),
                     ('location_id.usage', '=', 'customer'),
                     ('location_dest_id', 'not in', withdrawal_locs.ids),
                 ], ['product_uom_qty'], [])
-            loose_fieldname = 'sale_loose_%s_oil' % oil_type
+            loose_fieldname = 'sale_loose_%s_juice' % juice_type
             qty = move_rg and move_rg[0]['product_uom_qty'] or 0.0
             return_qty = return_move_rg and\
                 return_move_rg[0]['product_uom_qty'] or 0.0
@@ -257,9 +257,9 @@ class OliveAgrimerReport(models.Model):
         # Sale bottles
         rpo = self.env['res.partner']
         distri_pricelists = self.env['product.pricelist'].search([
-            ('olive_oil_distributor', '=', True)])
+            ('olive_juice_distributor', '=', True)])
 
-        for bottle, props in list(bottle2oiltypevol.items()):
+        for bottle, props in list(bottle2juicetypevol.items()):
             move_rg = smo.read_group(
                 move_common_domain + [
                     ('product_id', '=', bottle.id),
@@ -282,78 +282,78 @@ class OliveAgrimerReport(models.Model):
                             partner.property_product_pricelist and
                             partner.property_product_pricelist in
                             distri_pricelists):
-                        self._oil_out_sale_final_compute(
+                        self._juice_out_sale_final_compute(
                             'distributor', vals, props, product_qty)
                     else:
-                        self._oil_out_sale_final_compute(
+                        self._juice_out_sale_final_compute(
                             'consumer', vals, props, product_qty)
                 else:
-                    self._oil_out_sale_final_compute(
+                    self._juice_out_sale_final_compute(
                         'consumer', vals, props, product_qty)
 
-    def _oil_out_sale_final_compute(
+    def _juice_out_sale_final_compute(
             self, partner_type, vals, props, product_qty):
-        for oil_type, vol in list(props.items()):
-            fieldname = 'sale_%s_%s_oil' % (partner_type, oil_type)
+        for juice_type, vol in list(props.items()):
+            fieldname = 'sale_%s_%s_juice' % (partner_type, juice_type)
             vals[fieldname] += product_qty * vol
 
     def report_compute_values(self):
-        oil_product_domain = {
+        juice_product_domain = {
             'organic_virgin': [
-                ('olive_oil_type', '=', 'virgin'),
+                ('olive_juice_type', '=', 'virgin'),
                 ('olive_culture_type', 'in', ('organic', 'conversion'))],
             'organic_extravirgin': [
-                ('olive_oil_type', '=', 'extravirgin'),
+                ('olive_juice_type', '=', 'extravirgin'),
                 ('olive_culture_type', 'in', ('organic', 'conversion'))],
             'regular_virgin': [
-                ('olive_oil_type', '=', 'virgin'),
+                ('olive_juice_type', '=', 'virgin'),
                 ('olive_culture_type', '=', 'regular')],
             'regular_extravirgin': [
-                ('olive_oil_type', '=', 'extravirgin'),
+                ('olive_juice_type', '=', 'extravirgin'),
                 ('olive_culture_type', '=', 'regular')],
             }
-        oiltype2oilproducts = {}
-        bottle2oiltypevol = {}
+        juicetype2juiceproducts = {}
+        bottle2juicetypevol = {}
         ppo = self.env['product.product']
-        for oil_type, domain in list(oil_product_domain.items()):
-            oiltype2oilproducts[oil_type] = ppo.search(
-                domain + [('olive_type', '=', 'oil')])
+        for juice_type, domain in list(juice_product_domain.items()):
+            juicetype2juiceproducts[juice_type] = ppo.search(
+                domain + [('olive_type', '=', 'juice')])
         regular_bottles = ppo.search([('olive_type', '=', 'bottle_full')])
         for bottle in regular_bottles:
-            bom, oil_product, bottle_volume =\
-                bottle.oil_bottle_full_get_bom_and_oil_product()
-            if not oil_product.olive_oil_type:
+            bom, juice_product, bottle_volume =\
+                bottle.juice_bottle_full_get_bom_and_juice_product()
+            if not juice_product.olive_juice_type:
                 raise UserError(_(
-                    "Oil type not configured on oil product '%s'.")
-                    % oil_product.display_name)
-            if not oil_product.olive_culture_type:
+                    "Juice type not configured on juice product '%s'.")
+                    % juice_product.display_name)
+            if not juice_product.olive_culture_type:
                 raise UserError(_(
-                    "Culture type not configured on oil product '%s'.")
-                    % oil_product.display_name)
-            culture_type = oil_product.olive_culture_type
+                    "Culture type not configured on juice product '%s'.")
+                    % juice_product.display_name)
+            culture_type = juice_product.olive_culture_type
             if culture_type == 'conversion':
                 culture_type = 'organic'
-            oil_type = '%s_%s' % (culture_type, oil_product.olive_oil_type)
-            bottle2oiltypevol[bottle] = {oil_type: bottle_volume}
+            juice_type = '%s_%s' % (culture_type, juice_product.olive_juice_type)
+            bottle2juicetypevol[bottle] = {juice_type: bottle_volume}
 
         pack_bottles = ppo.search([('olive_type', '=', 'bottle_full_pack')])
         for pbottle in pack_bottles:
-            bottle2oiltypevol[pbottle] = {}
-            pack_dict = pbottle.oil_bottle_full_pack_get_bottles()
+            bottle2juicetypevol[pbottle] = {}
+            pack_dict = pbottle.juice_bottle_full_pack_get_bottles()
             for cbottle, qty in list(pack_dict.items()):
-                oil_type, bottle_volume = list(bottle2oiltypevol[cbottle].items())[0]
-                if oil_type in bottle2oiltypevol[pbottle]:
-                    bottle2oiltypevol[pbottle][oil_type] += bottle_volume * qty
+                juice_type, bottle_volume = list(bottle2juicetypevol[cbottle].items())[0]
+                if juice_type in bottle2juicetypevol[pbottle]:
+                    bottle2juicetypevol[pbottle][juice_type] += bottle_volume * qty
                 else:
-                    bottle2oiltypevol[pbottle][oil_type] = bottle_volume * qty
+                    bottle2juicetypevol[pbottle][juice_type] = bottle_volume * qty
 
         vals = {}
         self._reset_values(vals)
         self._compute_olive_arrival_qty(vals)
         self._compute_olive_pressed_qty(vals)
-        self._compute_oil_produced(vals, oiltype2oilproducts)
-        self._compute_oil_out(
-            vals, oiltype2oilproducts, bottle2oiltypevol)
+        self._compute_juice_produced(vals, juicetype2juiceproducts)
+        self._compute_juice_out(
+            vals, juicetype2juiceproducts, bottle2juicetypevol)
         return vals
 
     def _reset_values(self, vals):

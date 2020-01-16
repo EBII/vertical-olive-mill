@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo noupdate="1">
+
+
+<record id="stock.warehouse0" model="stock.warehouse">
+    <field name="fruit_mill">1</field>
+    <field name="fruit_withdrawal_loc_id" ref="withdrawal"/>
+    <field name="fruit_compensation_loc_id" ref="compensation"/>
+    <field name="fruit_regular_case_total">1000</field>
+    <field name="fruit_organic_case_total">500</field>
+</record>
+
+
+</odoo>

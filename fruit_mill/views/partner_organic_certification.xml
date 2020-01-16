@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="partner_organic_certification_form" model="ir.ui.view">
+    <field name="name">partner.organic.certification.form</field>
+    <field name="model">partner.organic.certification</field>
+    <field name="arch" type="xml">
+        <form string="Farmer Organic Certification">
+            <header>
+                <button name="validate" string="Validate" type="object" confirm="I certify that I have seen the organic certificate of that fruit farmer." states="draft" groups="stock.group_stock_user"/>
+                <field name="state" widget="statusbar" statusbar_colors="{'draft': 'blue'}"/>
+            </header>
+            <group name="main">
+                <field name="partner_id" invisible="not context.get('partner_organic_certification_main_view')"/>
+                <field name="season_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="certifying_entity_id"/>
+                <field name="conversion"/>
+                <field name="validation_user_id"/>
+                <field name="validation_datetime"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="partner_organic_certification_tree" model="ir.ui.view">
+    <field name="name">partner.organic.certification.tree</field>
+    <field name="model">partner.organic.certification</field>
+    <field name="arch" type="xml">
+        <tree string="Farmer Organic Certifications" decoration-info="state == 'draft'">
+            <field name="partner_id" invisible="not context.get('partner_organic_certification_main_view')"/>
+            <field name="season_id"/>
+            <field name="certifying_entity_id"/>
+            <field name="conversion"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="partner_organic_certification_search" model="ir.ui.view">
+    <field name="name">partner.organic.certification.search</field>
+    <field name="model">partner.organic.certification</field>
+    <field name="arch" type="xml">
+        <search string="Farmer Organic Certifications">
+            <field name="partner_id"/>
+            <filter name="draft" domain="[('state', '=', 'draft')]" string="Draft"/>
+            <filter name="done" domain="[('state', '=', 'done')]" string="Valid"/>
+            <separator/>
+            <filter name="regular" domain="[('conversion', '=', False)]" string="Regular"/>
+            <filter name="conversion" domain="[('conversion', '=', True)]" string="Conversion"/>
+            <separator/>
+            <filter name="current_season" string="Current Season" domain="[('season_id', '=', 'CURRENT_SEASON_ID')]"/>
+            <separator/>
+            <group string="Group By" name="groupby">
+                <filter name="partner_groupby" string="Farmer" context="{'group_by': 'partner_id'}"/>
+                <filter name="certifying_entity_groupby" string="Certifying Entity" context="{'group_by': 'certifying_entity_id'}"/>
+                <filter name="season_groupby" string="Season" context="{'group_by': 'season_id'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="partner_organic_certification_action" model="ir.actions.act_window">
+    <field name="name">Organic Certifications</field>
+    <field name="res_model">partner.organic.certification</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{'partner_organic_certification_main_view': True, 'search_default_current_season': True}</field>
+</record>
+
+<menuitem id="partner_organic_certification_menu" action="partner_organic_certification_action" parent="fruit_data_menu" sequence="40"/>
+
+</odoo>

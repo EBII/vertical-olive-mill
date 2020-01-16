@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="fruit_juice_picking_form" model="ir.ui.view">
+    <field name="name">fruit.juice.picking.form</field>
+    <field name="model">fruit.juice.picking</field>
+    <field name="arch" type="xml">
+        <form string="Ship Loose Fruit Juice">
+            <group name="main">
+                <field name="picking_id" attrs="{'invisible': [('picking_id', '=', False)]}"/>
+                <field name="juice_product_id"/>
+                <field name="warehouse_id"/>
+                <label for="juice_qty"/>
+                <div name="juice_qty">
+                    <field name="juice_qty" class="oe_inline"/> L
+                </div>
+                <field name="src_location_id" domain="[('fruit_tank_type', 'in', ('regular', 'risouletto')), ('usage', '=', 'internal'), ('juice_product_id', '=', juice_product_id)]"/>
+                <field name="dest_location_id"/>
+                <field name="container_src_location_id"/>
+            </group>
+            <group name="container_lines" string="Containers Used">
+                <field name="container_ids" nolabel="1">
+                    <tree editable="bottom">
+                        <field name="product_id"/>
+                        <field name="qty"/>
+                        <field name="uom_id"/>
+                    </tree>
+                </field>
+            </group>
+            <footer>
+                <button name="validate" type="object" string="Validate" class="btn-primary"/>
+                <button special="cancel" string="Cancel" class="btn-default"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="fruit_juice_picking_action" model="ir.actions.act_window">
+    <field name="name">Prepare Loose Fruit Juice</field>
+    <field name="res_model">fruit.juice.picking</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+
+</odoo>

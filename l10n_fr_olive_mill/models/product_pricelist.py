@@ -8,5 +8,5 @@ from odoo import fields, models
 class ProductPricelist(models.Model):
     _inherit = 'product.pricelist'
 
-    olive_oil_distributor = fields.Boolean(
-        string='Olive Oil Distributor', help="Field used for AgriMer reports")
+    olive_juice_distributor = fields.Boolean(
+        string='Olive Juice Distributor', help="Field used for AgriMer reports")

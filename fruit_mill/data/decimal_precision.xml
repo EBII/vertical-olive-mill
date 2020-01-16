@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+
+<record forcecreate="True" id="fruit_parcel_area" model="decimal.precision">
+    <field name="name">Fruit Parcel Area</field>
+    <field name="digits">4</field>
+</record>
+
+<record forcecreate="True" id="fruit_weight" model="decimal.precision">
+    <field name="name">Fruit Weight</field>  <!-- Also used for Fruit Juice at the moment -->
+    <field name="digits">2</field>
+</record>
+
+<record forcecreate="True" id="fruit_juice_volume" model="decimal.precision">
+    <field name="name">Fruit Juice Volume</field>
+    <field name="digits">2</field>
+</record>
+
+<record forcecreate="True" id="fruit_juice_ratio" model="decimal.precision">
+    <field name="name">Fruit Juice Ratio</field>
+    <field name="digits">2</field>
+</record>
+
+<record forcecreate="True" id="fruit_juice_density" model="decimal.precision">
+    <field name="name">Fruit Juice Density</field>
+    <field name="digits">3</field>
+</record>
+
+<!--
+<record forcecreate="True" id="fruit_juice_tax_price_unit" model="decimal.precision">
+    <field name="name">Fruit Juice Tax Price Unit</field>
+    <field name="digits">3</field>
+</record>
+-->
+
+
+</odoo>

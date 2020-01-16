@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="fruit_juice_tank_merge_form" model="ir.ui.view">
+    <field name="name">fruit.juice.tank.merge.form</field>
+    <field name="model">fruit.juice.tank.merge</field>
+    <field name="arch" type="xml">
+        <form string="Fruit Juice Tank Merge">
+            <group name="main">
+                <field name="location_id"/>
+            </group>
+            <footer>
+                <button name="validate" type="object" string="Validate" class="btn-primary"/>
+                <button special="cancel" string="Cancel" class="btn-default"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="fruit_juice_tank_merge_action" model="ir.actions.act_window">
+    <field name="name">Juice Tank Merge</field>
+    <field name="res_model">fruit.juice.tank.merge</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+<menuitem id="fruit_juice_tank_merge_menu" action="fruit_juice_tank_merge_action" parent="fruit_operations_menu" groups="stock.group_stock_user" sequence="210"/>
+
+</odoo>

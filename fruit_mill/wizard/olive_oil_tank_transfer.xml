@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="fruit_juice_tank_transfer_form" model="ir.ui.view">
+    <field name="name">fruit.juice.tank.transfer.form</field>
+    <field name="model">fruit.juice.tank.transfer</field>
+    <field name="arch" type="xml">
+        <form string="Fruit Juice Tank Transfer">
+            <group name="main">
+                <field name="warehouse_id"/>
+                <field name="src_location_id" domain="[('fruit_tank_type', '!=', False)]"/>
+                <field name="dest_location_id" domain="[('fruit_tank_type', '!=', False)]"/>
+                <field name="transfer_type" widget="radio"/>
+                <label for="quantity_div" attrs="{'invisible': [('transfer_type', '!=', 'partial')]}"/>
+                <div name="quantity_div" attrs="{'invisible': [('transfer_type', '!=', 'partial')]}">
+                    <field name="quantity" class="oe_inline"/>
+                    <label for="quantity" string=" L"/>
+                </div>
+            </group>
+            <footer>
+                <button name="validate" type="object" string="Validate" class="btn-primary"/>
+                <button special="cancel" string="Cancel" class="btn-default"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="fruit_juice_tank_transfer_action" model="ir.actions.act_window">
+    <field name="name">Juice Tank Transfer</field>
+    <field name="res_model">fruit.juice.tank.transfer</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+<menuitem id="fruit_juice_tank_transfer_menu" action="fruit_juice_tank_transfer_action" parent="fruit_operations_menu" groups="stock.group_stock_user" sequence="200"/>
+
+</odoo>

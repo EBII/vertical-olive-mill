@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="view_location_form" model="ir.ui.view">
+    <field name="name">fruit.mill.stock.location.form</field>
+    <field name="model">stock.location</field>
+    <field name="inherit_id" ref="stock.view_location_form"/>
+    <field name="arch" type="xml">
+        <group groups="stock.group_adv_location" position="after">
+            <group name="fruit" string="Fruit Juice">
+                <field name="fruit_tank_type"/>
+                <field name="juice_product_id" attrs="{'required': [('fruit_tank_type', 'in', ('shrinkage', 'risouletto'))], 'invisible': [('fruit_tank_type', '=', False)]}"/>
+                <field name="fruit_shrinkage_juice_product_ids" attrs="{'invisible': [('fruit_tank_type', '!=', 'shrinkage')]}" widget="many2many_tags"/>
+                <field name="fruit_season_id" attrs="{'invisible': [('fruit_tank_type', '=', False)]}"/>
+                <label for="fruit_juice_qty" string="Fruit Juice Qty" attrs="{'invisible': [('fruit_tank_type', '=', False)]}"/>
+                <div name="fruit_juice_qty" attrs="{'invisible': [('fruit_tank_type', '=', False)]}">
+                    <field name="fruit_juice_qty" class="oe_inline"/> L
+                </div>
+            </group>
+        </group>
+    </field>
+</record>
+
+<record id="view_location_tree2" model="ir.ui.view">
+    <field name="name">fruit.mill.stock.location.tree</field>
+    <field name="model">stock.location</field>
+    <field name="inherit_id" ref="stock.view_location_tree2"/>
+    <field name="arch" type="xml">
+        <field name="usage" position="after">
+            <field name="fruit_tank_type" invisible="not context.get('default_fruit_tank')"/>
+            <field name="juice_product_id" invisible="not context.get('default_fruit_tank')"/>
+            <field name="fruit_season_id" invisible="not context.get('default_fruit_tank')"/>
+        </field>
+    </field>
+</record>
+
+<record id="fruit_stock_location_with_qty_tree" model="ir.ui.view">
+    <field name="name">fruit.mill.stock.location.with.qty.tree</field>
+    <field name="model">stock.location</field>
+    <field name="priority">200</field>
+    <field name="arch" type="xml">
+        <tree string="Stock Location" decoration-info="usage=='view'" decoration-danger="usage=='internal'">
+            <field name="active" invisible="1"/>
+            <field name="display_name"/>
+            <field name="fruit_juice_qty"/>
+            <field name="fruit_tank_type"/>
+            <field name="juice_product_id"/>
+            <field name="fruit_season_id"/>
+            <field name="usage"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_location_search" model="ir.ui.view">
+    <field name="name">fruit.mill.stock.location.search</field>
+    <field name="model">stock.location</field>
+    <field name="inherit_id" ref="stock.view_location_search"/>
+    <field name="arch" type="xml">
+        <filter name="supplier" position="after">
+            <separator/>
+            <filter name="fruit_tank" string="Fruit Juice Tank" domain="[('fruit_tank_type', '!=', False)]"/>
+        </filter>
+        <filter name="inactive" position="after">
+            <group string="Group By" name="fruit_groupby">
+                <filter name="fruit_tank_type_groupby" string="Fruit Tank Type" context="{'group_by': 'fruit_tank_type'}"/>
+            </group>
+        </filter>
+    </field>
+</record>
+
+<record id="tank_stock_location_action" model="ir.actions.act_window">
+    <field name="name">Tanks</field>
+    <field name="res_model">stock.location</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{'default_fruit_tank': 'regular', 'search_default_fruit_tank': True, 'default_usage': 'internal'}</field>
+    <field name="view_id" ref="fruit_stock_location_with_qty_tree"/>
+</record>
+
+<menuitem id="tank_stock_location_menu" action="tank_stock_location_action" parent="fruit_data_menu" sequence="20"/>
+
+
+
+</odoo>

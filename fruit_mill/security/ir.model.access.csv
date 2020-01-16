@@ -1,0 +1,48 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fruit_palox_operator,Read+write access on fruit.palox for operator,model_fruit_palox,fruit_operator,1,0,0,0
+access_fruit_palox_user,Read+write access on fruit.palox,model_fruit_palox,stock.group_stock_user,1,1,0,0
+access_fruit_palox_manager,Full access on fruit.palox,model_fruit_palox,stock.group_stock_manager,1,1,1,1
+access_fruit_palox_borrow_history_operator,Read+create access on fruit.palox.borrow.history,model_fruit_palox_borrow_history,fruit_operator,1,0,1,0
+access_fruit_palox_borrow_history_user,Read+create access on fruit.palox.borrow.history,model_fruit_palox_borrow_history,stock.group_stock_user,1,0,1,0
+access_fruit_palox_borrow_history_manager,Full access on fruit.palox.borrow.history,model_fruit_palox_borrow_history,stock.group_stock_manager,1,1,1,1
+access_fruit_ochard_operator,Read access on fruit.ochard,model_fruit_ochard,fruit_operator,1,0,0,0
+access_fruit_ochard_user,Full access on fruit.ochard,model_fruit_ochard,stock.group_stock_user,1,1,1,1
+access_fruit_parcel_operator,Read access on fruit.parcel,model_fruit_parcel,fruit_operator,1,0,0,0
+access_fruit_parcel_user,Full access on fruit.parcel,model_fruit_parcel,stock.group_stock_user,1,1,1,1
+access_fruit_season_user,Read access on fruit.season,model_fruit_season,base.group_user,1,0,0,0
+access_fruit_season_manager,Full access on fruit.season,model_fruit_season,stock.group_stock_manager,1,1,1,1
+access_fruit_variant_user,Read access on fruit.variant,model_fruit_variant,base.group_user,1,0,0,0
+access_fruit_variant_manager,Full access on fruit.variant,model_fruit_variant,stock.group_stock_manager,1,1,1,1
+access_fruit_treatment_manager,Full access on fruit.treatment,model_fruit_treatment,stock.group_stock_manager,1,1,1,1
+access_fruit_treatment_user,Read+create access on fruit.treatment,model_fruit_treatment,stock.group_stock_user,1,0,1,0
+access_fruit_cultivation_operator,Read access on fruit.cultivation,model_fruit_cultivation,fruit_operator,1,1,1,1
+access_fruit_cultivation_user,Full access on fruit.cultivation,model_fruit_cultivation,stock.group_stock_user,1,1,1,1
+access_fruit_lended_case_operator,Read+create access on fruit.lended.case to operator,model_fruit_lended_case,fruit_operator,1,0,1,0
+access_fruit_lended_case_user,Read+create access on fruit.lended.case to stock user,model_fruit_lended_case,stock.group_stock_user,1,0,1,0
+access_fruit_lended_case_manager,Full access on fruit.lended.case,model_fruit_lended_case,stock.group_stock_manager,1,1,1,1
+access_organic_certifying_entity_user,Read access on organic.certifying.entity,model_organic_certifying_entity,base.group_user,1,0,0,0
+access_organic_certifying_entity_manager,Full access on organic.certifying.entity,model_organic_certifying_entity,stock.group_stock_manager,1,1,1,1
+access_partner_organic_certification_operator,Read+create access on partner.organic.certification,model_partner_organic_certification,fruit_operator,1,0,0,0
+access_partner_organic_certification_user,Read+create access on partner.organic.certification,model_partner_organic_certification,stock.group_stock_user,1,1,1,0
+access_partner_organic_certification_manager,Full access on partner.organic.certification,model_partner_organic_certification,stock.group_stock_manager,1,1,1,1
+access_fruit_preseason_poll_user,Full access on fruit.preseason.poll,model_fruit_preseason_poll,stock.group_stock_user,1,1,1,1
+access_fruit_preseason_poll_line_user,Full access on fruit.preseason.poll.line,model_fruit_preseason_poll_line,stock.group_stock_user,1,1,1,1
+access_fruit_appointment_operator,Read access on fruit.appointment,model_fruit_appointment,fruit_operator,1,0,0,0
+access_fruit_appointment_user,Full access on fruit.appointment,model_fruit_appointment,stock.group_stock_user,1,1,1,1
+access_fruit_arrival_operator,Full access on fruit.arrival,model_fruit_arrival,fruit_operator,1,1,1,1
+access_fruit_arrival_user,Full access on fruit.arrival,model_fruit_arrival,stock.group_stock_user,1,1,1,1
+access_fruit_arrival_line_operator,Full access on fruit.arrival.line to operator,model_fruit_arrival_line,fruit_operator,1,1,1,1
+access_fruit_arrival_line_user,Full access on fruit.arrival.line to stock user,model_fruit_arrival_line,stock.group_stock_user,1,1,1,1
+access_fruit_arrival_line_extra_operator,Full access on fruit.arrival.line.extra,model_fruit_arrival_line_extra,fruit_operator,1,1,1,1
+access_fruit_arrival_line_extra_user,Full access on fruit.arrival.line.extra,model_fruit_arrival_line_extra,stock.group_stock_user,1,1,1,1
+access_fruit_juice_production_operator,Read+Write+Create access on fruit.juice.production,model_fruit_juice_production,fruit_operator,1,1,1,0
+access_fruit_juice_production_user,Full access on fruit.juice.production,model_fruit_juice_production,stock.group_stock_user,1,1,1,1
+access_fruit_sale_pricelist_full,Full access on fruit.sale.pricelist to Stock Manager,model_fruit_sale_pricelist,stock.group_stock_manager,1,1,1,1
+access_fruit_sale_pricelist_read,Read access on fruit.sale.pricelist to Stock User,model_fruit_sale_pricelist,stock.group_stock_user,1,0,0,0
+access_fruit_sale_pricelist_line_full,Full access on fruit.sale.pricelist.line to Stock Manager,model_fruit_sale_pricelist_line,stock.group_stock_manager,1,1,1,1
+access_fruit_sale_pricelist_line_read,Read access on fruit.sale.pricelist.line to Employee,model_fruit_sale_pricelist,stock.group_stock_user,1,0,0,0
+access_fruit_juice_analysis_user,Full access on fruit.juice.analysis,model_fruit_juice_analysis,stock.group_stock_user,1,1,1,1
+access_fruit_juice_analysis_line_user,Full access on fruit.juice.analysis.line,model_fruit_juice_analysis_line,stock.group_stock_user,1,1,1,1
+access_stock_warehouse_operator,Read access on stock.warehouse,stock.model_stock_warehouse,fruit_operator,1,0,0,0
+access_stock_location_operator,Read access on stock.location,stock.model_stock_location,fruit_operator,1,0,0,0
+access_stock_move_operator,Read access on stock.move,stock.model_stock_move,fruit_operator,1,0,0,0

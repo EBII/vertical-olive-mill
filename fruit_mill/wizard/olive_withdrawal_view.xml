@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="fruit_withdrawal_form" model="ir.ui.view">
+    <field name="name">fruit.withdrawal.form</field>
+    <field name="model">fruit.withdrawal</field>
+    <field name="arch" type="xml">
+        <form string="Fruit Withdrawal">
+            <header>
+                <span name="fruit_cultivation_form_ko" attrs="{'invisible': ['|', ('fruit_cultivation_form_ko', '=', False), ('partner_id', '=', False)]}" class="label label-danger">Cultivation form missing</span>
+                <span name="fruit_parcel_ko" attrs="{'invisible': ['|', ('fruit_parcel_ko', '=', False), ('partner_id', '=', False)]}" class="label label-warning">Parcel information incomplete</span>
+                <span name="fruit_organic_certif_ko" attrs="{'invisible': ['|', ('fruit_organic_certif_ko', '=', False), ('partner_id', '=', False)]}" class="label label-success">Organic certification missing</span>
+                <span name="fruit_invoicing_ko" attrs="{'invisible': ['|', ('fruit_invoicing_ko', '=', False), ('partner_id', '=', False)]}" class="label label-info">Invoicing to do</span>
+            </header>
+            <group name="main">
+                <field name="partner_id"/>
+                <field name="warehouse_id"/>
+                <field name="fruit_cultivation_form_ko" invisible="1"/>
+                <field name="fruit_parcel_ko" invisible="1"/>
+                <field name="fruit_organic_certif_ko" invisible="1"/>
+                <field name="fruit_invoicing_ko" invisible="1"/>
+            </group>
+            <footer>
+                <button name="validate" type="object" string="Validate" class="btn-primary"/>
+                <button special="cancel" string="Cancel" class="btn-default"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="fruit_withdrawal_action" model="ir.actions.act_window">
+    <field name="name">Juice Withdrawal</field>
+    <field name="res_model">fruit.withdrawal</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+<menuitem id="fruit_withdrawal_menu" action="fruit_withdrawal_action" parent="fruit_operations_menu" groups="stock.group_stock_user" sequence="150"/>
+
+</odoo>

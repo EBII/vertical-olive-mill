@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="fruit_juice_production_ratio2force_form" model="ir.ui.view">
+    <field name="name">fruit.juice.production.ratio2force.form</field>
+    <field name="model">fruit.juice.production.ratio2force</field>
+    <field name="arch" type="xml">
+        <form string="Fruit Juice Production: Enter Result">
+            <group name="main">
+                <field name="production_id" invisible="1"/>
+                <field name="season_id" invisible="1"/>
+                <field name="palox_id"/>
+                <field name="farmers"/>
+                <field name="juice_destination" attrs="{'invisible': [('juice_destination', '=', 'withdrawal')]}"/>
+                <field name="juice_product_id"/>
+                <field name="sale_location_id" attrs="{'invisible': [('juice_destination', '=', 'withdrawal')]}" domain="[('fruit_tank_type', '=', 'regular'), ('juice_product_id', '=', juice_product_id), ('fruit_season_id', '=', season_id)]"/>
+                <label for="decanter_duration_div"/>
+                <div name="decanter_duration_div">
+                    <field name="decanter_duration" class="oe_inline"/>
+                    <label for="decanter_duration" string=" minutes"/>
+                </div>
+                <label for="decanter_speed_div"/>
+                <div name="decanter_speed_div">
+                    <field name="decanter_speed" class="oe_inline"/>
+                    <label for="decanter_speed" string=" kg / h"/>
+                </div>
+                <label for="fruit_qty_div"/>
+                <div name="fruit_qty_div">
+                    <field name="fruit_qty" class="oe_inline"/>
+                    <label for="fruit_qty" string=" kg" class="oe_inline"/>
+                </div>
+                <field name="compensation_type"/>
+                <field name="compensation_juice_product_id" attrs="{'invisible': [('compensation_type', '!=', 'first')]}"/>
+                <field name="compensation_sale_location_id" attrs="{'invisible': ['|', ('compensation_type', '!=', 'first'), ('juice_destination', '=', 'withdrawal')]}" domain="[('fruit_tank_type', '=', 'regular'), ('juice_product_id', '=', compensation_juice_product_id), ('fruit_season_id', '=', season_id)]"/>
+                <label for="compensation_juice_qty_div" name="compensation_juice_qty" string="Compensation Juice Qty" attrs="{'invisible': [('compensation_type', '!=', 'first')]}"/>
+                <div name="compensation_juice_qty_div" attrs="{'invisible': [('compensation_type', '!=', 'first')]}">
+                    <field name="compensation_juice_qty" class="oe_inline"/>
+                    <label for="compensation_juice_qty" string=" L" class="oe_inline"/>
+                </div>
+                <label for="compensation_last_fruit_qty_div" string="Fruit Compensation Qty" attrs="{'invisible': [('compensation_type', '!=', 'last')]}"/>
+                <div name="compensation_last_fruit_qty_div" attrs="{'invisible': [('compensation_type', '!=', 'last')]}">
+                    <field name="compensation_last_fruit_qty" class="oe_inline"/>
+                    <label for="compensation_last_fruit_qty" string=" kg" class="oe_inline"/>
+                </div>
+                <label for="juice_qty_kg_div" string="Juice Qty"/>
+                <div name="juice_qty_kg_div">
+                    <field name="juice_qty_kg" class="oe_inline"/>
+                    <label for="juice_qty_kg" string=" kg" class="oe_inline"/>
+                </div>
+                <label for="juice_qty_div" string="Juice Qty"/>
+                <div name="juice_qty_div">
+                    <field name="juice_qty" class="oe_inline"/>
+                    <label for="juice_qty" string=" L" class="oe_inline"/>
+                </div>
+
+                <label for="ratio_div" string="Gross Ratio"/>
+                <div name="ratio_div">
+                    <field name="ratio" class="oe_inline"/>
+                    <label for="ratio" string=" % (L)" class="oe_inline"/>
+                </div>
+            </group>
+            <footer>
+                <button name="validate" type="object" string="Validate" class="btn-primary"/>
+                <button special="cancel" string="Cancel" class="btn-default"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="fruit_juice_production_ratio2force_action" model="ir.actions.act_window">
+    <field name="name">Fruit Juice Production Ratio2force</field>
+    <field name="res_model">fruit.juice.production.ratio2force</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+</odoo>

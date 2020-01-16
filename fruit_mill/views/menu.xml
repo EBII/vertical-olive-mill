@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<menuitem id="fruit_root_menu" name="Fruit Mill" sequence="31" groups="stock.group_stock_user,fruit_operator"/>
+
+<menuitem id="fruit_operations_menu" parent="fruit_root_menu" name="Operations" sequence="10"/>
+
+<menuitem id="fruit_data_menu" parent="fruit_root_menu" name="Data" sequence="20"/>
+
+<menuitem id="fruit_report_menu" parent="fruit_root_menu" groups="stock.group_stock_user" name="Reports" sequence="30"/>
+
+<menuitem id="fruit_config_menu" parent="fruit_root_menu" name="Configuration" sequence="100" groups="stock.group_stock_manager"/>
+
+
+</odoo>

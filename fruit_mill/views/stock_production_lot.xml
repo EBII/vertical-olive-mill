@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
+-->
+
+<odoo>
+
+<record id="view_production_lot_form" model="ir.ui.view">
+    <field name="name">juice_mill_stock_production_lot_form</field>
+    <field name="model">stock.production.lot</field>
+    <field name="inherit_id" ref="stock.view_production_lot_form"/>
+    <field name="arch" type="xml">
+        <field name="product_id" position="after">
+            <field name="fruit_production_id"/>
+        </field>
+    </field>
+</record>
+
+<record id="search_product_lot_filter" model="ir.ui.view">
+    <field name="name">fruit.stock.production.lot.search</field>
+    <field name="model">stock.production.lot</field>
+    <field name="inherit_id" ref="stock.search_product_lot_filter"/>
+    <field name="arch" type="xml">
+        <field name="product_id" position="after">
+            <separator/>
+            <filter domain="[('product_id.fruit_type', '!=', False)]" string="Fruit Products" name="fruit_products"/>
+        </field>
+    </field>
+</record>
+
+<record id="fruit_stock_production_lot_action" model="ir.actions.act_window">
+    <field name="name">Lots</field>
+    <field name="res_model">stock.production.lot</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{'search_default_fruit_products': True}</field>
+</record>
+
+<menuitem id="fruit_stock_production_lot_menu" action="fruit_stock_production_lot_action" parent="fruit_data_menu" sequence="110"/>
+
+
+</odoo>
+
