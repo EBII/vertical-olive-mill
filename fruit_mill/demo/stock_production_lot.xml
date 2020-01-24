@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Barroux Abbey (https://www.barroux.org/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo noupdate="1">
+
+<record id="juice_shrinkage_lot" model="stock.production.lot">
+    <field name="name">OJUICE-SHRINK</field>
+    <field name="product_id" ref="juice"/>
+</record>
+
+<record id="black_juice_shrinkage_lot" model="stock.production.lot">
+    <field name="name">OJUICEBLACK-SHRINK</field>
+    <field name="product_id" ref="black_juice"/>
+</record>
+
+<record id="juice_organic_shrinkage_lot" model="stock.production.lot">
+    <field name="name">ORG_OJUICE-SHRINK</field>
+    <field name="product_id" ref="juice_organic"/>
+</record>
+
+<record id="juice_conversion_shrinkage_lot" model="stock.production.lot">
+    <field name="name">CONV_OJUICE-SHRINK</field>
+    <field name="product_id" ref="juice_conversion"/>
+</record>
+
+<record id="juice" model="product.product">
+    <field name="shrinkage_prodlot_id" ref="juice_shrinkage_lot"/>
+</record>
+
+<record id="black_juice" model="product.product">
+    <field name="shrinkage_prodlot_id" ref="black_juice_shrinkage_lot"/>
+</record>
+
+<record id="juice_organic" model="product.product">
+    <field name="shrinkage_prodlot_id" ref="juice_organic_shrinkage_lot"/>
+</record>
+
+<record id="juice_conversion" model="product.product">
+    <field name="shrinkage_prodlot_id" ref="juice_conversion_shrinkage_lot"/>
+</record>
+
+</odoo>

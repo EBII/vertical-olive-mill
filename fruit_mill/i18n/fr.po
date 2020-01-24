@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-15 10:55+0000\n"
-"PO-Revision-Date: 2020-01-15 17:48+0100\n"
+"PO-Revision-Date: 2020-01-24 15:44+0100\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,17 +20,17 @@ msgstr ""
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "<span class=\"o_stat_text\">Lended Cases</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">Caisses Prétées</span>"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_form
 msgid "<span class=\"o_stat_text\">Fruits that day</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">Fruits ce jour</span>"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_form
 msgid "<span class=\"o_stat_text\">Palox that day</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">Palox ce jour</span>"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
@@ -39,6 +39,9 @@ msgid ""
 "                <span name=\"fruit_parcel_ko\" attrs=\"{'invisible': ['|', ('fruit_parcel_ko', '=', False), ('partner_id', '=', False)]}\" class=\"label label-warning\">Parcel information incomplete</span>\n"
 "                <span name=\"fruit_organic_certif_ko\" attrs=\"{'invisible': ['|', ('fruit_organic_certif_ko', '=', False), ('partner_id', '=', False)]}\" class=\"label label-success\">Organic certification missing</span>"
 msgstr ""
+"<span name=\"fruit_cultivation_form_ko\" attrs=\"{'invisible': ['|', ('fruit_cultivation_form_ko', '=', False), ('partner_id', '=', False)]}\" class=\"label label-danger\">Formulaire de culture manquant</span>\n"
+"                <span name=\"fruit_parcel_ko\" attrs=\"{'invisible': ['|', ('fruit_parcel_ko', '=', False), ('partner_id', '=', False)]}\" class=\"label label-warning\">Parcel information incomplete</span>\n"
+"                <span name=\"fruit_organic_certif_ko\" attrs=\"{'invisible': ['|', ('fruit_organic_certif_ko', '=', False), ('partner_id', '=', False)]}\" class=\"label label-success\">Certification Bio manquante</span>"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_form
@@ -97,13 +100,13 @@ msgstr "Un rendement au-dessous de cette valeur devrait être considéré comme 
 #: model:product.product,name:fruit_mill.tax_product
 #: model:product.template,name:fruit_mill.tax_product_product_template
 msgid "AFIDOL Tax"
-msgstr ""
+msgstr "Taxe AFIDOL"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_juice_tax_product_id
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_juice_tax_product_id
 msgid "AFIDOL Tax Product"
-msgstr ""
+msgstr "AFIDOL product taxe"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__unsplash_access_key
@@ -118,13 +121,13 @@ msgstr "Compte TaxCloud"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_account_accountant
 msgid "Accounting"
-msgstr ""
+msgstr "Comptabilité"
 
 #. module: fruit_mill
 #: model:product.product,name:fruit_mill.acidity_analysis
 #: model:product.template,name:fruit_mill.acidity_analysis_product_template
 msgid "Acidity Analysis"
-msgstr ""
+msgstr "Analyse d'acidité"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__message_needaction
@@ -177,7 +180,7 @@ msgstr "Autoriser la marge du produit"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_account_check_printing
 msgid "Allow check printing and deposits"
-msgstr "Activer l'impression et le dépôt de chèques "
+msgstr "Activer l'impression et le dépôt de chèques"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_google_calendar
@@ -192,7 +195,7 @@ msgstr "Permettre aux utilisateurs d'importer des fichiers CSV/KLS/XLSX/ODS"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_location__fruit_shrinkage_juice_product_ids
 msgid "Allowed Juice Products"
-msgstr ""
+msgstr "Production de Jus authorisé"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_config_settings__group_sale_pricelist
@@ -266,7 +269,7 @@ msgstr "Rendez vous"
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__appointment_type
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_search
 msgid "Appointment Type"
-msgstr ""
+msgstr "Type de rendez vous"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_appointment_action
@@ -300,7 +303,7 @@ msgstr "Etes vous sur de vouloir  annuler cet apport?"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_warning_form
 msgid "Are you sure you want to force validation?"
-msgstr "Etes vous sur de vouloir forcer la validation"
+msgstr "Êtes vous sur de vouloir forcer la validation?"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_parcel__area
@@ -411,12 +414,12 @@ msgstr "Durée minimum du rendez-vous d'apport en minutes"
 #. module: fruit_mill
 #: selection:fruit.appointment,appointment_type:0
 msgid "Arrival with Leaf Removal"
-msgstr "Apport avec effeuillage "
+msgstr "Apport avec effeuillage"
 
 #. module: fruit_mill
 #: selection:fruit.appointment,appointment_type:0
 msgid "Arrival without Leaf Removal"
-msgstr "Apport avec effeuillage "
+msgstr "Apport avec effeuillage"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_arrival_action
@@ -539,13 +542,13 @@ msgstr "Nomenclature"
 #: model:product.product,name:fruit_mill.black_juice
 #: model:product.template,name:fruit_mill.black_juice_product_template
 msgid "Black Fruity Fruit Juice"
-msgstr ""
+msgstr "'Black Fruity' jus de fruit"
 
 #. module: fruit_mill
 #: model:product.product,name:fruit_mill.black_option_product
 #: model:product.template,name:fruit_mill.black_option_product_product_template
 msgid "Black Fruity Production Option"
-msgstr ""
+msgstr "'Black Fruity' options de Pressage"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_palox__borrow_history_ids
@@ -1088,7 +1091,7 @@ msgstr "Données"
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_line_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_search
 msgid "Date"
-msgstr "Date "
+msgstr "Date"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__done_datetime
@@ -1106,13 +1109,13 @@ msgstr "Jour"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_ratio2force__decanter_duration
 msgid "Decanter Duration"
-msgstr "durée de décantation"
+msgstr "Durée de décantation"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__decanter_speed
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_ratio2force__decanter_speed
 msgid "Decanter Speed"
-msgstr "vitesse de décantation"
+msgstr "Vitesse de décantation"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis_line__decimal_precision
@@ -1147,7 +1150,7 @@ msgstr "Destination du Jus par Défaut"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_season__default_expiry_date
 msgid "Default Juice Expiry Date"
-msgstr "date limite du jus par défaut"
+msgstr "Date limite du jus par défaut"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_juice_production_duration_minutes
@@ -1185,7 +1188,7 @@ msgstr "Taxe d'achat par défaut"
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_config_settings__invoice_reference_type
 msgid "Default Reference Type on Invoices."
-msgstr "Type de référence par Défaut sur les Factures"
+msgstr "Type de référence par Défaut sur les Factures."
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__sale_tax_id
@@ -1202,12 +1205,12 @@ msgstr "Utilisateur par defaut pour l'anlyse du Jus"
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line_extra__uom_id
 #: model:ir.model.fields,help:fruit_mill.field_fruit_juice_picking_container__uom_id
 msgid "Default unit of measure used for all stock operations."
-msgstr "Unité de mesure par défaut utilisée pour toutes les opérations de stock"
+msgstr "Unité de mesure par défaut utilisée pour toutes les opérations de stock."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_partner_organic_certification__certifying_entity_id
 msgid "Default value: same as previous season."
-msgstr "Valeur par Défaut: La même que la saison précedente"
+msgstr "Valeur par Défaut: La même que la saison précedente."
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__group_stock_tracking_lot
@@ -1217,7 +1220,7 @@ msgstr "Colis"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_parcel__density
 msgid "Density"
-msgstr "densité"
+msgstr "Densité"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_picking__dest_location_id
@@ -1358,12 +1361,12 @@ msgstr "Sec"
 #. module: fruit_mill
 #: sql_constraint:fruit.juice.production.day.print:0
 msgid "Duration must be positive."
-msgstr "La durée doit être positive"
+msgstr "La durée doit être positive."
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_day_print__duration_minutes
 msgid "Duration of one Juice Production"
-msgstr "durée d'une production de Jus"
+msgstr "Durée d'une production de Jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_account_reports
@@ -1487,7 +1490,7 @@ msgstr "Dates de péremption"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__expiry_date
 msgid "Expiry Date"
-msgstr "date de péremption "
+msgstr "Date de péremption"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_line_search
@@ -1504,14 +1507,14 @@ msgstr "Serveur de messagerie externe"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__extra_count
 msgid "Extra Item Lines"
-msgstr "Ligne d'article supplémentaire "
+msgstr "Ligne d'article supplémentaire"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__extra_ids
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_pack2check__extra_ids
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_production_pack2check_form
 msgid "Extra Items"
-msgstr "Articles supplémentaires "
+msgstr "Articles supplémentaires"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_arrival_form
@@ -1543,7 +1546,7 @@ msgstr "Articles supplémentaires liés à une ligne d'apport"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Extras"
-msgstr "Suppléments "
+msgstr "Suppléments"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fail_counter
@@ -1819,7 +1822,7 @@ msgstr "Cacher le bouton Pret de Palox et/ou  Caisses"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.partner_organic_certification_form
 msgid "I certify that I have seen the organic certificate of that fruit farmer."
-msgstr "Je certifie avoir vu le certificat Biologique de cet agriculteur"
+msgstr "Je certifie avoir vu le certificat Biologique de cet agriculteur."
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__id
@@ -2077,7 +2080,7 @@ msgstr "Nom dans la vue calendrier"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_parcel__land_registry_ref
 msgid "Land Registry Ref"
-msgstr ""
+msgstr "Ref du registre de zone"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment____last_update
@@ -2128,7 +2131,7 @@ msgstr "Dernière modification le"
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_compensation__compensation_ratio_update_date
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_warehouse__fruit_juice_compensation_ratio_update_date
 msgid "Last Update of the Compensation Ratio"
-msgstr ""
+msgstr "Dernière mise à jour du Ratio de Compensation"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__write_uid
@@ -2231,24 +2234,24 @@ msgstr "Dernier de la journée"
 #: model:product.product,name:fruit_mill.leaf_remove_product
 #: model:product.template,name:fruit_mill.leaf_remove_product_product_template
 msgid "Leaf Removal"
-msgstr ""
+msgstr "Effeuillage"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_juice_leaf_removal_product_id
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_juice_leaf_removal_product_id
 msgid "Leaf Removal Product"
-msgstr ""
+msgstr "Service d'Effeuillage"
 
 #. module: fruit_mill
 #: selection:fruit.palox.case.lend,way:0
 msgid "Lend"
-msgstr ""
+msgstr "Prêt"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_palox_lend_form
 msgid "Lend Palox and/or Cases"
-msgstr ""
+msgstr "Prêt de conteneurs"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_palox_lend_action
@@ -2262,7 +2265,7 @@ msgstr "Prêt palox/caisses"
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_appointment_lend_minutes
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_appointment_lend_minutes
 msgid "Lend Palox/Cases Appointment Default Duration"
-msgstr ""
+msgstr "Durée générique de Rendez vous de type prêt de conteneurs"
 
 #. module: fruit_mill
 #: sql_constraint:res.company:0
@@ -2272,7 +2275,7 @@ msgstr "La durée par défaut du rendez-vous du prêt palox/caisses doit être p
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_palox_search
 msgid "Lended"
-msgstr ""
+msgstr "Pretés"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_lended_case_action
@@ -2286,7 +2289,7 @@ msgstr "Caisses prêtées"
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_lended_organic_case
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_lended_organic_case
 msgid "Lended Organic Case"
-msgstr ""
+msgstr "Prêt de Caisse pour le Bio"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__lended_palox
@@ -2294,19 +2297,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_lended_palox
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Lended Palox"
-msgstr ""
+msgstr "Palox Prétées"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__lended_regular_case
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_lended_regular_case
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_lended_regular_case
 msgid "Lended Regular Case"
-msgstr ""
+msgstr "Caisses Standard Prétées"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__show_line_subtotals_tax_selection
 msgid "Line Subtotals Tax Display"
-msgstr "Affichage de la taxe sur les sous-totaux "
+msgstr "Affichage de la taxe sur les sous-totaux"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__line_ids
@@ -2326,7 +2329,7 @@ msgstr "Lignes"
 #: model:product.template,uom_name:fruit_mill.juice_product_template
 #: model:product.template,uom_name:fruit_mill.tax_product_product_template
 msgid "Liter(s)"
-msgstr ""
+msgstr "Litre(s)"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.view_warehouse
@@ -2341,12 +2344,12 @@ msgstr "Jus d'fruit en vrac : Lignes du contenant"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__lot_name
 msgid "Lot"
-msgstr ""
+msgstr "Lot"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__lot_type
 msgid "Lot Type"
-msgstr ""
+msgstr "Lot Type"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_stock_production_lot
@@ -2357,7 +2360,7 @@ msgstr "Lot/N° série"
 #: model:ir.actions.act_window,name:fruit_mill.fruit_stock_production_lot_action
 #: model:ir.ui.menu,name:fruit_mill.fruit_stock_production_lot_menu
 msgid "Lots"
-msgstr ""
+msgstr "Lots"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__group_stock_production_lot
@@ -2381,7 +2384,7 @@ msgstr "Pièce jointe principale"
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_config_settings__currency_id
 msgid "Main currency of the company."
-msgstr "Devise principale de la société"
+msgstr "Devise principale de la société."
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_inter_company_rules
@@ -2396,7 +2399,7 @@ msgstr "Gérer plusieurs sociétés"
 #. module: fruit_mill
 #: selection:fruit.config.settings,module_procurement_jit:0
 msgid "Manually or based on automatic scheduler"
-msgstr ""
+msgstr "Manuellement ou d'après une programmation automatique"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__manufacturing_lead
@@ -2406,19 +2409,19 @@ msgstr "Délai de fabrication"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_mrp_mps
 msgid "Master Production Schedule"
-msgstr "Pdp"
+msgstr "Calendrier principal de production"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_harvest_arrival_max_delta_days
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_harvest_arrival_max_delta_days
 msgid "Maximum Delay Between Harvest Start Date and Arrival Date"
-msgstr ""
+msgstr "Délai maximal entre la date de début de la récolte et la date d’arrivée"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_max_qty_per_palox
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_max_qty_per_palox
 msgid "Maximum Quantity of Fruits per Palox"
-msgstr ""
+msgstr "Quantité Maximum de Fruit par palox"
 
 #. module: fruit_mill
 #: sql_constraint:res.company:0
@@ -2429,7 +2432,7 @@ msgstr "La quantité maxi d'fruits par palox doit être positive."
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_max_ratio
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_max_ratio
 msgid "Maximum Ratio"
-msgstr ""
+msgstr "Ration Maximum"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__message_has_error
@@ -2447,7 +2450,7 @@ msgstr "Erreur d'envoi du message"
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis__message_ids
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 #. module: fruit_mill
 #: selection:fruit.parcel,irrigation:0
@@ -2463,7 +2466,7 @@ msgstr "Delta minimum pour la propagation"
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_min_ratio
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_min_ratio
 msgid "Minimum Ratio"
-msgstr ""
+msgstr "Ration Minimum"
 
 #. module: fruit_mill
 #: selection:fruit.appointment,juice_destination:0
@@ -2479,12 +2482,12 @@ msgstr "Mixte"
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_search
 msgid "Month"
-msgstr ""
+msgstr "Mois"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_warning__msg
 msgid "Msg"
-msgstr ""
+msgstr "Msg"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__group_multi_currency
@@ -2504,92 +2507,92 @@ msgstr "Multi-Entrepôts"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n1_juice_qty_net
 msgid "N-1 Net Juice Qty (L)"
-msgstr ""
+msgstr "N-1 Quantité Net de Jus(L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n1_ratio_net
 msgid "N-1 Net Ratio (%)"
-msgstr ""
+msgstr "N-1 Ratio Net (%)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n1_fruit_qty
 msgid "N-1 Fruit Qty (kg)"
-msgstr ""
+msgstr "N-1 Quantité de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n1_sale_juice_qty
 msgid "N-1 Sale Juice Qty (L)"
-msgstr ""
+msgstr "N-1 Quantité de Jus (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n1_sale_fruit_qty
 msgid "N-1 Sale Fruit Qty (kg)"
-msgstr ""
+msgstr "N-1 Quantité de Fruit (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n1_season_id
 msgid "N-1 Season"
-msgstr ""
+msgstr "Saison N-1"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n2_juice_qty_net
 msgid "N-2 Net Juice Qty (L)"
-msgstr ""
+msgstr "N-2 Quantité Net de Jus(L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n2_ratio_net
 msgid "N-2 Net Ratio (%)"
-msgstr ""
+msgstr "N-2 Ratio Net (%)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n2_fruit_qty
 msgid "N-2 Fruit Qty (kg)"
-msgstr ""
+msgstr "N-2 Quantité de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n2_sale_juice_qty
 msgid "N-2 Sale Juice Qty (L)"
-msgstr ""
+msgstr "N-2 Quantité Net de Jus(L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n2_sale_fruit_qty
 msgid "N-2 Sale Fruit Qty (kg)"
-msgstr ""
+msgstr "N-2 Quantité de Fruit (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n2_season_id
 msgid "N-2 Season"
-msgstr ""
+msgstr "Saison N-2"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n3_juice_qty_net
 msgid "N-3 Net Juice Qty (L)"
-msgstr ""
+msgstr "N-3 Quantité Net de Jus(L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n3_ratio_net
 msgid "N-3 Net Ratio (%)"
-msgstr ""
+msgstr "N-3 Ratio Net (%)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n3_fruit_qty
 msgid "N-3 Fruit Qty (kg)"
-msgstr ""
+msgstr "N-3 Quantité de Fruits (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n3_sale_juice_qty
 msgid "N-3 Sale Juice Qty (L)"
-msgstr ""
+msgstr "N-3 Quantité de Jus (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n3_sale_fruit_qty
 msgid "N-3 Sale Fruit Qty (kg)"
-msgstr ""
+msgstr "N-3 Quantité de Fruits (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__n3_season_id
 msgid "N-3 Season"
-msgstr ""
+msgstr "Saison N-3"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_ochard__name
@@ -2603,7 +2606,7 @@ msgstr "Nom"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.organic_certifying_entity_search
 msgid "Name or Code"
-msgstr ""
+msgstr "Nom ou Code"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_juice_qty_current_season
@@ -2612,24 +2615,24 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Net Juice Qty"
-msgstr ""
+msgstr "Quantité Net de Jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__juice_qty_net
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_qty_net
 msgid "Net Juice Qty (L)"
-msgstr ""
+msgstr "N-1 Quantité Net de Jus(L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_juice_ratio_current_season
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_juice_ratio_current_season
 msgid "Net Juice Ratio"
-msgstr ""
+msgstr "Ratio Net de Jus"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Net Ratio"
-msgstr ""
+msgstr "Ration Net"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival__juice_qty_net
@@ -2641,18 +2644,23 @@ msgid ""
 "Shrinkage: already deducted.\n"
 "Filter loss: already deducted."
 msgstr ""
+"Quantité nette de jus produite en litres.\n"
+"Indemnité de premier jour : incluse.\n"
+"Indemnité de dernier jour : déjà déduite.\n"
+"Rétrécissement : déjà déduit.\n"
+"Perte de filtre : déjà déduite."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_res_partner__fruit_juice_ratio_current_season
 #: model:ir.model.fields,help:fruit_mill.field_res_users__fruit_juice_ratio_current_season
 msgid "Net juice ratio for the current season in percentage"
-msgstr ""
+msgstr "Ratio net de jus pour la saison en cours en pourcentage"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_res_partner__fruit_juice_qty_current_season
 #: model:ir.model.fields,help:fruit_mill.field_res_users__fruit_juice_qty_current_season
 msgid "Net fruit juice producted for the current season in liters"
-msgstr ""
+msgstr "Jus de fruits net produit pour la saison en cours en litres"
 
 #. module: fruit_mill
 #: selection:fruit.juice.bottling,lot_type:0
@@ -2662,27 +2670,27 @@ msgstr "Nouveau"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_form
 msgid "New After This"
-msgstr ""
+msgstr "Nouveau après ceci"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_form
 msgid "New Appointment"
-msgstr ""
+msgstr "Nouveau Rendez Vous"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_product_swap__new_juice_product_id
 msgid "New Juice Type"
-msgstr ""
+msgstr "Nouvelle Sorte de Jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_product_swap__sale_location_id
 msgid "New Sale Tank"
-msgstr ""
+msgstr "Nouvelle Cuve de Vente"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_form
 msgid "New Withdrawal"
-msgstr ""
+msgstr "Nouveau Retrait"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_bottling_form
@@ -2692,7 +2700,7 @@ msgstr "Suivante"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_picking__fruit_juice_picking_wizard_next_move_id
 msgid "Next Move for Fruit Juice Picking Wizard"
-msgstr ""
+msgstr "Assistant Prochaine Extraction de jus de fruits"
 
 #. module: fruit_mill
 #: selection:fruit.juice.bottling,inventory_required:0
@@ -2718,24 +2726,24 @@ msgstr "Pas de traitement"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_search
 msgid "Not Cancelled"
-msgstr ""
+msgstr "Non annulé"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_palox_search
 msgid "Not Empty"
-msgstr ""
+msgstr "Non Vide"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line_extra__fruit_bottle_free_full
 #: model:ir.model.fields,field_description:fruit_mill.field_product_product__fruit_bottle_free_full
 #: model:ir.model.fields,field_description:fruit_mill.field_product_template__fruit_bottle_free_full
 msgid "Not Invoiced when Full"
-msgstr ""
+msgstr "Non facturé lorsqu’il est complet"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_palox_search
 msgid "Not Lended"
-msgstr ""
+msgstr "Non Prété"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__name
@@ -2743,7 +2751,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_lended_case__notes
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_parcel__notes
 msgid "Notes"
-msgstr ""
+msgstr "Notes"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_palox__name
@@ -2762,22 +2770,22 @@ msgstr "Nombre d'actions"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__lend_organic_case_qty
 msgid "Number of Organic Cases"
-msgstr ""
+msgstr "Nombre de Caisses pour le Bio"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__lend_palox_qty
 msgid "Number of Palox"
-msgstr ""
+msgstr "Nombre de Palox"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__lend_regular_case_qty
 msgid "Number of Regular Cases"
-msgstr ""
+msgstr "Nombre de Caisses Standard"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_parcel__tree_qty
 msgid "Number of Trees"
-msgstr ""
+msgstr "Nombre d'arbres"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__message_has_error_counter
@@ -2812,7 +2820,7 @@ msgstr "Nombre de messages avec des erreurs d'envoi"
 #: model:ir.model.fields,help:fruit_mill.field_res_company__fruit_appointment_arrival_leaf_removal_minutes
 #: model:ir.model.fields,help:fruit_mill.field_res_company__fruit_appointment_arrival_no_leaf_removal_minutes
 msgid "Number of minutes per 100 kg of fruits"
-msgstr ""
+msgstr "Nombre de minutes pour 10KG de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_appointment__message_unread_counter
@@ -2826,7 +2834,7 @@ msgstr "Nombre de messages non lus"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_palox_search
 msgid "Number or Label"
-msgstr ""
+msgstr "Nombre de message non lus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__ochard_id
@@ -2834,12 +2842,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_parcel_search
 msgid "Ochard"
-msgstr ""
+msgstr "Verger"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_ochard_form
 msgid "Ochard Name"
-msgstr ""
+msgstr "Nom du Verger"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_ochard_action
@@ -2863,19 +2871,19 @@ msgstr "Lignes d'analyse de jus"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__bottle_product_id
 msgid "Juice Bottle to Produce"
-msgstr ""
+msgstr "Bouteille de jus Produites"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__compensation_juice_qty
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_compensation__compensation_last_juice_qty
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_ratio2force__compensation_juice_qty
 msgid "Juice Compensation (L)"
-msgstr ""
+msgstr "Jus en Compensation (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__compensation_juice_qty_kg
 msgid "Juice Compensation (kg)"
-msgstr ""
+msgstr "Jus en Compensation (Kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__juice_destination
@@ -2886,35 +2894,35 @@ msgstr ""
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_palox__juice_destination
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
 msgid "Juice Destination"
-msgstr ""
+msgstr "Destination du Jus"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 msgid "Juice Gross Ratio"
-msgstr ""
+msgstr "Ratio Brut de jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_ratio
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_pack2check__line_juice_ratio
 msgid "Juice Gross Ratio (% L)"
-msgstr ""
+msgstr "Ratio Brut de jus (% L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis__lot_id
 msgid "Juice Lot"
-msgstr ""
+msgstr "Lot de Jus"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 msgid "Juice Net Ratio"
-msgstr ""
+msgstr "Ratio Net de Jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__juice_ratio_net
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_ratio_net
 msgid "Juice Net Ratio (% L)"
-msgstr ""
+msgstr "Ratio Net de Jus (% L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_sale_pricelist_line__product_id
@@ -2922,17 +2930,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_line_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_search
 msgid "Juice Product"
-msgstr ""
+msgstr "Jus produit"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_config_settings_form
 msgid "Juice Production"
-msgstr ""
+msgstr "Production de jus"
 
 #. module: fruit_mill
 #: sql_constraint:res.company:0
 msgid "Juice Production Duration must be positive."
-msgstr "La durée de production de jus doit être positive"
+msgstr "La durée de production de jus doit être positive."
 
 #. module: fruit_mill
 #: sql_constraint:res.company:0
@@ -2955,131 +2963,131 @@ msgstr "Presses"
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_production_ratio2force_form
 msgid "Juice Qty"
-msgstr ""
+msgstr "Quantité de jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_qty
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_ratio2force__juice_qty
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll_line__juice_qty
 msgid "Juice Qty (L)"
-msgstr ""
+msgstr "Quantité de jus (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_qty_kg
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_ratio2force__juice_qty_kg
 msgid "Juice Qty (kg)"
-msgstr ""
+msgstr "Quantité de jus (kg)"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 msgid "Juice Qty Lost in Filter"
-msgstr ""
+msgstr "Quantité de jus Perdu au Filtre"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__filter_loss_juice_qty
 msgid "Juice Qty Lost in Filter (L)"
-msgstr ""
+msgstr "Quantité de jus Perdu au Filtre"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_sale_juice_qty_current_season
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_sale_juice_qty_current_season
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 msgid "Juice Qty Sold"
-msgstr ""
+msgstr "Quantité de jus Vendu"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__sale_juice_qty
 msgid "Juice Qty Sold (L)"
-msgstr ""
+msgstr "Quantité de jus vendu (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__juice_qty
 msgid "Juice Qty for Bottling"
-msgstr ""
+msgstr "Quantité de Jus pour  la mise en bouteille"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__src_location_end_qty
 msgid "Juice Qty in Tank after Bottling"
-msgstr ""
+msgstr "Quantité de jus restant après  la mise en bouteille"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__src_location_start_qty
 msgid "Juice Qty in Tank before Bottling"
-msgstr ""
+msgstr "Quantité de Jus dans la cuve avant la mise en bouteille"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__to_compensation_sale_tank_juice_qty
 msgid "Juice Qty to Compensation Sale Tank (L)"
-msgstr ""
+msgstr "Quantité de jus en Compensation Cuve de Vente(L)"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 msgid "Juice Qty to Sale Tank"
-msgstr ""
+msgstr "Quantité de jus Cuve de Vente"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__to_sale_tank_juice_qty
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__to_sale_tank_juice_qty
 msgid "Juice Qty to Sale Tank (L)"
-msgstr ""
+msgstr "Quantité de jus Cuve de Vente (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_juice_qty_to_withdraw
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_juice_qty_to_withdraw
 msgid "Juice Qty to Withdraw"
-msgstr ""
+msgstr "Quantité de jus à retirer"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 msgid "Juice Qty with Compensation"
-msgstr ""
+msgstr "Quantité de jus avec compensation"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_qty_with_compensation
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_season__juice_qty_with_compensation
 msgid "Juice Qty with Compensation (L)"
-msgstr ""
+msgstr "Quantité de jus avec compensation (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__juice_qty
 msgid "Juice Quantity (L)"
-msgstr ""
+msgstr "Quantité de jus (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__juice_qty_kg
 msgid "Juice Quantity (kg)"
-msgstr ""
+msgstr "Quantité de jus (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_tank_transfer__quantity
 msgid "Juice Quantity to Transfer (L)"
-msgstr ""
+msgstr "Quantité de jus à Transferer (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_sale_price_total
 msgid "Juice Sale Price Total"
-msgstr ""
+msgstr "Prix total de vente du Jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_sale_price_unit
 msgid "Juice Sale Unit Price"
-msgstr ""
+msgstr "Prix unitaire de vente de Jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_service_sale_price_total
 msgid "Juice Service Price Total (Sale Only)"
-msgstr ""
+msgstr "Prix Total du Service de Jus(Vente Seulement)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__juice_service_sale_price_unit
 msgid "Juice Service Unit Price (Sale Only)"
-msgstr ""
+msgstr "Prix unitaire du Service de Jus(Vente Seulement)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis__juice_source_type
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis_line__juice_source_type
 msgid "Juice Source Type"
-msgstr ""
+msgstr "Type de Source de jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis__location_id
@@ -3088,7 +3096,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_line_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_search
 msgid "Juice Tank"
-msgstr ""
+msgstr "Cuve de Jus"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_juice_tank_merge_action
@@ -3099,7 +3107,7 @@ msgstr "Fusion de cuve"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__src_location_end_status
 msgid "Juice Tank Status at End of Bottling"
-msgstr ""
+msgstr "Etat de la Cuve à la Fin de la Mise en Bouteille"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_juice_tank_transfer_action
@@ -3121,7 +3129,7 @@ msgstr "Transfert de cuve"
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll_line__juice_product_id
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_line_search
 msgid "Juice Type"
-msgstr ""
+msgstr "Type de Jus"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_withdrawal_action
@@ -3132,7 +3140,7 @@ msgstr "Retrait de jus"
 #. module: fruit_mill
 #: sql_constraint:stock.warehouse:0
 msgid "Juice compensation ratio must be positive or null."
-msgstr "Le rendement de l'jus de compensation doit être positif ou nul."
+msgstr "Le rendement du jus de compensation doit être positif ou nul."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__juice_qty_kg
@@ -3143,6 +3151,11 @@ msgid ""
 "Shrinkage: not deducted.\n"
 "Filter loss: not deducted."
 msgstr ""
+"Quantité de jus en kg.\n"
+"Indemnité de premier jour : non comprise.\n"
+"Indemnité de dernier jour : déjà déduite.\n"
+"Retrait : non déduit.\n"
+"Perte de filtre : non déduite."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__juice_qty
@@ -3153,6 +3166,11 @@ msgid ""
 "Shrinkage: not deducted.\n"
 "Filter loss: not deducted."
 msgstr ""
+"Quantité de jus en litres.\n"
+"Indemnité de premier jour : non comprise.\n"
+"Indemnité de dernier jour : déjà déduite.\n"
+"Retrait : non déduit.\n"
+"Perte de filtre : non déduite."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__sale_juice_qty
@@ -3163,6 +3181,11 @@ msgid ""
 "Shrinkage: already deducted.\n"
 "Filter loss: already deducted."
 msgstr ""
+"Quantité de jus vendue en litres.\n"
+"Indemnité de premier jour : incluse.\n"
+"Indemnité de dernier jour : déjà déduite.\n"
+"Retrait : déjà déduit.\n"
+"Perte de filtre : déjà déduite."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__juice_qty_with_compensation
@@ -3173,11 +3196,16 @@ msgid ""
 "Shrinkage: not deducted.\n"
 "Filter loss: not deducted."
 msgstr ""
+"Quantité de jus avec compensation en litres.\n"
+"Indemnité de premier jour : incluse.\n"
+"Indemnité de dernier jour : déjà déduite.\n"
+"Retrait : non déduit.\n"
+"Perte de filtre : non déduite."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__juice_sale_price_unit
 msgid "Juice sale price per liter without taxes in company currency."
-msgstr ""
+msgstr "Jus prix de vente par litre sans taxes dans la monnaie de l’entreprise."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__to_sale_tank_juice_qty
@@ -3188,6 +3216,11 @@ msgid ""
 "Shrinkage: not deducted (because we take shrinkage in sale tank).\n"
 "Filter loss: already deducted."
 msgstr ""
+"Jus envoyé à une cuve de vente en litres.\n"
+"Indemnité de premier jour : non comprise.\n"
+"Indemnité de dernier jour : déjà déduite.\n"
+"retrait : non déduit (parce que nous prenons le retrait dans le réservoir de vente).\n"
+"Perte de filtre : déjà déduite."
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_appointment
@@ -3204,7 +3237,7 @@ msgstr "Apport d'fruits"
 #: model:ir.model,name:fruit_mill.model_fruit_arrival_line
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_arrival_form
 msgid "Fruit Arrival Line"
-msgstr "Ligne d'apport d'fruits"
+msgstr "Ligne d'apport de fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
@@ -3213,19 +3246,19 @@ msgstr "Ligne d'apport d'fruits"
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_tree
 #: model_terms:ir.ui.view,arch_db:fruit_mill.partner_fruit_arrival_line_pivot
 msgid "Fruit Arrival Lines"
-msgstr ""
+msgstr "Lignes d'apport de fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_warning_form
 msgid "Fruit Arrival Warnings"
-msgstr ""
+msgstr "Alerte Apport de Fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_graph
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_pivot
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_tree
 msgid "Fruit Arrivals"
-msgstr ""
+msgstr "Apport de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__compensation_last_fruit_qty
@@ -3233,12 +3266,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_ratio2force__compensation_last_fruit_qty
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_production_ratio2force_form
 msgid "Fruit Compensation Qty"
-msgstr ""
+msgstr "Quantité de compensation en Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_warehouse__fruit_compensation_last_qty
 msgid "Fruit Compensation Quantity"
-msgstr ""
+msgstr "Quantité de compensation en Fruits"
 
 #. module: fruit_mill
 #: sql_constraint:stock.warehouse:0
@@ -3261,12 +3294,12 @@ msgstr "Fiche de culture"
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_culture_type
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_culture_type
 msgid "Fruit Culture Type"
-msgstr ""
+msgstr "Type de Culture"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__fruit_culture_type_logo
 msgid "Fruit Culture Type Logo"
-msgstr ""
+msgstr "Logo du type de Culture"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__partner_id
@@ -3287,12 +3320,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_line_search
 msgid "Fruit Farmer"
-msgstr ""
+msgstr "Fruiticulteur"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_invoice_create_form
 msgid "Fruit Invoice Create"
-msgstr ""
+msgstr "Creation Facture de Fruit"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_lended_case
@@ -3331,12 +3364,12 @@ msgstr "Le rendement mini doit être positif."
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Fruit Net Ratio"
-msgstr ""
+msgstr "Ration Net Fruit"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__fruit_ratio_net
 msgid "Fruit Net Ratio (kg / L)"
-msgstr ""
+msgstr "Ratio Net Fruit (kg / L)"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_ochard
@@ -3350,7 +3383,7 @@ msgstr "Verger d'oliviers"
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_ochard_pivot
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_ochard_tree
 msgid "Fruit Ochards"
-msgstr ""
+msgstr "Vergers d'oliviers"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.view_location_form
@@ -3371,7 +3404,7 @@ msgstr "Analyse de jus d'fruit"
 #: model:ir.model.fields,field_description:fruit_mill.field_product_product__fruit_analysis_decimal_precision
 #: model:ir.model.fields,field_description:fruit_mill.field_product_template__fruit_analysis_decimal_precision
 msgid "Fruit Juice Analysis Decimal Precision"
-msgstr ""
+msgstr "Décimal Précision des Analyses"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_juice_analysis_line
@@ -3382,31 +3415,31 @@ msgstr "Ligne d'analyse de jus d'fruit"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_line_tree
 msgid "Fruit Juice Analysis Lines"
-msgstr ""
+msgstr "Lignes d'Analyse des Fruits"
 
 #. module: fruit_mill
 #: model:product.product,name:fruit_mill.bottle
 #: model:product.template,name:fruit_mill.bottle_product_template
 msgid "Fruit Juice Bottle"
-msgstr ""
+msgstr "Bouteilles de Jus de Fruit"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_juice_bottling_action
 #: model:ir.ui.menu,name:fruit_mill.fruit_juice_bottling_menu
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_bottling_form
 msgid "Fruit Juice Bottling"
-msgstr "Mise en bouteille de jus d'fruit"
+msgstr "Mise en bouteille de jus de fruit"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_warehouse__fruit_compensation_loc_id
 msgid "Fruit Juice Compensation Tank"
-msgstr ""
+msgstr "Cuve de Compensation en Jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_juice_density
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_juice_density
 msgid "Fruit Juice Density"
-msgstr ""
+msgstr "Densité du Jus de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_juice_production
@@ -3433,59 +3466,59 @@ msgstr "Presse de jus d'fruit - Rendement imposé"
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_juice_production_pack2check
 msgid "Fruit Juice Production Pack2check"
-msgstr ""
+msgstr "Production de Jus de Fruit Pack2check"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_juice_production_ratio2force_action
 #: model:ir.model,name:fruit_mill.model_fruit_juice_production_ratio2force
 msgid "Fruit Juice Production Ratio2force"
-msgstr ""
+msgstr "Production de Jus de Fruit Ratio2Force"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_juice_production_pack2check_action
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_production_pack2check_form
 msgid "Fruit Juice Production pack2check"
-msgstr ""
+msgstr "Production de Jus de Fruit Pack2check"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_production_ratio2force_form
 msgid "Fruit Juice Production: Enter Result"
-msgstr ""
+msgstr "Production de Jus de Fruit: entrer le réssultat"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.view_location_form
 msgid "Fruit Juice Qty"
-msgstr ""
+msgstr "Quantité Jus de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_location__fruit_juice_qty
 msgid "Fruit Juice Qty (L)"
-msgstr ""
+msgstr "Quantité Jus de Fruits (L)"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.view_location_search
 msgid "Fruit Juice Tank"
-msgstr ""
+msgstr "Cuve de Jus de Fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_tank_merge_form
 msgid "Fruit Juice Tank Merge"
-msgstr ""
+msgstr "Fusion de Cuves de Jus de Fruit"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_tank_transfer_form
 msgid "Fruit Juice Tank Transfer"
-msgstr ""
+msgstr "Transfer de Cuve de Jus de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_location__fruit_tank_type
 msgid "Fruit Juice Tank Type"
-msgstr ""
+msgstr "Type de Cuve de Jus de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_warehouse__fruit_withdrawal_loc_id
 msgid "Fruit Juice Withdrawal Location"
-msgstr ""
+msgstr "Emplacement de retrait du jus de Fruit"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_palox
@@ -3503,17 +3536,17 @@ msgstr "Palox - Historique des prêts"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_parcel_form
 msgid "Fruit Parcel"
-msgstr ""
+msgstr "Parcelle de fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_parcel_tree
 msgid "Fruit Parcels"
-msgstr ""
+msgstr "Parcelles de fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.search_product_lot_filter
 msgid "Fruit Products"
-msgstr ""
+msgstr "Production de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__fruit_qty
@@ -3522,35 +3555,35 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Fruit Qty"
-msgstr ""
+msgstr "Quantité de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__fruit_qty
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll_line__fruit_qty
 msgid "Fruit Qty (kg)"
-msgstr ""
+msgstr "Quantité de Fruits (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_qty_current_season
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_qty_current_season
 msgid "Fruit Qty Brought"
-msgstr ""
+msgstr "Quantité de Fruits Achetés"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Fruit Qty Pressed"
-msgstr ""
+msgstr "Quantité de Fruit Préssés"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__fruit_qty_pressed
 msgid "Fruit Qty Pressed (kg)"
-msgstr ""
+msgstr "Quantité de Fruits Pressés(kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_qty_triturated_current_season
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_qty_triturated_current_season
 msgid "Fruit Qty Triturated"
-msgstr ""
+msgstr "Quantité de fruits"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_sale_pricelist
@@ -3567,12 +3600,12 @@ msgstr "Ligne de liste de prix de vente de jus"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_sale_pricelist_line_tree
 msgid "Fruit Sale Pricelist Lines"
-msgstr ""
+msgstr "Lignes de liste de prix de vente de jus"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_sale_pricelist_tree
 msgid "Fruit Sale Pricelists"
-msgstr ""
+msgstr "liste de prix de vente de fruits"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_season
@@ -3584,18 +3617,18 @@ msgstr "Campagne"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_season_tree
 msgid "Fruit Seasons"
-msgstr ""
+msgstr "Campagnes"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_picking__src_location_id
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_tank_merge__location_id
 msgid "Fruit Tank"
-msgstr ""
+msgstr "Cuve de Fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.view_location_search
 msgid "Fruit Tank Type"
-msgstr ""
+msgstr "type de Cuve de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_treatment
@@ -3606,7 +3639,7 @@ msgstr "Trituration des fruits"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_treatment_tree
 msgid "Fruit Treatments"
-msgstr ""
+msgstr "Traitements des Fruits"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_parcel
@@ -3616,7 +3649,7 @@ msgstr "Parcelle d'oliviers"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Fruit Trees"
-msgstr ""
+msgstr "Arbres Fruitiers"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line_extra__product_fruit_type
@@ -3624,7 +3657,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fruit_mill.field_product_template__fruit_type
 #: model_terms:ir.ui.view,arch_db:fruit_mill.product_template_search_view
 msgid "Fruit Type"
-msgstr ""
+msgstr "Type de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_variant
@@ -3634,7 +3667,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_variant_form
 msgid "Fruit Variant"
-msgstr "Variété d'fruits"
+msgstr "Variété de fruits"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_variant_action
@@ -3643,12 +3676,12 @@ msgstr "Variété d'fruits"
 #: model:ir.ui.menu,name:fruit_mill.fruit_variant_menu
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_variant_tree
 msgid "Fruit Variants"
-msgstr "Variétés d'fruits"
+msgstr "Variétés de fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_withdrawal_form
 msgid "Fruit Withdrawal"
-msgstr ""
+msgstr "Retrait de Fruits"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_arrival_warning
@@ -3659,13 +3692,13 @@ msgstr "Avertissement apport d'fruits"
 #: model:ir.model.fields,help:fruit_mill.field_fruit_juice_production__compensation_last_fruit_qty
 #: model:ir.model.fields,help:fruit_mill.field_fruit_juice_production_ratio2force__compensation_last_fruit_qty
 msgid "Fruit compensation in kg"
-msgstr ""
+msgstr "Compensation de Fruits en kg"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_config_settings__fruit_juice_density
 #: model:ir.model.fields,help:fruit_mill.field_res_company__fruit_juice_density
 msgid "Fruit juice density in kg per liter"
-msgstr ""
+msgstr "Densité du jus de fruits en kg par litre"
 
 #. module: fruit_mill
 #: sql_constraint:res.company:0
@@ -3676,12 +3709,12 @@ msgstr "La densité de jus d'fruit doit être strictement positive."
 #: model:ir.model.fields,help:fruit_mill.field_res_partner__fruit_juice_qty_to_withdraw
 #: model:ir.model.fields,help:fruit_mill.field_res_users__fruit_juice_qty_to_withdraw
 msgid "Fruit juice to withdraw in liters"
-msgstr ""
+msgstr "Retrait de jus de fruits en litres"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_appointment__qty
 msgid "Fruit quantity in kg"
-msgstr ""
+msgstr "Quantité de fruits en Kg"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__fruit_qty
@@ -3690,29 +3723,32 @@ msgid ""
 "First-of-day compensation: not included.\n"
 "Last-of-day compensation: not deducted."
 msgstr ""
+"Quantité de fruits en kg.\n"
+"Indemnité de premier jour : non comprise.\n"
+"Indemnité de dernier jour : non déduite."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_juice_production__fruit_qty
 #: model:ir.model.fields,help:fruit_mill.field_fruit_juice_production_ratio2force__fruit_qty
 msgid "Fruit quantity without compensation in kg"
-msgstr ""
+msgstr "Quantité de fruits en kg sans compensation"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_res_partner__fruit_qty_current_season
 #: model:ir.model.fields,help:fruit_mill.field_res_users__fruit_qty_current_season
 msgid "Fruits brought for the current season in kg"
-msgstr ""
+msgstr "Fruits achetés pour la campagne en cours en kg"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_res_partner__fruit_qty_triturated_current_season
 #: model:ir.model.fields,help:fruit_mill.field_res_users__fruit_qty_triturated_current_season
 msgid "Fruits triturated for the current season in kg"
-msgstr ""
+msgstr "Fruits triturer pour la campagne en cours en kg"
 
 #. module: fruit_mill
 #: selection:fruit.config.settings,auth_signup_uninvited:0
 msgid "On invitation"
-msgstr ""
+msgstr "sur Invitation"
 
 #. module: fruit_mill
 #: model:ir.ui.menu,name:fruit_mill.fruit_operations_menu
@@ -3722,7 +3758,7 @@ msgstr "Opérations"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__operator_user_id
 msgid "Operator"
-msgstr ""
+msgstr "Operateur"
 
 #. module: fruit_mill
 #: selection:fruit.arrival.line,ripeness:0
@@ -3732,7 +3768,7 @@ msgstr "Optimales"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__day_position
 msgid "Order"
-msgstr ""
+msgstr "Commande"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
@@ -3744,22 +3780,22 @@ msgstr "Bio"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_palox_case_lend__organic_case_qty
 msgid "Organic Case Qty"
-msgstr ""
+msgstr "Quantité de caisses pour le Bio"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_lended_case__organic_qty
 msgid "Organic Case Quantity"
-msgstr ""
+msgstr "Quantité de caisses pour le Bio"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_warehouse__fruit_organic_case_total
 msgid "Organic Cases Total"
-msgstr ""
+msgstr "Total de caisses pour le Bio"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_warehouse__fruit_organic_case_stock
 msgid "Organic Cases in Stock"
-msgstr ""
+msgstr "Caisses pour le Bio En stock"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.organic_certifying_entity_action
@@ -3775,7 +3811,7 @@ msgstr "Organismes de certification bio"
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_organic_certif_ko
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_organic_certif_ko
 msgid "Organic Certification Missing"
-msgstr ""
+msgstr "Certification Bio manquantes"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.partner_organic_certification_action
@@ -3792,12 +3828,12 @@ msgstr "Certifications bio"
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_organic_certified_logo
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_organic_certified_logo
 msgid "Organic Certified Logo"
-msgstr ""
+msgstr "Logo de Certification Bio"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.organic_certifying_entity_tree
 msgid "Organic Certifying Entities"
-msgstr ""
+msgstr "Organismes de certification bio"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_organic_certifying_entity
@@ -3809,25 +3845,25 @@ msgstr "Organisme de certification bio"
 #: model:product.product,name:fruit_mill.juice_conversion
 #: model:product.template,name:fruit_mill.juice_conversion_product_template
 msgid "Organic Conversion Juice"
-msgstr ""
+msgstr "Jus en conversion au Bio"
 
 #. module: fruit_mill
 #: model:product.product,name:fruit_mill.juice_organic
 #: model:product.template,name:fruit_mill.juice_organic_product_template
 msgid "Organic Fruit Juice"
-msgstr ""
+msgstr "Jus de Fruit Bio"
 
 #. module: fruit_mill
 #: model:product.product,name:fruit_mill.bottle_organic
 #: model:product.template,name:fruit_mill.bottle_organic_product_template
 msgid "Organic Fruit Juice Bottle"
-msgstr ""
+msgstr "Bouteille de jus de fruits Bio"
 
 #. module: fruit_mill
 #: model:product.product,name:fruit_mill.organic_option_product
 #: model:product.template,name:fruit_mill.organic_option_product_product_template
 msgid "Organic Production Option"
-msgstr ""
+msgstr "Ooption de production Bio"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_search
@@ -3838,7 +3874,7 @@ msgstr "Autre"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__returned_palox_ids
 msgid "Other Returned Palox"
-msgstr ""
+msgstr "Autre Retour de Palox"
 
 #. module: fruit_mill
 #: selection:fruit.arrival.line,ripeness:0
@@ -3869,7 +3905,7 @@ msgstr "Conditionnement"
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_palox_case_lend__return_palox_ids
 #: model:ir.ui.menu,name:fruit_mill.fruit_palox_menu
 msgid "Palox"
-msgstr ""
+msgstr "Palox"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_palox_borrow_history_action
@@ -3880,7 +3916,7 @@ msgstr "Palox - Historique des prêts"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_palox_form
 msgid "Palox Number"
-msgstr ""
+msgstr "Numéro de palox"
 
 #. module: fruit_mill
 #: selection:fruit.juice.production,state:0
@@ -3890,12 +3926,12 @@ msgstr "Sélection de palox"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_arrival_form
 msgid "Palox Weight"
-msgstr ""
+msgstr "Poids du Palox"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_palox_generate_production__palox_ids
 msgid "Paloxes"
-msgstr ""
+msgstr "Paloxs"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__paperformat_id
@@ -3910,7 +3946,7 @@ msgstr "Format du papier"
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_parcel_ko
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_parcel_ko
 msgid "Parcel Information Incomplete"
-msgstr ""
+msgstr "informations Incomplètes sur la parcelle"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_parcel_action
@@ -3934,63 +3970,63 @@ msgstr "Partenaire"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_season__partner_organic_certif_generated
 msgid "Partner Organic Certif Generated"
-msgstr ""
+msgstr "Certificat Bio du partenaire créé"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__past_average_juice_qty_net
 msgid "Past Average Net Juice Qty (L)"
-msgstr ""
+msgstr "Ancienne Moyenne Nette de quantité de Jus (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__past_average_ratio_net
 msgid "Past Average Net Ratio (%)"
-msgstr ""
+msgstr "Ancienne Moyenne Nette du ratio (%)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__past_average_fruit_qty
 msgid "Past Average Fruit Qty (kg)"
-msgstr ""
+msgstr "Ancienne Moyenne  de quantité de fruits (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__past_average_sale_juice_qty
 msgid "Past Average Sale Juice Qty (L)"
-msgstr ""
+msgstr "Ancienne Moyenne de quantité de vente de Jus (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__past_average_sale_fruit_qty
 msgid "Past Average Sale Fruit Qty (kg)"
-msgstr ""
+msgstr "Ancienne Moyenne  de quantité de fruits (kg)"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Past Data Average"
-msgstr ""
+msgstr "Anciennes Données Moyenne"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Past Data N-1"
-msgstr ""
+msgstr "Données antérieures N-1"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Past Data N-2"
-msgstr ""
+msgstr "Données antérieures N-2"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Past Data N-3"
-msgstr ""
+msgstr "Données antérieures N-3"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll__past_data_ok
 msgid "Past Data Ok"
-msgstr ""
+msgstr "Données antérieures Ok"
 
 #. module: fruit_mill
 #: model:product.product,name:fruit_mill.peroxide_analysis
 #: model:product.template,name:fruit_mill.peroxide_analysis_product_template
 msgid "Peroxide Analysis"
-msgstr ""
+msgstr "Analyse des peroxydes"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_account_plaid
@@ -4000,12 +4036,12 @@ msgstr "Connecteur Plaid"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_parcel__planted_year
 msgid "Planted Year"
-msgstr ""
+msgstr "année de Plantation"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Poll"
-msgstr ""
+msgstr "Sondage"
 
 #. module: fruit_mill
 #: selection:fruit.config.settings,product_weight_in_lbs:0
@@ -4015,17 +4051,17 @@ msgstr ""
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll_line__poll_id
 msgid "Pre-Season Poll"
-msgstr ""
+msgstr "Enquête de pré-campagne"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Pre-season Poll"
-msgstr ""
+msgstr "Enquête de pré-campagne"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_line_tree
 msgid "Pre-season Poll Lines"
-msgstr ""
+msgstr "Lignes d'enquête de pré-campagne"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_preseason_poll_action
@@ -4046,28 +4082,28 @@ msgstr "Prévisions pré-campagnes"
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_preseason_poll_line
 msgid "Pre-season polls Line"
-msgstr ""
+msgstr "Lignes de Prévisions pré-campagnes"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis_line__precision
 msgid "Precision"
-msgstr ""
+msgstr "précision"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_product_product__fruit_analysis_precision
 #: model:ir.model.fields,field_description:fruit_mill.field_product_template__fruit_analysis_precision
 msgid "Precision of the Fruit Juice Analysis"
-msgstr ""
+msgstr "Précision des analyse de jus"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_juice_picking_action
 msgid "Prepare Loose Fruit Juice"
-msgstr "Préparer jus d'fruit en vrac"
+msgstr "Préparer du jus de fruit en vrac"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_season__fruit_qty
 msgid "Pressed Fruit Qty (kg)"
-msgstr ""
+msgstr "Quantité de Fruits Pressés (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_sale_pricelist_line__price
@@ -4095,7 +4131,7 @@ msgstr "Imprimer les rendez-vous"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_partner_warning_print_form
 msgid "Print Farmer Warnings"
-msgstr ""
+msgstr "Imprimer une Alerte Agriculteur"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_juice_production_day_print_action
@@ -4107,7 +4143,7 @@ msgstr "Imprimer le planning des presses"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_form
 msgid "Print Report"
-msgstr ""
+msgstr "impression de rapport"
 
 #. module: fruit_mill
 #: selection:fruit.juice.bottling,state:0
@@ -4117,7 +4153,7 @@ msgstr "Produire"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__bottle_qty
 msgid "Produced Bottles Qty"
-msgstr ""
+msgstr "quantité de bouteilles produites"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_product_product
@@ -4158,23 +4194,23 @@ msgstr "Date de production"
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_force_ratio__arrival_line_id
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_pack2check__arrival_line_id
 msgid "Production Line"
-msgstr ""
+msgstr "Ligne de production"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__name
 msgid "Production Number"
-msgstr ""
+msgstr "Numero de production"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_juice_production_product_id
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_juice_production_product_id
 msgid "Production Product"
-msgstr ""
+msgstr "Produit produit"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Production Results"
-msgstr ""
+msgstr "Résultat de production"
 
 #. module: fruit_mill
 #: selection:product.template,fruit_type:0
@@ -4184,12 +4220,12 @@ msgstr "Service trituration"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__production_state
 msgid "Production State"
-msgstr ""
+msgstr "Etat de la production"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
 msgid "Production in Progress"
-msgstr ""
+msgstr "Production en croissance"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_product_action
@@ -4200,7 +4236,7 @@ msgstr "Articles"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
 msgid "Purchased"
-msgstr ""
+msgstr "Achetés"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_quality_control
@@ -4219,12 +4255,12 @@ msgstr "Quantité"
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_appointment_qty_per_palox
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_appointment_qty_per_palox
 msgid "Quantity of Fruits per Palox"
-msgstr ""
+msgstr "quantité de fruit par palox"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__mix_withdrawal_juice_qty
 msgid "Quantity of fruit juice withdrawn by the farmer in liters"
-msgstr ""
+msgstr "Quantité de jus de fruits retirée par l’agriculteur en litres"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
@@ -4238,12 +4274,12 @@ msgstr "Conventionnel"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_warehouse__fruit_regular_case_total
 msgid "Regular Cases Total"
-msgstr ""
+msgstr "Total de caisses standard"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_warehouse__fruit_regular_case_stock
 msgid "Regular Cases in Stock"
-msgstr ""
+msgstr "Caisses standard en stock"
 
 #. module: fruit_mill
 #: model:ir.ui.menu,name:fruit_mill.fruit_report_menu
@@ -4254,12 +4290,12 @@ msgstr "Rapports"
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_arrival_form
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 msgid "Requested Withdrawal Qty"
-msgstr ""
+msgstr "Quantité de retrait demandée"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__mix_withdrawal_juice_qty
 msgid "Requested Withdrawal Qty (L)"
-msgstr ""
+msgstr "Quantité de retrait demandée (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_config_settings__use_propagation_minimum_delta
@@ -4283,57 +4319,57 @@ msgstr "Il est conseillé de réserver les produits manuellement en créant des 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis_line__result_string
 msgid "Result"
-msgstr ""
+msgstr "Résultat"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis_line__result_p1
 msgid "Result (1 decimal)"
-msgstr ""
+msgstr "Résultat (1 décimale)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis_line__result_p2
 msgid "Result (2 decimals)"
-msgstr ""
+msgstr "Résultat (2 décimales)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_analysis_line__result_int
 msgid "Result (integer)"
-msgstr ""
+msgstr "Résultat (entier)"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_form
 msgid "Results"
-msgstr ""
+msgstr "Résultats"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Results and Additional Info"
-msgstr ""
+msgstr "Résultats et informations additionnelles"
 
 #. module: fruit_mill
 #: selection:fruit.palox.case.lend,way:0
 msgid "Return"
-msgstr ""
+msgstr "Retour"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_palox_form
 msgid "Return Palox"
-msgstr ""
+msgstr "Retour Palox"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__lended_case_id
 msgid "Returned Lended Cases Move"
-msgstr ""
+msgstr "Mouvement de retour de caisses pretées"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__returned_organic_case
 msgid "Returned Organic Cases"
-msgstr ""
+msgstr "retour de caisses pour le Bio"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__returned_regular_case
 msgid "Returned Regular Cases"
-msgstr ""
+msgstr "Retour de caisses standard"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_account_deferred_revenue
@@ -4343,7 +4379,7 @@ msgstr "Reconnaissance des revenus"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__ripeness
 msgid "Ripeness"
-msgstr ""
+msgstr "Maturité"
 
 #. module: fruit_mill
 #: selection:stock.location,fruit_tank_type:0
@@ -4367,35 +4403,35 @@ msgstr "Vente"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__sale_move_id
 msgid "Sale Move"
-msgstr ""
+msgstr "Movement de Vente"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Sale Juice Qty"
-msgstr ""
+msgstr "Quantité de Jus Vendu"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll_line__sale_juice_qty
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_season__sale_juice_qty
 msgid "Sale Juice Qty (L)"
-msgstr ""
+msgstr "Quantité de Jus Vendu (L)"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_form
 msgid "Sale Fruit Qty"
-msgstr ""
+msgstr "Quantité de Fruit Vendu"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_preseason_poll_line__sale_fruit_qty
 msgid "Sale Fruit Qty (kg)"
-msgstr ""
+msgstr "Quantité de Fruit (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_invoice_create__fruit_sale_pricelist_id
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_sale_pricelist_id
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_sale_pricelist_id
 msgid "Sale Pricelist for Fruit Mill"
-msgstr ""
+msgstr "Liste de prix de vente du Moulin"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_sale_pricelist_action
@@ -4406,93 +4442,93 @@ msgstr "Listes de prix de vente"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_sale_pricelist_form
 msgid "Sale Prices"
-msgstr ""
+msgstr "Prix de Ventes"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__sale_location_id
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_ratio2force__sale_location_id
 msgid "Sale Tank"
-msgstr ""
+msgstr "Cuve de Vente"
 
 #. module: fruit_mill
 #: sql_constraint:fruit.preseason.poll.line:0
 msgid "Same juice type selected twice."
-msgstr ""
+msgstr "Type de Jus sélectionner deux fois"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__sample
 msgid "Sample"
-msgstr ""
+msgstr "Echantillon"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__sanitary_state
 msgid "Sanitary State"
-msgstr ""
+msgstr "Etat Sanitaire"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_search
 msgid "Search Appointments"
-msgstr ""
+msgstr "Rechercher dans Rendez vous"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
 msgid "Search Arrival Lines"
-msgstr ""
+msgstr "Rechercher dans Lignes d'apports"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_cultivation_search
 msgid "Search Cultivation Methods"
-msgstr ""
+msgstr "Rechercher dans Méthodes de Culture"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_search
 msgid "Search Fruit Arrivals"
-msgstr ""
+msgstr "Rechercher Dans Apports de Fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_lended_case_search
 msgid "Search Fruit Lended Cases"
-msgstr ""
+msgstr "Recherchez Dans Caisses Pretées"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_ochard_search
 msgid "Search Fruit Ochards"
-msgstr ""
+msgstr "Rechercher dans Agriculteur"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_palox_search
 msgid "Search Fruit Palox"
-msgstr ""
+msgstr "Recherchez dans Palox de Fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_parcel_search
 msgid "Search Fruit Parcels"
-msgstr ""
+msgstr "Recherchez dans Parcelle de Fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_sale_pricelist_search
 msgid "Search Fruit Sale Pricelists"
-msgstr ""
+msgstr "Recherchez dans Prix de vente"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_season_search
 msgid "Search Fruit Seasons"
-msgstr ""
+msgstr "Recherchez dans Campagne"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_treatment_search
 msgid "Search Fruit Treatments"
-msgstr ""
+msgstr "Recherchez dans Traitements de fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_variant_search
 msgid "Search Fruit Variants"
-msgstr ""
+msgstr "Recherchez dans Variétés de Fruits"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.organic_certifying_entity_search
 msgid "Search Organic Certifying Entities"
-msgstr ""
+msgstr "Recherchez dans Organismes de certification Bio"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__season_id
@@ -4525,7 +4561,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_preseason_poll_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.partner_organic_certification_search
 msgid "Season"
-msgstr ""
+msgstr "Campagne"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_season_action
@@ -4551,7 +4587,7 @@ msgstr "Sélectionner une bouteille de jus"
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival__returned_palox_ids
 msgid "Select returned palox other than those used in the arrival lines"
-msgstr ""
+msgstr "Sélectionnez les palox retournées autre que celles utilisées dans les lignes d’arrivée"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_product_product__shrinkage_prodlot_id
@@ -4613,29 +4649,29 @@ msgstr ""
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_picking_form
 msgid "Ship Loose Fruit Juice"
-msgstr ""
+msgstr "Perte de jus de fruit lors du transport"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_print_form
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_production_day_print_form
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_partner_warning_print_form
 msgid "Show"
-msgstr ""
+msgstr "Affiche"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__show_effect
 msgid "Show Effect"
-msgstr ""
+msgstr "Affiche l'effet"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Show Report"
-msgstr ""
+msgstr "Affiche le rapport"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_warning__show_validation_button
 msgid "Show Validation Button"
-msgstr ""
+msgstr "Affiche le bouton Valider"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__group_show_line_subtotals_tax_included
@@ -4650,7 +4686,7 @@ msgstr "Afficher les sous-totaux HT (B2B)"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_season__show_on_dashboard
 msgid "Show on Dashboard"
-msgstr ""
+msgstr "Montre sur le tableau de bord"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__group_product_pricelist
@@ -4670,28 +4706,28 @@ msgstr "Freinte"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 msgid "Shrinkage Juice Qty"
-msgstr ""
+msgstr "quantité prélevée"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__shrinkage_juice_qty
 msgid "Shrinkage Juice Qty (L)"
-msgstr ""
+msgstr "Quantité de Jus retiré (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__shrinkage_juice_qty_kg
 msgid "Shrinkage Juice Qty (kg)"
-msgstr ""
+msgstr "Quantité de jus retiré( kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_product_product__shrinkage_prodlot_id
 msgid "Shrinkage Production Lot"
-msgstr ""
+msgstr "Lot de production retiré"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_shrinkage_ratio
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_shrinkage_ratio
 msgid "Shrinkage Ratio"
-msgstr ""
+msgstr "Ratio du retrait"
 
 #. module: fruit_mill
 #: sql_constraint:res.company:0
@@ -4701,33 +4737,33 @@ msgstr "Le taux de freinte doit être positif."
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__shrinkage_move_id
 msgid "Shrinkage Stock Move"
-msgstr ""
+msgstr "Mouvement de retrait"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__shrinkage_location_id
 msgid "Shrinkage Tank"
-msgstr ""
+msgstr "Cuve de retrait"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_res_partner__fruit_sale_juice_qty_current_season
 #: model:ir.model.fields,help:fruit_mill.field_res_users__fruit_sale_juice_qty_current_season
 msgid "Sold fruit juice for the current season in liters"
-msgstr ""
+msgstr "Jus de fruits vendu pour la saison en cours en litres"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_bottling__other_src_location_id
 msgid "Source Location for Empty Bottles"
-msgstr ""
+msgstr "Emplacement de la source pour les bouteilles vides"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_picking__container_src_location_id
 msgid "Source Location for Empty Containers"
-msgstr ""
+msgstr "Emplacement de la source pour les bouteilles vides"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_tank_transfer__src_location_id
 msgid "Source Fruit Tank"
-msgstr ""
+msgstr "Cuve d'origine des fruits"
 
 #. module: fruit_mill
 #: selection:fruit.parcel,irrigation:0
@@ -4737,7 +4773,7 @@ msgstr "Arrosage"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__start_datetime
 msgid "Start"
-msgstr ""
+msgstr "Commencer"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_palox_borrow_history__start_date
@@ -4748,12 +4784,12 @@ msgstr "Date de début"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_day_print__start_hour
 msgid "Start Hour"
-msgstr ""
+msgstr "Heure de debut"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_day_print__start_minute
 msgid "Start Minute"
-msgstr ""
+msgstr "Minute de debut"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__state
@@ -4787,7 +4823,7 @@ msgstr "Emplacements de stockage"
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_config_settings__group_stock_multi_locations
 msgid "Store products in specific locations of your warehouse (e.g. bins, racks) and to track inventory accordingly."
-msgstr "Stockez les produits dans des zones d'emplacement spécifiques dans votre entrepôt (exemple: bacs, étagères) et suivez votre inventaire en fonction. "
+msgstr "Stockez les produits dans des zones d'emplacement spécifiques dans votre entrepôt (exemple: bacs, étagères) et suivez votre inventaire en fonction."
 
 #. module: fruit_mill
 #: selection:fruit.invoice.create,invoice_type:0
@@ -4813,14 +4849,14 @@ msgstr "Changement de type de jus sur la presse"
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__juice_service_sale_price_unit
 msgid "TODO"
-msgstr ""
+msgstr "Todo"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_line_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_analysis_search
 #: selection:fruit.juice.analysis,juice_source_type:0
 msgid "Tank"
-msgstr ""
+msgstr "Cuve"
 
 #. module: fruit_mill
 #: selection:fruit.juice.bottling,src_location_end_status:0
@@ -4846,17 +4882,17 @@ msgstr "Méthode d'arrondi pour le calcul des taxes"
 #. module: fruit_mill
 #: selection:fruit.config.settings,show_line_subtotals_tax_selection:0
 msgid "Tax-Excluded"
-msgstr ""
+msgstr "Hors Taxes "
 
 #. module: fruit_mill
 #: selection:fruit.config.settings,show_line_subtotals_tax_selection:0
 msgid "Tax-Included"
-msgstr ""
+msgstr "toutes taxes comprises"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__chart_template_id
 msgid "Template"
-msgstr ""
+msgstr "modèles "
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__auth_signup_template_user_id
@@ -4923,7 +4959,7 @@ msgstr "La quantité d'fruits doit être positive ou nulle."
 #: model:ir.model.fields,help:fruit_mill.field_fruit_lended_case__organic_qty
 #: model:ir.model.fields,help:fruit_mill.field_fruit_lended_case__regular_qty
 msgid "The quantity is positive when the case is lended. It is negative when the case is returned."
-msgstr ""
+msgstr "La quantité est positive lorsque le cas est prêté. Elle est négative lorsque le cas est retourné."
 
 #. module: fruit_mill
 #: sql_constraint:fruit.appointment:0
@@ -4953,7 +4989,7 @@ msgstr "La quantité de caisses normales rendues doit être positive ou nulle."
 #. module: fruit_mill
 #: sql_constraint:fruit.preseason.poll.line:0
 msgid "The sale fruit quantity cannot be superior to the fruit quantity."
-msgstr ""
+msgstr "La quantité de fruits vendue ne peut être supérieure à la quantité de fruits."
 
 #. module: fruit_mill
 #: sql_constraint:fruit.sale.pricelist.line:0
@@ -4972,27 +5008,27 @@ msgid ""
 "-This installs the account_batch_payment module."
 msgstr ""
 "Ceci vous permet de grouper des paiements dans un seul groupe et de faciliter le processus de lettrage. \n"
-"- Ceci installe le module account_batch_payment"
+"- Ceci installe le module account_batch_payment."
 
 #. module: fruit_mill
 #: sql_constraint:partner.organic.certification:0
 msgid "This farmer already has a certification for that season."
-msgstr "Cet oléiculteur a déjà une certification pour cette campagne."
+msgstr "Cet agriculteur a déjà une certification pour cette campagne."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_juice_bottling__src_location_end_qty
 msgid "This field doesn't take into account the inventory operation"
-msgstr ""
+msgstr "Ce champ ne prend pas en compte l’opération d’inventaire"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__compensation_juice_qty
 msgid "This field is used both for last of the day and first of the day compensations. The quantity is always positive, even for last-of-day compensations."
-msgstr ""
+msgstr "Ce champ est utilisé à la fois pour les compensations du dernier jour et du premier jour. La quantité est toujours positive, même pour les compensations du dernier jour."
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_production_product_swap_form
 msgid "This is an important decision. Are you sure?"
-msgstr ""
+msgstr "C’est une décision importante. En êtes-vous certain?"
 
 #. module: fruit_mill
 #: sql_constraint:fruit.ochard:0
@@ -5023,7 +5059,7 @@ msgstr "Ce profil existe déjà."
 #: model:ir.model.fields,help:fruit_mill.field_fruit_juice_production__ratio
 #: model:ir.model.fields,help:fruit_mill.field_fruit_juice_production_force_ratio__global_ratio
 msgid "This ratio gives the number of liters of fruit juice for 100 kg of fruits."
-msgstr ""
+msgstr "Ce ratio donne le nombre de litres de jus de fruits pour 100 kg de fruits."
 
 #. module: fruit_mill
 #: sql_constraint:fruit.treatment:0
@@ -5038,45 +5074,45 @@ msgstr "À facturer"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
 msgid "To Purchase"
-msgstr ""
+msgstr "A Acheter"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_search
 msgid "Today"
-msgstr ""
+msgstr "Aujourd'hui"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_appointment_search
 msgid "Tomorrow"
-msgstr ""
+msgstr "Demain"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_ochard__area_total
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_area_total
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_area_total
 msgid "Total Area"
-msgstr ""
+msgstr "Espace Total"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__total_qty_same_day
 msgid "Total Fruit Arrival Same Day"
-msgstr ""
+msgstr "Total des apports de fruit sur une journé"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__total_palox_same_day
 msgid "Total Palox Same Day"
-msgstr ""
+msgstr "Total Palox même Jour "
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Total Quantity"
-msgstr ""
+msgstr "Quantité Total"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__fruit_qty
 msgid "Total Quantity (kg)"
-msgstr ""
+msgstr "Quantité Total (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival__partner_fruit_tree_total
@@ -5084,18 +5120,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_tree_total
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_tree_total
 msgid "Total Trees"
-msgstr ""
+msgstr "Arbres Total"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival__fruit_qty
 msgid "Total fruit quantity in kg"
-msgstr ""
+msgstr "Total Fruit quantity en kg"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_appointment__total_palox_same_day
 #: model:ir.model.fields,help:fruit_mill.field_fruit_appointment__total_qty_same_day
 msgid "Total qty of fruit arrival on the same day, including this appointment."
-msgstr ""
+msgstr "Quantité totale de fruits arrivant le même jour, y compris ce rendez-vous."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_config_settings__module_product_expiry
@@ -5119,7 +5155,7 @@ msgstr "Référence de transfert"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_tank_transfer__transfer_type
 msgid "Transfer Type"
-msgstr ""
+msgstr "Type de Transfert"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_base_gengo
@@ -5134,12 +5170,12 @@ msgstr "Traitement"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_cultivation__treatment_id
 msgid "Treatment Product"
-msgstr ""
+msgstr "Produit de Traitement"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_cultivation__treatment_type
 msgid "Treatment Type"
-msgstr ""
+msgstr "Type de traitement"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.fruit_treatment_action
@@ -5150,17 +5186,17 @@ msgstr "Traitements"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_palox_case_lend__way
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_delivery_ups
 msgid "UPS"
-msgstr ""
+msgstr "UPS"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_delivery_usps
 msgid "USPS"
-msgstr ""
+msgstr "USOS"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line_extra__uom_id
@@ -5230,7 +5266,7 @@ msgstr "Bibliothèque d'images Unsplash"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.view_warehouse
 msgid "Update Compensation Ratio"
-msgstr ""
+msgstr "Mise a jour du ratio de Compensation"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_account_sepa_direct_debit
@@ -5290,27 +5326,27 @@ msgstr "Valider"
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_partner_organic_certification__validation_user_id
 msgid "Validated by"
-msgstr ""
+msgstr "Validé par"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_partner_organic_certification__validation_datetime
 msgid "Validated on"
-msgstr ""
+msgstr "Validé le"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_config_settings_form
 msgid "Variables"
-msgstr ""
+msgstr "Variables"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__group_product_variant
 msgid "Variants and Options"
-msgstr ""
+msgstr "Variétés et Options"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__in_invoice_line_id
 msgid "Vendor Bill Line"
-msgstr ""
+msgstr "Ligne de Facture Vendeur"
 
 #. module: fruit_mill
 #: model:ir.actions.act_window,name:fruit_mill.stock_warehouse_fruit_mill_action
@@ -5373,7 +5409,7 @@ msgstr "Désherbage"
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_search
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_search
 msgid "Week"
-msgstr ""
+msgstr "Semaine"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__product_weight_in_lbs
@@ -5385,7 +5421,7 @@ msgstr "Unité de mesure du poids"
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_search
 #: selection:fruit.arrival,state:0
 msgid "Weighted"
-msgstr ""
+msgstr "Pesé"
 
 #. module: fruit_mill
 #: selection:fruit.appointment,withdrawal_invoice:0
@@ -5407,13 +5443,13 @@ msgstr "Retrait"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "Withdrawal (L)"
-msgstr ""
+msgstr "Retrait (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__fruit_appointment_withdrawal_minutes
 #: model:ir.model.fields,field_description:fruit_mill.field_res_company__fruit_appointment_withdrawal_minutes
 msgid "Withdrawal Appointment Default Duration"
-msgstr ""
+msgstr "Retrait Nomination Défaut Durée"
 
 #. module: fruit_mill
 #: sql_constraint:res.company:0
@@ -5423,48 +5459,48 @@ msgstr "La durée par défaut du rendez-vous retrait devrait être positive."
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production__withdrawal_location_id
 msgid "Withdrawal Location"
-msgstr ""
+msgstr "Emplacement de Retrait"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__withdrawal_move_id
 msgid "Withdrawal Move"
-msgstr ""
+msgstr "Mouvement de Retrait"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_juice_qty_withdrawal_current_season
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_juice_qty_withdrawal_current_season
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_line_form
 msgid "Withdrawal Juice Qty"
-msgstr ""
+msgstr "Quantité du Retrait de Jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__withdrawal_juice_qty
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_pack2check__line_withdrawal_juice_qty
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_season__withdrawal_juice_qty
 msgid "Withdrawal Juice Qty (L)"
-msgstr ""
+msgstr "Quantité du Retrait de Jus (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__withdrawal_juice_qty_kg
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_juice_production_pack2check__line_withdrawal_juice_qty_kg
 msgid "Withdrawal Juice Qty (kg)"
-msgstr ""
+msgstr "Quantité du Retrait de Jus (kg)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_arrival_line__withdrawal_juice_qty_with_compensation
 msgid "Withdrawal Juice Qty with Compensation (L)"
-msgstr ""
+msgstr "Quantité du Retrait de Jus avec compensation (L)"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_appointment__withdrawal_juice_qty
 msgid "Withdrawal Juice Quantity"
-msgstr ""
+msgstr "Quantité du Retrait de Jus"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_res_partner__fruit_juice_qty_withdrawal_current_season
 #: model:ir.model.fields,help:fruit_mill.field_res_users__fruit_juice_qty_withdrawal_current_season
 msgid "Withdrawal juice (already withdrawn and pending withdrawal) for the current season in liters"
-msgstr ""
+msgstr "Jus de retrait (déjà retiré et en attente de retrait) pour la saison en cours en litres"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__withdrawal_juice_qty_kg
@@ -5476,6 +5512,11 @@ msgid ""
 "Shrinkage: already deducted.\n"
 "Filter loss: not applicable."
 msgstr ""
+"Quantité de jus de retrait en kg.\n"
+"Indemnité de premier jour : non comprise.\n"
+"Indemnité de dernier jour : déjà déduite.\n"
+"Rétrécissement : déjà déduit.\n"
+"Perte du filtre : sans objet."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__withdrawal_juice_qty
@@ -5487,6 +5528,11 @@ msgid ""
 "Shrinkage: already deducted.\n"
 "Filter loss: not applicable."
 msgstr ""
+"Quantité de jus de retrait en litres.\n"
+"Indemnité de premier jour : non comprise.\n"
+"Indemnité de dernier jour : déjà déduite.\n"
+"Rétrécissement : déjà déduit.\n"
+"Perte du filtre : sans objet."
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_fruit_arrival_line__withdrawal_juice_qty_with_compensation
@@ -5497,18 +5543,23 @@ msgid ""
 "Shrinkage: already deducted.\n"
 "Filter loss: not applicable."
 msgstr ""
+"Quantité de jus de retrait avec compensation en litres (pour les statistiques).\n"
+"Indemnité de premier jour : incluse.\n"
+"Indemnité de dernier jour : déjà déduite.\n"
+"Rétrécissement : déjà déduit.\n"
+"Perte du filtre : sans objet."
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_res_partner__fruit_juice_qty_withdrawn_current_season
 #: model:ir.model.fields,field_description:fruit_mill.field_res_users__fruit_juice_qty_withdrawn_current_season
 msgid "Withdrawn Juice Qty"
-msgstr ""
+msgstr "Quantité de jus retirée"
 
 #. module: fruit_mill
 #: model:ir.model.fields,help:fruit_mill.field_res_partner__fruit_juice_qty_withdrawn_current_season
 #: model:ir.model.fields,help:fruit_mill.field_res_users__fruit_juice_qty_withdrawn_current_season
 msgid "Withdrawn juice for the current season in liters"
-msgstr ""
+msgstr "Jus retiré en litres pour la campagne en cours"
 
 #. module: fruit_mill
 #: selection:fruit.appointment,withdrawal_invoice:0
@@ -5583,18 +5634,18 @@ msgstr "Ordres de travail"
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_palox_form
 msgid "Write here the number of the palox"
-msgstr ""
+msgstr "Ecrire ici le nombre de palox"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_season__year
 #: model:ir.model.fields,field_description:fruit_mill.field_stock_location__fruit_season_year
 msgid "Year"
-msgstr ""
+msgstr "Année"
 
 #. module: fruit_mill
 #: selection:fruit.juice.bottling,inventory_required:0
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #. module: fruit_mill
 #: model:ir.model.fields,field_description:fruit_mill.field_fruit_config_settings__module_delivery_bpost
@@ -5692,13 +5743,13 @@ msgstr ""
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.view_warehouse
 msgid "last days"
-msgstr ""
+msgstr "derniers jours"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_config_settings_form
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_juice_production_day_print_form
 msgid "min"
-msgstr ""
+msgstr "mn"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_config_settings_form
@@ -5709,7 +5760,7 @@ msgstr ""
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_config_settings_form
 msgid "minutes / 100 kg of fruit"
-msgstr ""
+msgstr "minutes / 100 kg de fruit"
 
 #. module: fruit_mill
 #: model:ir.model,name:fruit_mill.model_fruit_config_settings
@@ -5719,9 +5770,9 @@ msgstr ""
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_form
 msgid "organic"
-msgstr ""
+msgstr "Bio"
 
 #. module: fruit_mill
 #: model_terms:ir.ui.view,arch_db:fruit_mill.fruit_arrival_warning_form
 msgid "warning(s)"
-msgstr ""
+msgstr "Avertissement(s)"
