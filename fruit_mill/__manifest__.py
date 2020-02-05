@@ -29,7 +29,7 @@
         'data/sequence.xml',
         'data/organic_certifying_entity.xml',
         #'data/cron.xml',
-        #'report/report.xml',
+        'report/report.xml',
         'views/menu.xml',
         'wizard/fruit_palox_case_lend_view.xml',
         'wizard/fruit_palox_generate_production_view.xml',

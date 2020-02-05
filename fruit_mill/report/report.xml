@@ -142,19 +142,19 @@
 <!--    <field name="print_report_name">'Production-' + object.date + '.odt'</field>-->
 <!--</record>-->
 
-<!--<record id="fruit_arrival_report" model="ir.actions.report">-->
-<!--    <field name="name">Fruit Arrival</field>-->
-<!--    <field name="model">fruit.arrival</field>-->
-<!--    <field name="report_name">fruit.arrival</field>-->
-<!--    <field name="report_type">py3o</field>-->
-<!--    <field name="py3o_filetype">odt</field>-->
-<!--    <field name="module">fruit_mill</field>-->
-<!--    <field name="py3o_template_fallback">report/fruit_arrival.odt</field>-->
-<!--    <field name="print_report_name">'Arrival-' + object.name + '.odt'</field>-->
-<!--</record>-->
+<record id="fruit_arrival_report" model="ir.actions.report">
+    <field name="name">Fruit Arrival</field>
+    <field name="model">fruit.arrival</field>
+    <field name="report_name">fruit.arrival</field>
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">odt</field>
+    <field name="module">fruit_mill</field>
+    <field name="py3o_template_fallback">report/fruit_arrival.odt</field>
+    <field name="print_report_name">'Arrival-' + object.name + '.odt'</field>
+</record>
 
-<!--<record id="button_fruit_arrival_report" model="ir.values">-->
-<!--    <field name="key2">client_print_multi</field>-->
+<!--<record id="button_fruit_arrival_report" model="ir.default">-->
+<!--    <field name="field_id">client_print_multi</field>-->
 <!--    <field name="model">fruit.arrival</field>-->
 <!--    <field name="name">Fruit Arrival</field>-->
 <!--    <field name="value" eval="'ir.actions.report,%d'%fruit_arrival_report" />-->
