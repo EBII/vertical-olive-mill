@@ -29,7 +29,6 @@
         'data/sequence.xml',
         'data/organic_certifying_entity.xml',
         #'data/cron.xml',
-        #'report/report.xml',
         'views/menu.xml',
         'wizard/olive_palox_case_lend_view.xml',
         'wizard/olive_palox_generate_production_view.xml',
@@ -61,7 +60,9 @@
         'views/olive_cultivation.xml',
         'views/olive_treatment.xml',
         'views/olive_arrival.xml',
+        'report/report.xml',
         #'views/olive_oil_production.xml',
+
         'views/partner_organic_certification.xml',
         'views/olive_appointment.xml',
         'views/olive_preseason_poll.xml',
