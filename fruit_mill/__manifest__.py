@@ -2,6 +2,8 @@
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+
+
 {
     'name': 'Fruit Mill',
     'version': '12.0.1.0.0',
@@ -29,7 +31,6 @@
         'data/sequence.xml',
         'data/organic_certifying_entity.xml',
         #'data/cron.xml',
-        'report/report.xml',
         'views/menu.xml',
         'wizard/fruit_palox_case_lend_view.xml',
         'wizard/fruit_palox_generate_production_view.xml',
@@ -72,6 +73,7 @@
         'views/product.xml',
         'views/stock_production_lot.xml',
         'views/fruit_juice_analysis.xml',
+        'report/report.xml',
     ],
     'demo': [
         'demo/product.xml',
