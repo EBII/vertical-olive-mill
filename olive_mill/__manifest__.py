@@ -67,7 +67,7 @@
         'views/olive_preseason_poll.xml',
         'views/olive_sale_pricelist.xml',
         'views/organic_certifying_entity.xml',
-        #'views/partner.xml',
+        'views/partner.xml',
         'views/users.xml',
         'views/product.xml',
         'views/stock_production_lot.xml',

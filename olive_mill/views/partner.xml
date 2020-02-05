@@ -16,9 +16,9 @@
         <xpath expr="//field[@name='child_ids']/form//field[@name='customer']" position="after">
             <field name="olive_farmer" invisible="1"/>
         </xpath>
-        <field name="child_ids" position="attributes">
-            <attribute name="context" operation="python_dict" key="default_olive_farmer">olive_farmer</attribute>
-        </field>
+<!--        <field name="child_ids" position="attributes">-->
+<!--            <attribute name="context" operation="python_dict" key="default_olive_farmer">olive_farmer</attribute>-->
+<!--        </field>-->
     </field>
 </record>
 
