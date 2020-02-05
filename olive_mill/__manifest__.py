@@ -61,8 +61,7 @@
         'views/olive_treatment.xml',
         'views/olive_arrival.xml',
         'report/report.xml',
-        #'views/olive_oil_production.xml',
-
+        'views/olive_oil_production.xml',
         'views/partner_organic_certification.xml',
         'views/olive_appointment.xml',
         'views/olive_preseason_poll.xml',
